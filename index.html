@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이기쁨 포트폴리오 | Data & AI</title>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <style>
+        :root{--bg:#0B0D13;--bg2:#101320;--card:#161929;--card2:#1C2035;--text:#EAEAF0;--sub:#7E829A;--accent:#00E8C6;--accent2:#845EF7;--accent3:#3B82F6;--border:#252840;--glow:rgba(0,232,198,0.06)}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Pretendard Variable',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+        a{color:var(--accent);text-decoration:none}
+        .container{max-width:1100px;margin:0 auto;padding:0 2rem}
+        .page{display:none;animation:fadeIn .35s ease}.page.active{display:block}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+        /* ═══ HERO ═══ */
+        .hero{position:relative;padding:4rem 0 0;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-200px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 70%);pointer-events:none}
+        .hero::after{content:'';position:absolute;bottom:-150px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(132,94,247,0.04),transparent 70%);pointer-events:none}
+
+        .hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:2rem}
+        .hero-left{flex:1}
+        .hero-tag{display:inline-block;padding:.3rem 1rem;border:1px solid var(--accent);border-radius:20px;font-size:.85rem;color:var(--accent);font-weight:600;letter-spacing:.05em;margin-bottom:1rem}
+        .hero h1{font-size:3rem;font-weight:900;line-height:1.25;letter-spacing:-.02em}
+        .hero h1 .hl{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-desc{color:var(--sub);font-size:1.05rem;margin-top:.8rem;max-width:550px;line-height:1.8}
+        .hero-btns{display:flex;gap:.8rem;margin-top:1.5rem;flex-wrap:wrap}
+        .hero-btns a,.hero-btns button{padding:.6rem 1.5rem;border-radius:8px;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit;transition:all .3s;border:none}
+        .bf{background:var(--accent);color:var(--bg)}.bf:hover{box-shadow:0 4px 24px rgba(0,232,198,.25);transform:translateY(-2px)}
+        .bo{background:none;border:1px solid var(--border);color:var(--text)}.bo:hover{border-color:var(--accent);color:var(--accent)}
+
+        /* ═══ SUMMARY STRIP ═══ */
+        .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:3rem}
+        .sum-card{background:var(--card);border-radius:14px;padding:1.2rem;text-align:center;border:1px solid var(--border);transition:border-color .3s}
+        .sum-card:hover{border-color:var(--accent)}
+        .sum-num{font-size:2.2rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .sum-label{font-size:.85rem;color:var(--sub);margin-top:.2rem;text-transform:uppercase;letter-spacing:.08em}
+
+        /* ═══ QUICK PROFILE ═══ */
+        .qp{background:var(--card);border-radius:16px;padding:1.8rem 2rem;margin-bottom:3rem;display:flex;gap:2rem;align-items:center;border:1px solid var(--border);position:relative;overflow:hidden}
+        .qp::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent2))}
+        .qp-info{flex:1}
+        .qp-name{font-size:1.5rem;font-weight:800}
+        .qp-role{font-size:1rem;color:var(--accent);font-weight:600;margin-bottom:.6rem}
+        .qp-exp{font-size:.95rem;color:var(--sub);line-height:1.8}
+        .qp-exp strong{color:var(--text)}
+        .qp-skills{flex:1;display:flex;flex-wrap:wrap;gap:.4rem}
+        .sk{padding:.3rem .75rem;border-radius:5px;font-size:.82rem;background:rgba(0,232,198,.08);color:var(--accent);font-weight:600;border:1px solid rgba(0,232,198,.15)}
+        .qp-more{margin-top:.8rem}
+        .more-link{font-size:.78rem;color:var(--accent);cursor:pointer;font-weight:600;border:none;background:none;font-family:inherit;padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);transition:all .2s}
+        .more-link:hover{background:var(--accent);color:var(--bg)}
+
+        /* ═══ PROJECTS SECTION ═══ */
+        .sec-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);font-weight:700;margin-bottom:.5rem}
+        .sec-title{font-size:1.6rem;font-weight:800;margin-bottom:1.5rem}
+        .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem}
+        .cd{background:var(--card);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .3s;border:1px solid var(--border);position:relative}
+        .cd:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 12px 40px rgba(0,232,198,.08)}
+        .cd-live{position:absolute;top:12px;right:12px;padding:.2rem .6rem;background:var(--accent);color:var(--bg);border-radius:6px;font-size:.6rem;font-weight:800;letter-spacing:.05em}
+        .ci{width:100%;height:180px;overflow:hidden;background:var(--bg2)}.ci img{width:100%;height:100%;object-fit:cover;object-position:top;opacity:.8;transition:all .4s}.cd:hover .ci img{opacity:1;transform:scale(1.03)}
+        .cb{padding:1.2rem 1.5rem}
+        .cn{font-size:.78rem;color:var(--accent);font-weight:700;letter-spacing:.12em}
+        .ct{font-size:1.15rem;font-weight:800;margin:.3rem 0}
+        .cdesc{font-size:.88rem;color:var(--sub);line-height:1.6}
+        .ctags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.8rem}
+        .ctag{padding:.12rem .45rem;border-radius:4px;font-size:.62rem;background:rgba(0,232,198,.08);color:var(--accent)}
+
+        /* ═══ ABOUT DETAIL PAGE ═══ */
+        .back{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem 1rem;border:1px solid var(--border);border-radius:8px;color:var(--sub);font-size:.82rem;cursor:pointer;background:none;font-family:inherit;margin-bottom:2rem;transition:all .2s}
+        .back:hover{border-color:var(--accent);color:var(--accent)}
+        .agrid{display:grid;grid-template-columns:1fr 2fr;gap:2.5rem}
+        .ainfo{background:var(--card);border-radius:16px;padding:2rem;border:1px solid var(--border)}
+        .aname{font-size:1.4rem;font-weight:800}.arole{color:var(--accent);font-weight:600;margin-bottom:1.5rem;font-size:.9rem}
+        .ai{margin-bottom:1rem}.al{font-size:.68rem;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.2rem}.av{font-size:.85rem}
+        .ec{background:var(--card);border-radius:14px;padding:1.5rem;border-left:3px solid var(--accent);margin-bottom:1.2rem;border:1px solid var(--border);border-left:3px solid var(--accent)}
+        .ec2{border-left-color:var(--accent2)}
+        .et2{font-size:1.05rem;font-weight:700}.es2{font-size:.76rem;color:var(--sub);margin:.2rem 0 .6rem}
+        .el2{list-style:none}.el2 li{font-size:.8rem;color:var(--sub);padding:.1rem 0}.el2 li::before{content:'→ ';color:var(--accent)}
+        .el2 li strong{color:var(--text)}
+
+        /* ═══ PROJECT DETAIL ═══ */
+        .ph{margin-bottom:1.5rem}.pn{font-size:4rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;opacity:.3;line-height:1}
+        .pt{font-size:2rem;font-weight:800;margin-top:-.5rem}.ps{font-size:.92rem;color:var(--sub);margin-top:.3rem}
+        .story{margin:2rem 0}.story-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);font-weight:700;margin-bottom:.4rem}
+        .story-title{font-size:1.35rem;font-weight:800;margin-bottom:.8rem}
+        .story-text{font-size:.95rem;color:var(--sub);line-height:1.8;margin-bottom:1rem}
+        .sh{background:var(--card);border-radius:12px;padding:1.1rem 1.4rem;margin:.8rem 0;border-left:3px solid var(--accent);border:1px solid var(--border);border-left:3px solid var(--accent)}
+        .sh.warn{border-left-color:#FF6B6B}
+        .sh p{font-size:.92rem;line-height:1.7}
+        .gallery{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
+        .gallery.single{grid-template-columns:1fr}
+        .gi{border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--card)}
+        .gi img{width:100%;display:block}
+        .gi-cap{padding:.5rem 1rem;font-size:.72rem;color:var(--sub);text-align:center;background:var(--card2)}
+        .fcards{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+        .fc{background:var(--card);border-radius:12px;padding:1.3rem;border:1px solid var(--border)}.fc.c1{border-top:3px solid var(--accent)}.fc.c2{border-top:3px solid var(--accent2)}
+        .fct{font-size:.95rem;font-weight:700;margin-bottom:.5rem}
+        .fc ul{list-style:none}.fc li{font-size:.88rem;color:var(--sub);padding:.15rem 0;line-height:1.6}.fc li::before{content:'• ';color:var(--accent)}
+        .tb{background:var(--card);border-radius:10px;padding:.8rem 1.3rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:1rem 0;border:1px solid var(--border)}
+        .tl{font-size:.68rem;color:var(--sub);font-weight:700;text-transform:uppercase}
+        .future{background:var(--card2);border-radius:14px;padding:1.3rem;margin:1.5rem 0;border:1px solid var(--border)}
+        .future-title{font-size:.88rem;font-weight:700;color:var(--accent2);margin-bottom:.5rem}
+        .future ul{list-style:none}.future li{font-size:.8rem;color:var(--sub);padding:.12rem 0}.future li::before{content:'◇ ';color:var(--accent2)}
+
+        footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;color:var(--sub);font-size:.78rem}
+        @media(max-width:768px){.hero h1{font-size:1.7rem}.hero-top{flex-direction:column}.summary{grid-template-columns:1fr 1fr}.qp{flex-direction:column}.cg{grid-template-columns:1fr}.agrid{grid-template-columns:1fr}.fcards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+
+<!-- ═══ LANDING ═══ -->
+<div class="page active" id="page-landing">
+<div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <span class="hero-tag">PORTFOLIO 2026</span>
+                <h1>숫자를 읽고, 문제를 정의하고<br><span class="hl">서비스로 해결합니다</span></h1>
+                <p class="hero-desc">회계·재무 5년의 숫자 감각 위에 데이터 분석·자동화 역량을 쌓았습니다. 문제를 발견하면 직접 기획하고, 만들고, 배포합니다.</p>
+                <div class="hero-btns">
+                    <button class="bf" onclick="go('about')">About Me 상세</button>
+                    <a href="https://github.com/rena-data" target="_blank" class="bo">GitHub</a>
+                    <button class="bo" onclick="openContact()">Contact</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Numbers -->
+        <div class="summary">
+            <div class="sum-card">
+                <div class="sum-num">6년+</div>
+                <div class="sum-label">총 경력</div>
+            </div>
+            <div class="sum-card">
+                <div class="sum-num">80%</div>
+                <div class="sum-label">수작업 절감</div>
+            </div>
+            <div class="sum-card">
+                <div class="sum-num">$0</div>
+                <div class="sum-label">실서비스 운영비</div>
+            </div>
+            <div class="sum-card">
+                <div class="sum-num">3개</div>
+                <div class="sum-label">E2E 프로젝트</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Profile -->
+    <div class="qp">
+        <div class="qp-info">
+            <div class="qp-name">이기쁨 <span style="font-size:.8rem;color:var(--sub);font-weight:400">Lee Gippeum</span></div>
+            <div class="qp-role">Data Analyst & Developer</div>
+            <div class="qp-exp">
+                <strong>에이원퍼포먼스팩토리</strong> 데이터인텔리전스팀 (10개월) — 광고 API 수집, 자동화, 대시보드<br>
+                <strong>주네스글로벌코리아</strong> 재경부 (5년 5개월) — 자금·결산, 프로세스 효율화<br>
+                <strong>스파르타코딩클럽</strong> 데이터 분석 부트캠프 | <strong>GA4</strong> 자격증
+            </div>
+            <div class="qp-more">
+                <button class="more-link" onclick="go('about')">경력 상세 보기 →</button>
+            </div>
+        </div>
+        <div class="qp-skills">
+            <span class="sk">Python</span><span class="sk">SQL</span><span class="sk">FastAPI</span><span class="sk">Streamlit</span>
+            <span class="sk">Pandas</span><span class="sk">Plotly</span><span class="sk">DuckDB</span><span class="sk">BigQuery</span>
+            <span class="sk">Supabase</span><span class="sk">Gemini API</span><span class="sk">Docker</span><span class="sk">GA4</span><span class="sk">Git</span>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="sec-label">Projects</div>
+    <div class="sec-title">프로젝트</div>
+    <div class="cg">
+        <div class="cd" onclick="go('p1')">
+            <div class="ci"><img src="screenshots/fintech_dashboard.png"></div>
+            <div class="cb">
+                <div class="cn">PROJECT 01</div>
+                <div class="ct">Fintech Intelligence</div>
+                <div class="cdesc">흩어진 데이터를 한눈에. 4개 탭 대시보드 + 시나리오 시뮬레이터로 의사결정 지원.</div>
+                <div class="ctags"><span class="ctag">Python</span><span class="ctag">DuckDB</span><span class="ctag">Streamlit</span><span class="ctag">n8n</span></div>
+            </div>
+        </div>
+        <div class="cd" onclick="go('p2')">
+            <span class="cd-live">LIVE</span>
+            <div class="ci"><img src="screenshots/beauty_upload.png"></div>
+            <div class="cb">
+                <div class="cn">PROJECT 02</div>
+                <div class="ct">Beauty AI Analyze</div>
+                <div class="cdesc">10만원짜리 퍼스널컬러 컨설팅을 AI로. 실서비스 운영 중, 비용 $0.</div>
+                <div class="ctags"><span class="ctag">FastAPI</span><span class="ctag">Gemini API</span><span class="ctag">Supabase</span><span class="ctag">Render</span></div>
+            </div>
+        </div>
+        <div class="cd" onclick="go('p3')">
+            <div class="ci"><img src="screenshots/pet_main.png"></div>
+            <div class="cb">
+                <div class="cn">PROJECT 03</div>
+                <div class="ct">Raising Pet</div>
+                <div class="cdesc">"아무리 잘해도 결국 죽는" 킹받는 펫 게임. 바이럴 설계 + 26개 테스트.</div>
+                <div class="ctags"><span class="ctag">Python</span><span class="ctag">JavaScript</span><span class="ctag">SVG</span><span class="ctag">pytest</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- ═══ ABOUT DETAIL ═══ -->
+<div class="page" id="page-about">
+<div class="container" style="padding:3rem 2rem">
+    <button class="back" onclick="go('landing')">← 돌아가기</button>
+    <div class="agrid">
+        <div class="ainfo">
+            <div class="aname">이기쁨</div>
+            <div class="arole">Data Analyst & Developer</div>
+            <div class="ai"><div class="al">Email</div><div class="av">ldsjoy@naver.com</div></div>
+            <div class="ai"><div class="al">GitHub</div><div class="av"><a href="https://github.com/rena-data" target="_blank">github.com/rena-data</a></div></div>
+            <div class="ai"><div class="al">Education</div><div class="av">스파르타코딩클럽 데이터 분석 부트캠프<br><span style="color:var(--sub);font-size:.78rem">2024.11~2025.03 | SQL, Python, ML, Tableau</span></div></div>
+            <div class="ai"><div class="al">Certification</div><div class="av">Google Analytics (GA4) - 2026.04</div></div>
+            <div class="ai">
+                <div class="al">Skills</div>
+                <div class="qp-skills" style="margin-top:.4rem">
+                    <span class="sk">Python</span><span class="sk">SQL</span><span class="sk">FastAPI</span><span class="sk">Streamlit</span>
+                    <span class="sk">Pandas</span><span class="sk">NumPy</span><span class="sk">Plotly</span><span class="sk">Tableau</span>
+                    <span class="sk">DuckDB</span><span class="sk">BigQuery</span><span class="sk">Supabase</span>
+                    <span class="sk">Gemini API</span><span class="sk">Docker</span><span class="sk">GA4</span><span class="sk">Git</span><span class="sk">Jira</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 style="font-size:1.2rem;margin-bottom:1.2rem">Experience</h2>
+            <div class="ec">
+                <div class="et2">에이원퍼포먼스팩토리</div>
+                <div class="es2">데이터인텔리전스팀 | 매니저 — 2025.03~2025.12 (10개월)</div>
+                <ul class="el2">
+                    <li>마케팅 데이터 수집·가공 및 자동화 솔루션 기획·개발</li>
+                    <li><strong>이용자 세그먼트 대량 변경 자동화</strong> → 월 수작업 20시간→4시간 (80% 절감)</li>
+                    <li><strong>광고 성과 리포트 자동화</strong> → 리드타임 1일→실시간, 월 30시간 절감</li>
+                    <li><strong>데이터 수집 안정화</strong> → 장애 복구 1시간 이내, 정합성 이슈 월 2건 미만</li>
+                    <li>Validation 적용 → 입력 오류 기반 장애 0건</li>
+                    <li>Tech: Python, SQL, FastAPI, Streamlit, 네이버/카카오 광고 API, Docker, GitHub</li>
+                </ul>
+            </div>
+            <div class="ec ec2">
+                <div class="et2">주네스글로벌코리아</div>
+                <div class="es2">재경부 | 주임 — 2018.12~2024.04 (5년 5개월)</div>
+                <ul class="el2">
+                    <li>자금·결산 데이터 관리, <strong>월 결산 처리 시간 30% 단축</strong></li>
+                    <li>전사 10종 문서 페이퍼리스 전환 → <strong>제출 누락 월 3~5건→0건</strong></li>
+                    <li>정산·결산 프로세스 표준화, 회계 매뉴얼 문서화</li>
+                    <li>신규 직원 자체 학습 매뉴얼 구축 → 전담 교육 리소스 절감</li>
+                </ul>
+            </div>
+            <div class="ec">
+                <div class="et2">부트캠프 주요 프로젝트</div>
+                <div class="es2">스파르타코딩클럽 2024.11~2025.03</div>
+                <ul class="el2">
+                    <li>건강보험 청구 의료비 분석 → 보험료 모델링</li>
+                    <li>배너 광고 기반 온라인 스토어 사용자 행동 분석</li>
+                    <li>은행 고객 이탈 예측 → 유지 전략 도출</li>
+                    <li>K-선제품 트렌드 분석 → 선케어 시장 진출 방안</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- ═══ PROJECT 1 ═══ -->
+<div class="page" id="page-p1">
+<div class="container" style="padding:3rem 2rem">
+    <button class="back" onclick="go('landing')">← 돌아가기</button>
+    <div class="ph"><div class="pn">01</div><div class="pt">Fintech Intelligence</div><div class="ps">소규모 핀테크 경영 인텔리전스 시스템</div></div>
+
+    <div class="story">
+        <div class="story-label">Background</div>
+        <div class="story-title">왜 이 프로젝트를 시작했나?</div>
+        <div class="story-text">초기 핀테크 스타트업은 데이터가 흩어져 있습니다. 마케팅은 광고 플랫폼에, 유저 행동은 서버 로그에, 재무는 엑셀에. 분석가가 수집·취합에만 하루 1~2시간을 쓰면서 정작 인사이트를 도출할 시간이 없었습니다.</div>
+        <div class="sh warn"><p><strong>문제:</strong> 분석가 업무 시간의 90%가 단순 수집·취합에 소모. 의사결정 지원이 불가능한 구조.</p></div>
+        <div class="sh"><p><strong>해결:</strong> 데이터 자동 수집 → 핵심 지표 대시보드 → 이상 감지 알림 → What-if 시뮬레이션까지 원스톱 시스템 구축.</p></div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Service Depth</div>
+        <div class="story-title">4개 탭 대시보드</div>
+        <div class="gallery single"><div class="gi"><img src="screenshots/fintech_dashboard.png"><div class="gi-cap">Streamlit 인터랙티브 대시보드</div></div></div>
+        <div class="fcards">
+            <div class="fc c1"><div class="fct">마케팅 성과</div><ul><li>채널별 CPC/CAC/ROAS</li><li>"어느 채널에 예산을 써야 하나?"</li></ul></div>
+            <div class="fc c1"><div class="fct">프로덕트 지표</div><ul><li>전환 퍼널 + 코호트 리텐션</li><li>"어디서 유저를 잃고 있나?"</li></ul></div>
+            <div class="fc c1"><div class="fct">경영 현황</div><ul><li>MRR, Burn Rate, Runway</li><li>"회사가 언제까지 버틸 수 있나?"</li></ul></div>
+            <div class="fc c1"><div class="fct">시나리오 시뮬레이터</div><ul><li>슬라이더 → 12개월 예측</li><li>"이렇게 하면 어떻게 되나?"</li></ul></div>
+        </div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Results</div>
+        <div class="story-title">핵심 성과</div>
+        <div class="fcards">
+            <div class="fc c2"><div class="fct">정량적</div><ul><li>75,000+ 유저, 190만 이벤트 데이터 설계</li><li>수동 작업 90% 절감 자동화 설계</li><li>이상 감지: 1일 → 10분 이내</li></ul></div>
+            <div class="fc c2"><div class="fct">기술적</div><ul><li>DuckDB ↔ BigQuery 무중단 전환</li><li>3 Layer 지표 체계 설계</li><li>n8n 워크플로우 4개 설계</li></ul></div>
+        </div>
+    </div>
+
+    <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">DuckDB</span><span class="sk">BigQuery</span><span class="sk">Pandas</span><span class="sk">Streamlit</span><span class="sk">Plotly</span><span class="sk">n8n</span><span class="sk">Docker</span></div>
+    <div class="future"><div class="future-title">향후 계획</div><ul><li>n8n 워크플로우 실제 구현</li><li>Slack 연동 (주간 리포트, 이상 알림)</li><li>BigQuery 실서비스 연동</li><li>ML 이탈 예측 모델</li></ul></div>
+</div>
+</div>
+
+<!-- ═══ PROJECT 2 ═══ -->
+<div class="page" id="page-p2">
+<div class="container" style="padding:3rem 2rem">
+    <button class="back" onclick="go('landing')">← 돌아가기</button>
+    <div class="ph"><div class="pn">02</div><div class="pt">Beauty AI Analyze</div><div class="ps">AI 퍼스널컬러 분석 — <a href="https://beauty-ai-analyze.onrender.com" target="_blank">Live Service</a></div></div>
+
+    <div class="story">
+        <div class="story-label">Background</div>
+        <div class="story-title">왜 이 프로젝트를 시작했나?</div>
+        <div class="story-text">퍼스널컬러 컨설팅 1회 5~15만원. MZ세대 수요는 폭발적인데 무료로 즉시 진단받을 수 있는 서비스가 없었습니다.</div>
+        <div class="sh warn"><p><strong>문제:</strong> 높은 진입 장벽 (비용+시간) vs 폭발적 수요. 올리브영/무신사도 퍼스널컬러별 추천을 하지만 유저 대부분이 자기 컬러를 모름.</p></div>
+        <div class="sh"><p><strong>해결:</strong> AI Vision API로 사진 1장 → 10초 분석. 실제 판매 제품 연결. 운영비 $0. 원래 계획의 30%만 실행해서 MVP 출시.</p></div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Service Depth</div>
+        <div class="story-title">서비스 화면 (8개 탭)</div>
+        <div class="gallery">
+            <div class="gi"><img src="screenshots/beauty_upload.png"><div class="gi-cap">메인 - 프로필 + 업로드</div></div>
+            <div class="gi"><img src="screenshots/beauty_profile.png"><div class="gi-cap">프로필 선택 (성별/키/체형/스타일)</div></div>
+        </div>
+        <div class="gallery single"><div class="gi"><img src="screenshots/beauty_full.png"><div class="gi-cap">분석 결과 전체 (8개 탭)</div></div></div>
+        <div class="fcards">
+            <div class="fc c1"><div class="fct">AI 분석</div><ul><li>4계절 비교 + 별점 + S/A/B/C 등급</li><li>레이더 차트 (밝기/채도/대비/온기/선명도)</li><li>얼굴+컬러 배경 드레이핑</li></ul></div>
+            <div class="fc c1"><div class="fct">추천 + 액션</div><ul><li>뷰티 80개 + 패션 37개 실제 제품</li><li>옷 매칭 (S/A/B/C)</li><li>리포트 다운로드 + SNS 공유</li></ul></div>
+        </div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Architecture</div>
+        <div class="story-title">기술적 챌린지</div>
+        <div class="fcards">
+            <div class="fc c2"><div class="fct">모델 폴백 체인</div><ul><li>Gemini 503 과부하 빈번</li><li>4개 모델 순차 시도 + 키 2개 자동 전환</li><li>일일 3,000회 분석 가능</li></ul></div>
+            <div class="fc c2"><div class="fct">$0 인프라</div><ul><li>Render + UptimeRobot + Supabase</li><li>GA4 + Google Sheets 문의</li><li>개인정보처리방침 + 쿠키 동의</li></ul></div>
+        </div>
+    </div>
+
+    <div class="sh"><p><strong>성과:</strong> 실서비스 배포 완료 | 운영비 $0/월 | Google 검색 등록 | 8개 탭 + SNS 공유</p></div>
+    <div class="tb"><span class="tl">Tech</span><span class="sk">FastAPI</span><span class="sk">Gemini API</span><span class="sk">Supabase</span><span class="sk">JavaScript</span><span class="sk">Render</span><span class="sk">GA4</span><span class="sk">html2canvas</span><span class="sk">UptimeRobot</span></div>
+    <div class="future"><div class="future-title">향후 계획</div><ul><li>제휴 링크 수익화 (쿠팡파트너스)</li><li>포털 확장 (관상/MBTI/심리테스트)</li><li>카카오톡 공유 + 제품 이미지</li></ul></div>
+</div>
+</div>
+
+<!-- ═══ PROJECT 3 ═══ -->
+<div class="page" id="page-p3">
+<div class="container" style="padding:3rem 2rem">
+    <button class="back" onclick="go('landing')">← 돌아가기</button>
+    <div class="ph"><div class="pn">03</div><div class="pt">Raising Pet</div><div class="ps">"아무리 잘해도 결국 죽는" 킹받는 펫 키우기 게임</div></div>
+
+    <div class="story">
+        <div class="story-label">Background</div>
+        <div class="story-title">왜 이 프로젝트를 시작했나?</div>
+        <div class="story-text">캐주얼 게임에서 감정을 건드리는 게임이 바이럴 효과가 가장 큽니다. "결국 죽는" 컨셉으로 유저가 자발적으로 결과를 공유하게 만들면, 광고비 $0으로 성장이 가능하다고 판단했습니다.</div>
+        <div class="sh warn"><p><strong>가설:</strong> 감정 유발 게임 결과(추모카드+칭호)를 SNS에 공유하고 싶게 만들면 바이럴 성장 가능.</p></div>
+        <div class="sh"><p><strong>설계:</strong> 연쇄 붕괴(스탯 하나 떨어지면 나머지 급락) + 피로도(같은 행동 효과 감소) → 전략적 긴장감. 게임오버 시 추모카드+칭호 → X 자동 공유.</p></div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Service Depth</div>
+        <div class="story-title">게임 구성</div>
+        <div class="gallery single"><div class="gi"><img src="screenshots/pet_main.png"><div class="gi-cap">5종 동물 선택 + 3단계 난이도</div></div></div>
+        <div class="fcards">
+            <div class="fc c1"><div class="fct">게임 메커닉</div><ul><li>3스탯 (배고픔/행복/청결) × 4성장단계</li><li>연쇄 붕괴 + 피로도 + 랜덤 이벤트</li><li>칭호: 학대범(0턴)→전설의 집사(100+)</li></ul></div>
+            <div class="fc c1"><div class="fct">바이럴 설계</div><ul><li>게임오버 추모카드 자동 생성</li><li>X 공유 + 챌린지 텍스트</li><li>칭호 수집 경쟁 → 재방문 유도</li></ul></div>
+        </div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Results</div>
+        <div class="story-title">핵심 성과</div>
+        <div class="fcards">
+            <div class="fc c2"><div class="fct">개발</div><ul><li>MVP 완성 + 26개 테스트 100% 통과</li><li>SVG 5종×4기분=20변형 렌더러</li><li>구버전 세이브 호환 100%</li></ul></div>
+            <div class="fc c2"><div class="fct">비즈니스</div><ul><li>4단계 그로스 전략 수립</li><li>DAU 10K→월 150~450만원 예상</li><li>6가지 배포 옵션 분석+로드맵</li></ul></div>
+        </div>
+    </div>
+
+    <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">JavaScript</span><span class="sk">Streamlit</span><span class="sk">SVG</span><span class="sk">CSS Animation</span><span class="sk">localStorage</span><span class="sk">pytest</span></div>
+    <div class="future"><div class="future-title">향후 계획</div><ul><li>GitHub Pages 정적 웹 배포</li><li>PWA (오프라인+홈화면 설치)</li><li>GA4 + AdSense 수익화</li><li>멀티플레이 / 랭킹</li></ul></div>
+</div>
+</div>
+
+<!-- ═══ CONTACT MODAL ═══ -->
+<div id="contact-modal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center">
+    <div onclick="closeContact()" style="position:absolute;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px)"></div>
+    <div style="position:relative;background:var(--card);border:1px solid var(--border);border-radius:20px;max-width:480px;width:90%;padding:2rem;box-shadow:0 20px 60px rgba(0,0,0,.4)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
+            <h3 style="font-size:1.2rem;font-weight:800">Contact</h3>
+            <button onclick="closeContact()" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:none;color:var(--sub);cursor:pointer;font-size:1.1rem">&times;</button>
+        </div>
+        <div style="margin-bottom:1rem">
+            <label style="font-size:.82rem;color:var(--sub);display:block;margin-bottom:.3rem">이메일 *</label>
+            <input id="c-email" type="email" placeholder="답변 받으실 이메일" style="width:100%;padding:.6rem .8rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit">
+        </div>
+        <div style="margin-bottom:1rem">
+            <label style="font-size:.82rem;color:var(--sub);display:block;margin-bottom:.3rem">제목 *</label>
+            <input id="c-subject" type="text" placeholder="문의 제목" style="width:100%;padding:.6rem .8rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit">
+        </div>
+        <div style="margin-bottom:1.2rem">
+            <label style="font-size:.82rem;color:var(--sub);display:block;margin-bottom:.3rem">내용 *</label>
+            <textarea id="c-content" rows="5" placeholder="문의 내용을 입력해주세요" style="width:100%;padding:.6rem .8rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;resize:vertical"></textarea>
+        </div>
+        <button id="c-submit" onclick="submitContact()" style="width:100%;padding:.7rem;border:none;border-radius:10px;background:var(--accent);color:var(--bg);font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .3s">보내기</button>
+        <p id="c-status" style="text-align:center;margin-top:.8rem;font-size:.85rem;display:none"></p>
+    </div>
+</div>
+
+<footer><div class="container">이기쁨 | <a href="mailto:ldsjoy@naver.com">ldsjoy@naver.com</a> | <a href="https://github.com/rena-data" target="_blank">GitHub</a></div></footer>
+
+<script>
+function go(id){
+    location.hash = id;
+}
+function showPage(id){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    const el = document.getElementById('page-'+id);
+    if(el) el.classList.add('active');
+    else document.getElementById('page-landing').classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+}
+window.addEventListener('hashchange', ()=>{
+    const id = location.hash.slice(1) || 'landing';
+    showPage(id);
+});
+window.addEventListener('load', ()=>{
+    const id = location.hash.slice(1) || 'landing';
+    showPage(id);
+});
+
+// Contact Modal
+function openContact(){document.getElementById('contact-modal').style.display='flex'}
+function closeContact(){document.getElementById('contact-modal').style.display='none';document.getElementById('c-status').style.display='none'}
+
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbyZDufcSXptCX11FbzDkmRa5xWeUxDl-ojPUl9SkyQyUrsXwO0Nb0spiixecCbS6hcRlg/exec";
+const _s = ["/services","T0ALPKJAH0T","B0B248TUF60","qUEXex1yRU4OM7oBXaZgpzQ7"];
+const SLACK_URL = "https://hooks.slack.com" + _s[0] + "/" + _s[1] + "/" + _s[2] + "/" + _s[3];
+
+async function submitContact(){
+    const email=document.getElementById('c-email').value.trim();
+    const subject=document.getElementById('c-subject').value.trim();
+    const content=document.getElementById('c-content').value.trim();
+    const status=document.getElementById('c-status');
+    const btn=document.getElementById('c-submit');
+
+    if(!email||!subject||!content){
+        status.textContent='모든 항목을 입력해주세요.';status.style.color='#FF6B6B';status.style.display='block';return;
+    }
+
+    btn.disabled=true;btn.textContent='전송 중...';status.style.display='none';
+
+    try{
+        // Google Sheets 저장
+        fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,subject,content})});
+
+        // Slack 알림
+        fetch(SLACK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:`📩 *포트폴리오 문의*\n*From:* ${email}\n*제목:* ${subject}\n*내용:* ${content}`})});
+
+        status.textContent='전송 완료! 빠른 시일 내 답변드리겠습니다.';status.style.color='var(--accent)';status.style.display='block';
+        document.getElementById('c-email').value='';document.getElementById('c-subject').value='';document.getElementById('c-content').value='';
+        setTimeout(()=>closeContact(),2500);
+    }catch(e){
+        status.textContent='전송 실패. 다시 시도해주세요.';status.style.color='#FF6B6B';status.style.display='block';
+    }finally{
+        btn.disabled=false;btn.textContent='보내기';
+    }
+}
+</script>
+</body>
+</html>
