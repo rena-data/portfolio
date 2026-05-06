@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이기쁨 포트폴리오 | Data & AI</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
     <meta property="og:title" content="이기쁨 포트폴리오 | Data & AI">
     <meta property="og:description" content="숫자를 읽고, 문제를 정의하고, 서비스로 해결합니다. 데이터 분석 & 개발 포트폴리오.">
     <meta property="og:image" content="https://rena-data.github.io/portfolio/og-image.png">
@@ -76,7 +77,7 @@
         /* ═══ ABOUT DETAIL PAGE ═══ */
         .back{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem 1rem;border:1px solid var(--border);border-radius:8px;color:var(--sub);font-size:.82rem;cursor:pointer;background:none;font-family:inherit;margin-bottom:2rem;transition:all .2s}
         .back:hover{border-color:var(--accent);color:var(--accent)}
-        .agrid{display:grid;grid-template-columns:1fr 2fr;gap:2.5rem}
+        .agrid{display:grid;grid-template-columns:1fr 2fr;gap:2.5rem}.agrid-wrap{display:grid;grid-template-columns:1fr 2fr;gap:2.5rem}
         .ainfo{background:var(--card);border-radius:16px;padding:2rem;border:1px solid var(--border)}
         .aname{font-size:1.4rem;font-weight:800}.arole{color:var(--accent);font-weight:600;margin-bottom:1.5rem;font-size:.9rem}
         .ai{margin-bottom:1rem}.al{font-size:.68rem;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.2rem}.av{font-size:.85rem}
@@ -110,8 +111,19 @@
         .future-title{font-size:.88rem;font-weight:700;color:var(--accent2);margin-bottom:.5rem}
         .future ul{list-style:none}.future li{font-size:.8rem;color:var(--sub);padding:.12rem 0}.future li::before{content:'◇ ';color:var(--accent2)}
 
+        /* Skills Visual */
+        .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+        .skill-group{background:var(--card);border-radius:14px;padding:1.2rem;border:1px solid var(--border)}
+        .sg-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--sub);font-weight:700;margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+        .skill-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem}
+        .sk-icon{width:22px;height:22px;flex-shrink:0;border-radius:4px}
+        .sk-emoji{font-size:1.1rem;width:22px;text-align:center;flex-shrink:0}
+        .sk-name{font-size:.78rem;font-weight:600;width:95px;flex-shrink:0}
+        .sk-bar{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+        .sk-fill{height:100%;border-radius:3px;transition:width 1s ease}
+
         footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;color:var(--sub);font-size:.78rem}
-        @media(max-width:768px){.hero h1{font-size:1.7rem}.hero-top{flex-direction:column}.summary{grid-template-columns:1fr 1fr}.qp{flex-direction:column}.cg{grid-template-columns:1fr}.agrid{grid-template-columns:1fr}.fcards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}}
+        @media(max-width:768px){.hero h1{font-size:1.7rem}.hero-top{flex-direction:column}.summary{grid-template-columns:1fr 1fr}.qp{flex-direction:column}.cg{grid-template-columns:1fr}.agrid{grid-template-columns:1fr}.fcards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}}
     </style>
 </head>
 <body>
@@ -217,6 +229,8 @@
 <div class="page" id="page-about">
 <div class="container" style="padding:3rem 2rem">
     <button class="back" onclick="go('landing')">← 돌아가기</button>
+
+    <!-- 상단: 프로필(좌) + Experience(우) -->
     <div class="agrid">
         <div class="ainfo">
             <div class="aname">이기쁨</div>
@@ -225,15 +239,6 @@
             <div class="ai"><div class="al">GitHub</div><div class="av"><a href="https://github.com/rena-data" target="_blank">github.com/rena-data</a></div></div>
             <div class="ai"><div class="al">Education</div><div class="av">스파르타코딩클럽 데이터 분석 부트캠프<br><span style="color:var(--sub);font-size:.78rem">2024.11~2025.03 | SQL, Python, ML, Tableau</span></div></div>
             <div class="ai"><div class="al">Certification</div><div class="av">Google Analytics (GA4) - 2026.04</div></div>
-            <div class="ai">
-                <div class="al">Skills</div>
-                <div class="qp-skills" style="margin-top:.4rem">
-                    <span class="sk">Python</span><span class="sk">SQL</span><span class="sk">FastAPI</span><span class="sk">Streamlit</span>
-                    <span class="sk">Pandas</span><span class="sk">NumPy</span><span class="sk">Plotly</span><span class="sk">Tableau</span>
-                    <span class="sk">DuckDB</span><span class="sk">BigQuery</span><span class="sk">Supabase</span>
-                    <span class="sk">Gemini API</span><span class="sk">Docker</span><span class="sk">GA4</span><span class="sk">Git</span><span class="sk">Jira</span>
-                </div>
-            </div>
         </div>
         <div>
             <h2 style="font-size:1.2rem;margin-bottom:1.2rem">Experience</h2>
@@ -269,6 +274,67 @@
                     <li>K-선제품 트렌드 분석 → 선케어 시장 진출 방안</li>
                 </ul>
             </div>
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <h2 style="font-size:1.2rem;margin:2rem 0 1rem">Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-group">
+            <div class="sg-title">Language & Data</div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="sk-icon"><span class="sk-name">Python</span><div class="sk-bar"><div class="sk-fill" style="width:90%;background:var(--accent)"></div></div></div>
+            <div class="skill-row"><img src="https://img.icons8.com/color/48/sql.png" class="sk-icon"><span class="sk-name">SQL</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:var(--accent)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="sk-icon"><span class="sk-name">MySQL</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="sk-icon"><span class="sk-name">PostgreSQL</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="sk-icon"><span class="sk-name">Pandas</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:var(--accent)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="sk-icon"><span class="sk-name">NumPy</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent)"></div></div></div>
+        </div>
+        <div class="skill-group">
+            <div class="sg-title">Framework & Web</div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" class="sk-icon"><span class="sk-name">FastAPI</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" class="sk-icon"><span class="sk-name">Streamlit</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="sk-icon"><span class="sk-name">JavaScript</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="sk-icon"><span class="sk-name">CSS/HTML</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:var(--accent2)"></div></div></div>
+        </div>
+        <div class="skill-group">
+            <div class="sg-title">AI & Automation</div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2" class="sk-icon"><span class="sk-name">Gemini API</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#E040FB"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/claude/D4A574" class="sk-icon"><span class="sk-name">Claude Code</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:#E040FB"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/cursor/00D4AA" class="sk-icon"><span class="sk-name">Cursor</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#E040FB"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg" class="sk-icon" style="filter:brightness(0) invert(1)"><span class="sk-name">Codex</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#E040FB"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/n8n/EA4B71" class="sk-icon"><span class="sk-name">n8n</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#E040FB"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/make/6D00CC" class="sk-icon"><span class="sk-name">Make</span><div class="sk-bar"><div class="sk-fill" style="width:65%;background:#E040FB"></div></div></div>
+        </div>
+        <div class="skill-group">
+            <div class="sg-title">Infra & Deploy</div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="sk-icon"><span class="sk-name">Docker</span><div class="sk-bar"><div class="sk-fill" style="width:65%;background:var(--accent3)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/render/46E3B7" class="sk-icon"><span class="sk-name">Render</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent3)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" class="sk-icon"><span class="sk-name">Supabase</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent3)"></div></div></div>
+            <div class="skill-row"><span class="sk-emoji">🦆</span><span class="sk-name">DuckDB</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent3)"></div></div></div>
+        </div>
+        <div class="skill-group">
+            <div class="sg-title">Analytics & Design</div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" class="sk-icon"><span class="sk-name">GA4</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FF6B6B"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/plotly/3F4F75" class="sk-icon"><span class="sk-name">Plotly</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FF6B6B"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tableau.svg" class="sk-icon" style="filter:brightness(0) invert(1)"><span class="sk-name">Tableau</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#FF6B6B"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="sk-icon"><span class="sk-name">Figma</span><div class="sk-bar"><div class="sk-fill" style="width:60%;background:#FF6B6B"></div></div></div>
+        </div>
+        <div class="skill-group">
+            <div class="sg-title">Tools & Collab</div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="sk-icon"><span class="sk-name">Git</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FFA726"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/github/EEEEEE" class="sk-icon"><span class="sk-name">GitHub</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FFA726"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" class="sk-icon"><span class="sk-name">Jira</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:#FFA726"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" class="sk-icon"><span class="sk-name">Confluence</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#FFA726"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" class="sk-icon"><span class="sk-name">Slack</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:#FFA726"></div></div></div>
+        </div>
+        <div class="skill-group">
+            <div class="sg-title">Productivity</div>
+            <div class="skill-row"><img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" class="sk-icon"><span class="sk-name">Excel</span><div class="sk-bar"><div class="sk-fill" style="width:90%;background:#4CAF50"></div></div></div>
+            <div class="skill-row"><img src="https://img.icons8.com/color/48/microsoft-powerpoint-2019.png" class="sk-icon"><span class="sk-name">PowerPoint</span><div class="sk-bar"><div class="sk-fill" style="width:90%;background:#4CAF50"></div></div></div>
+            <div class="skill-row"><img src="https://img.icons8.com/color/48/microsoft-word-2019.png" class="sk-icon"><span class="sk-name">Word</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:#4CAF50"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/googlesheets/34A853" class="sk-icon"><span class="sk-name">Google Sheets</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:#4CAF50"></div></div></div>
+            <div class="skill-row"><img src="https://img.icons8.com/color/48/canva.png" class="sk-icon"><span class="sk-name">Canva</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:#4CAF50"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" class="sk-icon"><span class="sk-name">Notion</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:#4CAF50"></div></div></div>
         </div>
     </div>
 </div>
