@@ -13,6 +13,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://rena-data.github.io/portfolio/og-image.png">
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root{--bg:#0B0D13;--bg2:#101320;--card:#161929;--card2:#1C2035;--text:#EAEAF0;--sub:#7E829A;--accent:#00E8C6;--accent2:#845EF7;--accent3:#3B82F6;--border:#252840;--glow:rgba(0,232,198,0.06)}
         *{margin:0;padding:0;box-sizing:border-box}
@@ -27,15 +28,22 @@
         .hero::before{content:'';position:absolute;top:-200px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 70%);pointer-events:none}
         .hero::after{content:'';position:absolute;bottom:-150px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(132,94,247,0.04),transparent 70%);pointer-events:none}
 
-        .hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:2rem}
-        .hero-left{flex:1}
-        .hero-tag{display:inline-block;padding:.3rem 1rem;border:1px solid var(--accent);border-radius:20px;font-size:.85rem;color:var(--accent);font-weight:600;letter-spacing:.05em;margin-bottom:1rem}
+        .hero-top{display:flex;justify-content:space-between;align-items:stretch;gap:2rem;margin-bottom:2rem}
+        .hero-left{flex:1;display:flex;flex-direction:column}
+        .hero-right{flex:0 0 340px}
+        .hero-img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+        .hero-meta{margin-top:1.2rem;font-size:.78rem;color:var(--sub);line-height:2;font-family:'JetBrains Mono',monospace;letter-spacing:.02em;max-width:340px}
+        .hero-meta-row{display:flex;justify-content:space-between}
+        .hero-meta-val{color:var(--text);text-align:right}
+        .hero-timeline{margin-top:1rem;font-size:.78rem;line-height:2;max-width:340px}
+        .hero-timeline span{color:var(--accent);font-family:'JetBrains Mono',monospace}
+        .hero-tag{display:inline-block;padding:.3rem 1rem;border:1px solid var(--accent);border-radius:20px;font-size:.85rem;color:var(--accent);font-weight:600;letter-spacing:.05em;margin-bottom:1rem;align-self:flex-start}
         .hero h1{font-size:3rem;font-weight:900;line-height:1.25;letter-spacing:-.02em}
         .hero h1 .hl{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         .hero-desc{color:var(--sub);font-size:1.05rem;margin-top:.8rem;max-width:550px;line-height:1.8}
-        .hero-btns{display:flex;gap:.8rem;margin-top:1.5rem;flex-wrap:wrap}
-        .hero-btns a,.hero-btns button{padding:.6rem 1.5rem;border-radius:8px;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit;transition:all .3s;border:none}
-        .bf{background:var(--accent);color:var(--bg)}.bf:hover{box-shadow:0 4px 24px rgba(0,232,198,.25);transform:translateY(-2px)}
+        .hero-btns{display:flex;gap:.8rem;margin-top:auto;padding-top:1rem;flex-wrap:wrap}
+        .hero-btns a,.hero-btns button{padding:.6rem 1.5rem;border-radius:8px;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit;transition:all .3s}
+        .bf{background:var(--accent);color:var(--bg);border:none}.bf:hover{box-shadow:0 4px 24px rgba(0,232,198,.25);transform:translateY(-2px)}
         .bo{background:none;border:1px solid var(--border);color:var(--text)}.bo:hover{border-color:var(--accent);color:var(--accent)}
 
         /* ═══ SUMMARY STRIP ═══ */
@@ -46,15 +54,17 @@
         .sum-label{font-size:.85rem;color:var(--sub);margin-top:.2rem;text-transform:uppercase;letter-spacing:.08em}
 
         /* ═══ QUICK PROFILE ═══ */
-        .qp{background:var(--card);border-radius:16px;padding:1.8rem 2rem;margin-bottom:3rem;display:flex;gap:2rem;align-items:center;border:1px solid var(--border);position:relative;overflow:hidden}
+        .qp{background:var(--card);border-radius:16px;padding:1.8rem 2rem;margin-top:-2.5rem;margin-bottom:3rem;display:flex;gap:2rem;align-items:center;border:1px solid var(--border);position:relative;overflow:hidden;z-index:1}
         .qp::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent2))}
         .qp-info{flex:1}
         .qp-name{font-size:1.5rem;font-weight:800}
         .qp-role{font-size:1rem;color:var(--accent);font-weight:600;margin-bottom:.6rem}
         .qp-exp{font-size:.95rem;color:var(--sub);line-height:1.8}
         .qp-exp strong{color:var(--text)}
-        .qp-skills{flex:1;display:flex;flex-wrap:wrap;gap:.4rem}
-        .sk{padding:.3rem .75rem;border-radius:5px;font-size:.82rem;background:rgba(0,232,198,.08);color:var(--accent);font-weight:600;border:1px solid rgba(0,232,198,.15)}
+        .qp-skills{flex:1;display:flex;flex-direction:column;gap:.6rem;padding-left:2rem}
+        .sk-cat{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+        .sk-cat-label{font-size:.75rem;color:var(--sub);font-weight:700;min-width:3.2rem;flex-shrink:0;text-transform:uppercase;letter-spacing:.04em}
+        .sk{padding:.25rem .65rem;border-radius:5px;font-size:.78rem;background:rgba(0,232,198,.08);color:var(--accent);font-weight:600;border:1px solid rgba(0,232,198,.15)}
         .qp-more{margin-top:.8rem}
         .more-link{font-size:.78rem;color:var(--accent);cursor:pointer;font-weight:600;border:none;background:none;font-family:inherit;padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);transition:all .2s}
         .more-link:hover{background:var(--accent);color:var(--bg)}
@@ -101,6 +111,22 @@
         .gi{border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--card)}
         .gi img{width:100%;display:block}
         .gi-cap{padding:.5rem 1rem;font-size:.72rem;color:var(--sub);text-align:center;background:var(--card2)}
+
+        /* ═══ CAROUSEL ═══ */
+        .carousel{position:relative;margin:1.5rem 0;overflow:hidden;border-radius:12px;border:1px solid var(--border);background:var(--card)}
+        .carousel-track{display:flex;transition:transform .4s ease}
+        .carousel-slide{min-width:100%;flex-shrink:0}
+        .carousel-slide img{width:100%;display:block}
+        .carousel-slide .gi-cap{padding:.5rem 1rem;font-size:.72rem;color:var(--sub);text-align:center;background:var(--card2)}
+        .carousel-btn{position:absolute;top:50%;transform:translateY(-60%);width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:rgba(11,13,19,.85);color:var(--text);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2}
+        .carousel-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(11,13,19,.95)}
+        .carousel-prev{left:.8rem}
+        .carousel-next{right:.8rem}
+        .carousel-thumbs{display:flex;justify-content:center;gap:.5rem;padding:.8rem .5rem;background:var(--card2);overflow-x:auto}
+        .carousel-thumb{width:80px;height:56px;border-radius:6px;overflow:hidden;cursor:pointer;border:2px solid transparent;opacity:.5;transition:all .2s;flex-shrink:0}
+        .carousel-thumb.active{border-color:var(--accent);opacity:1}
+        .carousel-thumb:hover{opacity:.8}
+        .carousel-thumb img{width:100%;height:100%;object-fit:cover}
         .fcards{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
         .fc{background:var(--card);border-radius:12px;padding:1.3rem;border:1px solid var(--border)}.fc.c1{border-top:3px solid var(--accent)}.fc.c2{border-top:3px solid var(--accent2)}
         .fct{font-size:.95rem;font-weight:700;margin-bottom:.5rem}
@@ -123,7 +149,7 @@
         .sk-fill{height:100%;border-radius:3px;transition:width 1s ease}
 
         footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;color:var(--sub);font-size:.78rem}
-        @media(max-width:768px){.hero h1{font-size:1.7rem}.hero-top{flex-direction:column}.summary{grid-template-columns:1fr 1fr}.qp{flex-direction:column}.cg{grid-template-columns:1fr}.agrid{grid-template-columns:1fr}.fcards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}}
+        @media(max-width:768px){.hero h1{font-size:1.7rem}.hero-top{flex-direction:column}.hero-right{flex:none;width:100%}.summary{grid-template-columns:1fr 1fr}.qp{flex-direction:column}.cg{grid-template-columns:1fr}.agrid{grid-template-columns:1fr}.fcards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}}
     </style>
 </head>
 <body>
@@ -138,11 +164,26 @@
             <div class="hero-left">
                 <span class="hero-tag">PORTFOLIO 2026</span>
                 <h1>숫자를 읽고, 문제를 정의하고<br><span class="hl">서비스로 해결합니다</span></h1>
-                <p class="hero-desc">회계·재무 5년의 숫자 감각 위에 데이터 분석·자동화 역량을 쌓았습니다. 문제를 발견하면 직접 기획하고, 만들고, 배포합니다.</p>
+                <p class="hero-desc">회계·재무 5년의 숫자 감각 위에 데이터 분석·자동화 역량을 쌓았습니다. <br>문제를 발견하면 직접 기획하고, 만들고, 배포합니다.</p>
+                <div class="hero-timeline">
+                    <span>[2026.05]</span> Beauty AI 서비스 라이브<br>
+                    <span>[2026.04]</span> GA4 자격증 취득<br>
+                    <span>[2025.08]</span> 광고 API 수집·리포트 자동화 구축<br>
+                    <span>[2025.03]</span> 데이터인텔리전스팀 합류<br>
+                    <span>[2024.11]</span> 데이터 분석 부트캠프 시작
+                </div>
                 <div class="hero-btns">
                     <button class="bf" onclick="go('about')">About Me 상세</button>
                     <a href="https://github.com/rena-data" target="_blank" class="bo">GitHub</a>
                     <button class="bo" onclick="openContact()">Contact</button>
+                </div>
+            </div>
+            <div class="hero-right">
+                <img src="screenshots/hero_workspace.png" class="hero-img" alt="workspace">
+                <div class="hero-meta">
+                    <div class="hero-meta-row"><span>CURRENTLY</span><span class="hero-meta-val">광고 API 자동화</span></div>
+                    <div class="hero-meta-row"><span>READING</span><span class="hero-meta-val">AI 서비스 프로덕트 설계</span></div>
+                    <div class="hero-meta-row"><span>LOCATION</span><span class="hero-meta-val">Seoul, KR</span></div>
                 </div>
             </div>
         </div>
@@ -174,18 +215,18 @@
             <div class="qp-name">이기쁨 <span style="font-size:.8rem;color:var(--sub);font-weight:400">Lee Gippeum</span></div>
             <div class="qp-role">Data Analyst & Developer</div>
             <div class="qp-exp">
-                <strong>에이원퍼포먼스팩토리</strong> 데이터인텔리전스팀 (10개월) — 광고 API 수집, 자동화, 대시보드<br>
-                <strong>주네스글로벌코리아</strong> 재경부 (5년 5개월) — 자금·결산, 프로세스 효율화<br>
-                <strong>스파르타코딩클럽</strong> 데이터 분석 부트캠프 | <strong>GA4</strong> 자격증
+                <strong>에이원퍼포먼스팩토리</strong> 데이터인텔리전스팀에서 광고 API 수집·자동화·대시보드를 만들고, 이전에는 <strong>주네스글로벌코리아</strong> 재경부에서 5년 5개월간 자금·결산을 다뤘습니다.<br>데이터 분석 부트캠프 수료 및 <strong>GA4</strong> 자격증 보유.
             </div>
             <div class="qp-more">
                 <button class="more-link" onclick="go('about')">경력 상세 보기 →</button>
             </div>
         </div>
         <div class="qp-skills">
-            <span class="sk">Python</span><span class="sk">SQL</span><span class="sk">FastAPI</span><span class="sk">Streamlit</span>
-            <span class="sk">Pandas</span><span class="sk">Plotly</span><span class="sk">DuckDB</span><span class="sk">BigQuery</span>
-            <span class="sk">Supabase</span><span class="sk">Gemini API</span><span class="sk">Docker</span><span class="sk">GA4</span><span class="sk">Git</span>
+            <div class="sk-cat"><span class="sk-cat-label">데이터</span><span class="sk">Python</span><span class="sk">SQL</span><span class="sk">Pandas</span><span class="sk">DuckDB</span></div>
+            <div class="sk-cat"><span class="sk-cat-label">분석</span><span class="sk">Tableau</span><span class="sk">GA4</span><span class="sk">NumPy</span><span class="sk">Plotly</span></div>
+            <div class="sk-cat"><span class="sk-cat-label">백엔드</span><span class="sk">FastAPI</span><span class="sk">Streamlit</span><span class="sk">Supabase</span><span class="sk">Docker</span></div>
+            <div class="sk-cat"><span class="sk-cat-label">AI</span><span class="sk">Claude Code</span><span class="sk">Gemini</span><span class="sk">Cursor</span><span class="sk">n8n</span></div>
+            <div class="sk-cat"><span class="sk-cat-label">도구</span><span class="sk">Git</span><span class="sk">GitHub</span><span class="sk">Jira</span><span class="sk">Slack</span></div>
         </div>
     </div>
 
@@ -204,7 +245,7 @@
         </div>
         <div class="cd" onclick="go('p2')">
             <span class="cd-live">LIVE</span>
-            <div class="ci"><img src="screenshots/beauty_upload.png"></div>
+            <div class="ci"><img src="screenshots/beauty_card.png"></div>
             <div class="cb">
                 <div class="cn">PROJECT 02</div>
                 <div class="ct">Beauty AI Analyze</div>
@@ -213,7 +254,7 @@
             </div>
         </div>
         <div class="cd" onclick="go('p3')">
-            <div class="ci"><img src="screenshots/pet_main.png"></div>
+            <div class="ci"><img src="screenshots/pet_card.png"></div>
             <div class="cb">
                 <div class="cn">PROJECT 03</div>
                 <div class="ct">Raising Pet</div>
@@ -227,7 +268,7 @@
     <div class="sec-title">데이터 분석 부트캠프 프로젝트</div>
     <div class="cg">
         <div class="cd" onclick="go('bp1')">
-            <div class="ci" style="background:linear-gradient(135deg,#1a237e,#4a148c);display:flex;align-items:center;justify-content:center;"><span style="font-size:3rem;">🏥</span></div>
+            <div class="ci"><img src="screenshots/bootcamp_insurance.png"></div>
             <div class="cb">
                 <div class="cn">BOOTCAMP 01 · SQL</div>
                 <div class="ct">보험 데이터 분석</div>
@@ -236,7 +277,7 @@
             </div>
         </div>
         <div class="cd" onclick="go('bp2')">
-            <div class="ci" style="background:linear-gradient(135deg,#e65100,#f57c00);display:flex;align-items:center;justify-content:center;"><span style="font-size:3rem;">📊</span></div>
+            <div class="ci"><img src="screenshots/bootcamp_banner.png"></div>
             <div class="cb">
                 <div class="cn">BOOTCAMP 02 · Python</div>
                 <div class="ct">배너 광고 성과 분석</div>
@@ -245,7 +286,7 @@
             </div>
         </div>
         <div class="cd" onclick="go('bp3')">
-            <div class="ci" style="background:linear-gradient(135deg,#1b5e20,#388e3c);display:flex;align-items:center;justify-content:center;"><span style="font-size:3rem;">🏦</span></div>
+            <div class="ci"><img src="screenshots/bootcamp_churn.png"></div>
             <div class="cb">
                 <div class="cn">BOOTCAMP 03 · ML</div>
                 <div class="ct">고객 이탈 예측</div>
@@ -313,20 +354,26 @@
     <h2 style="font-size:1.2rem;margin:2rem 0 1rem">Skills</h2>
     <div class="skills-grid">
         <div class="skill-group">
-            <div class="sg-title">Language & Data</div>
+            <div class="sg-title">Language</div>
             <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="sk-icon"><span class="sk-name">Python</span><div class="sk-bar"><div class="sk-fill" style="width:90%;background:var(--accent)"></div></div></div>
             <div class="skill-row"><img src="https://img.icons8.com/color/48/sql.png" class="sk-icon"><span class="sk-name">SQL</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:var(--accent)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="sk-icon"><span class="sk-name">MySQL</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="sk-icon"><span class="sk-name">PostgreSQL</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="sk-icon"><span class="sk-name">Pandas</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:var(--accent)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="sk-icon"><span class="sk-name">NumPy</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="sk-icon"><span class="sk-name">JavaScript</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:var(--accent)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="sk-icon"><span class="sk-name">CSS/HTML</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:var(--accent)"></div></div></div>
         </div>
         <div class="skill-group">
-            <div class="sg-title">Framework & Web</div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" class="sk-icon"><span class="sk-name">FastAPI</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent2)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" class="sk-icon"><span class="sk-name">Streamlit</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:var(--accent2)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="sk-icon"><span class="sk-name">JavaScript</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:var(--accent2)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="sk-icon"><span class="sk-name">CSS/HTML</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:var(--accent2)"></div></div></div>
+            <div class="sg-title">Database</div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="sk-icon"><span class="sk-name">MySQL</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="sk-icon"><span class="sk-name">PostgreSQL</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="sk-icon"><span class="sk-name">MongoDB</span><div class="sk-bar"><div class="sk-fill" style="width:60%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><span class="sk-emoji">🦆</span><span class="sk-name">DuckDB</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" class="sk-icon"><span class="sk-name">Supabase</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent2)"></div></div></div>
+        </div>
+        <div class="skill-group">
+            <div class="sg-title">Framework</div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" class="sk-icon"><span class="sk-name">FastAPI</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent3)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" class="sk-icon"><span class="sk-name">Streamlit</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:var(--accent3)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="sk-icon"><span class="sk-name">Pandas</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:var(--accent3)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="sk-icon"><span class="sk-name">NumPy</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent3)"></div></div></div>
         </div>
         <div class="skill-group">
             <div class="sg-title">AI & Automation</div>
@@ -339,19 +386,17 @@
         </div>
         <div class="skill-group">
             <div class="sg-title">Infra & Deploy</div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="sk-icon"><span class="sk-name">Docker</span><div class="sk-bar"><div class="sk-fill" style="width:65%;background:var(--accent3)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/render/46E3B7" class="sk-icon"><span class="sk-name">Render</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent3)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" class="sk-icon"><span class="sk-name">Supabase</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent3)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="sk-icon"><span class="sk-name">MongoDB</span><div class="sk-bar"><div class="sk-fill" style="width:60%;background:var(--accent3)"></div></div></div>
-            <div class="skill-row"><span class="sk-emoji">🦆</span><span class="sk-name">DuckDB</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent3)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="sk-icon"><span class="sk-name">Docker</span><div class="sk-bar"><div class="sk-fill" style="width:65%;background:#26C6DA"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/render/46E3B7" class="sk-icon"><span class="sk-name">Render</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#26C6DA"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/githubactions/2088FF" class="sk-icon"><span class="sk-name">GitHub Actions</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#26C6DA"></div></div></div>
         </div>
         <div class="skill-group">
-            <div class="sg-title">Analytics & Design</div>
+            <div class="sg-title">Analytics & Visualization</div>
             <div class="skill-row"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" class="sk-icon"><span class="sk-name">GA4</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FF6B6B"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tableau.svg" class="sk-icon" style="filter:brightness(0) invert(1)"><span class="sk-name">Tableau</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#FF6B6B"></div></div></div>
             <div class="skill-row"><img src="https://cdn.simpleicons.org/plotly/3F4F75" class="sk-icon"><span class="sk-name">Plotly</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FF6B6B"></div></div></div>
             <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" class="sk-icon"><span class="sk-name">Matplotlib</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FF6B6B"></div></div></div>
             <div class="skill-row"><span class="sk-emoji">🌊</span><span class="sk-name">Seaborn</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:#FF6B6B"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tableau.svg" class="sk-icon" style="filter:brightness(0) invert(1)"><span class="sk-name">Tableau</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#FF6B6B"></div></div></div>
             <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="sk-icon"><span class="sk-name">Figma</span><div class="sk-bar"><div class="sk-fill" style="width:60%;background:#FF6B6B"></div></div></div>
             <div class="skill-row"><img src="https://img.icons8.com/color/48/canva.png" class="sk-icon"><span class="sk-name">Canva</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:#FF6B6B"></div></div></div>
         </div>
@@ -384,7 +429,7 @@
     <div class="story">
         <div class="story-label">Background</div>
         <div class="story-title">왜 이 프로젝트를 시작했나?</div>
-        <div class="story-text">초기 핀테크 스타트업은 데이터가 흩어져 있습니다. 마케팅은 광고 플랫폼에, 유저 행동은 서버 로그에, 재무는 엑셀에. 분석가가 수집·취합에만 하루 1~2시간을 쓰면서 정작 인사이트를 도출할 시간이 없었습니다.</div>
+        <div class="story-text">초기 핀테크 스타트업은 데이터가 흩어져 있습니다. 마케팅은 광고 플랫폼에, 유저 행동은 서버 로그에, 재무는 엑셀에. <br>분석가가 수집·취합에만 하루 1~2시간을 쓰면서 정작 인사이트를 도출할 시간이 없었습니다.</div>
         <div class="sh warn"><p><strong>문제:</strong> 분석가 업무 시간의 90%가 단순 수집·취합에 소모. 의사결정 지원이 불가능한 구조.</p></div>
         <div class="sh"><p><strong>해결:</strong> 데이터 자동 수집 → 핵심 지표 대시보드 → 이상 감지 알림 → What-if 시뮬레이션까지 원스톱 시스템 구축.</p></div>
     </div>
@@ -432,11 +477,18 @@
     <div class="story">
         <div class="story-label">Service Depth</div>
         <div class="story-title">서비스 화면 (8개 탭)</div>
-        <div class="gallery">
-            <div class="gi"><img src="screenshots/beauty_upload.png"><div class="gi-cap">메인 - 프로필 + 업로드</div></div>
-            <div class="gi"><img src="screenshots/beauty_profile.png"><div class="gi-cap">프로필 선택 (성별/키/체형/스타일)</div></div>
+        <div class="carousel" id="beauty-carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="screenshots/beauty_upload.png"><div class="gi-cap">메인 - 프로필 + 업로드</div></div>
+                <div class="carousel-slide"><img src="screenshots/beauty_profile.png"><div class="gi-cap">프로필 선택 (성별/키/체형/스타일)</div></div>
+                <div class="carousel-slide"><img src="screenshots/beauty_header.png"><div class="gi-cap">분석 결과 - 4계절 매칭률 + 확신도 + 탭 메뉴</div></div>
+                <div class="carousel-slide"><img src="screenshots/beauty_matching_top.png"><div class="gi-cap">옷 매칭 분석 - 업로드 + 매칭 시작</div></div>
+                <div class="carousel-slide"><img src="screenshots/beauty_matching_bottom.png"><div class="gi-cap">옷 매칭 결과 - S등급 95점 + 코디 제안</div></div>
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="slideCarousel('beauty-carousel',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" onclick="slideCarousel('beauty-carousel',1)">&#8250;</button>
+            <div class="carousel-thumbs" id="beauty-carousel-thumbs"></div>
         </div>
-        <div class="gallery single"><div class="gi"><img src="screenshots/beauty_full.png"><div class="gi-cap">분석 결과 전체 (8개 탭)</div></div></div>
         <div class="fcards">
             <div class="fc c1"><div class="fct">AI 분석</div><ul><li>4계절 비교 + 별점 + S/A/B/C 등급</li><li>레이더 차트 (밝기/채도/대비/온기/선명도)</li><li>얼굴+컬러 배경 드레이핑</li></ul></div>
             <div class="fc c1"><div class="fct">추천 + 액션</div><ul><li>뷰티 80개 + 패션 37개 실제 제품</li><li>옷 매칭 (S/A/B/C)</li><li>리포트 다운로드 + SNS 공유</li></ul></div>
@@ -505,7 +557,7 @@
     <div class="story">
         <div class="story-label">Background</div>
         <div class="story-title">왜 이 프로젝트를 진행했나?</div>
-        <div class="story-text">코로나 이후 의료 보험 가입이 촉진되면서 업계는 성장 중이지만, 높은 인플레이션과 의료비 상승으로 정확한 보험료 책정이 필수가 되었습니다. 보험 가입자의 특성(연령/BMI/흡연 여부 등)이 보험료에 미치는 영향을 데이터로 분석하여 적정 보험료를 산출하고, 마케팅 전략을 수립했습니다.</div>
+        <div class="story-text">코로나 이후 의료 보험 가입이 촉진되면서 업계는 성장 중이지만, 높은 인플레이션과 의료비 상승으로 정확한 보험료 책정이 필수가 되었습니다. <br>보험 가입자의 특성(연령/BMI/흡연 여부 등)이 보험료에 미치는 영향을 데이터로 분석하여 적정 보험료를 산출하고, 마케팅 전략을 수립했습니다.</div>
         <div class="sh warn"><p><strong>문제:</strong> 보험료 책정에 영향을 미치는 요소의 가중치가 불명확. 리스크 기반 맞춤 보험료 산출 근거 필요.</p></div>
         <div class="sh"><p><strong>접근:</strong> SQL로 각 요소(연령/성별/BMI/자녀수/흡연/지역)와 보험료의 상관성 분석 → 흡연 여부를 고정 변수로 교차 분석 → 가중치 산출 → 마케팅 기획안 제안.</p></div>
     </div>
@@ -549,7 +601,7 @@
     <div class="story">
         <div class="story-label">Background</div>
         <div class="story-title">왜 이 프로젝트를 진행했나?</div>
-        <div class="story-text">온라인 스토어에서 내부 배너 광고와 외부 배너 광고의 효과 차이를 분석하여, 비용 대비 최적의 배너 운영 전략을 수립하는 것이 목표였습니다. CPC 단가(내부 100원 vs 외부 500원)와 CTR을 기반으로 수익성을 비교했습니다.</div>
+        <div class="story-text">온라인 스토어에서 내부 배너 광고와 외부 배너 광고의 효과 차이를 분석하여, 비용 대비 최적의 배너 운영 전략을 수립하는 것이 목표였습니다. <br>CPC 단가(내부 100원 vs 외부 500원)와 CTR을 기반으로 수익성을 비교했습니다.</div>
         <div class="sh warn"><p><strong>가설:</strong> "내부 광고가 외부 광고보다 수익률이 높을 것이다"</p></div>
         <div class="sh"><p><strong>결과:</strong> 내부 수익 8,300만원 vs 외부 7,400만원. 고객 세그먼트 기반 혼합 운영 전략으로 8,800만원(+7%) 달성 가능.</p></div>
     </div>
@@ -594,7 +646,7 @@
     <div class="story">
         <div class="story-label">Background</div>
         <div class="story-title">왜 이 프로젝트를 진행했나?</div>
-        <div class="story-text">기업의 안정적 수익 확보를 위해 기존 고객 유지가 중요합니다. 은행 고객 데이터(신용점수/연령/잔고/가입기간 등)를 기반으로 이탈을 예측하는 머신러닝 모델을 개발하고, 예측 결과를 활용한 고객 맞춤형 유지 전략을 제안했습니다.</div>
+        <div class="story-text">기업의 안정적 수익 확보를 위해 기존 고객 유지가 중요합니다. 은행 고객 데이터(신용점수/연령/잔고/가입기간 등)를 기반으로 이탈을 예측하는 머신러닝 모델을 개발하고, <br>예측 결과를 활용한 고객 맞춤형 유지 전략을 제안했습니다.</div>
         <div class="sh warn"><p><strong>목표:</strong> ① 고객 이탈을 예측하는 ML 모델 개발 ② 예측 결과 기반 맞춤형 유지 전략 제안</p></div>
         <div class="sh"><p><strong>결과:</strong> LightGBM 최종 모델 Recall 80.3% 달성 (이탈 고객 5명 중 4명 정확 예측). K-means 군집화로 4가지 이탈 유형 분류 → 유형별 방지 전략 제안.</p></div>
     </div>
@@ -677,6 +729,32 @@
 <footer><div class="container">이기쁨 | <a href="mailto:ldsjoy@naver.com">ldsjoy@naver.com</a> | <a href="https://github.com/rena-data" target="_blank">GitHub</a></div></footer>
 
 <script>
+// Carousel
+function initCarousel(id){
+    const el=document.getElementById(id);if(!el)return;
+    const slides=el.querySelectorAll('.carousel-slide');
+    const thumbsWrap=el.querySelector('[id$="-thumbs"]');
+    if(!slides.length)return;
+    el._idx=0;el._total=slides.length;
+    thumbsWrap.innerHTML='';
+    slides.forEach((s,i)=>{
+        const img=s.querySelector('img');
+        const t=document.createElement('div');t.className='carousel-thumb'+(i===0?' active':'');
+        t.innerHTML='<img src="'+img.src+'">';
+        t.onclick=()=>{el._idx=i;updateCarousel(id)};
+        thumbsWrap.appendChild(t);
+    });
+}
+function updateCarousel(id){
+    const el=document.getElementById(id);if(!el)return;
+    el.querySelector('.carousel-track').style.transform='translateX(-'+el._idx*100+'%)';
+    el.querySelectorAll('.carousel-thumb').forEach((t,i)=>t.classList.toggle('active',i===el._idx));
+}
+function slideCarousel(id,dir){
+    const el=document.getElementById(id);if(!el)return;
+    el._idx=(el._idx+dir+el._total)%el._total;updateCarousel(id);
+}
+
 function go(id){
     location.hash = id;
 }
@@ -694,6 +772,7 @@ window.addEventListener('hashchange', ()=>{
 window.addEventListener('load', ()=>{
     const id = location.hash.slice(1) || 'landing';
     showPage(id);
+    initCarousel('beauty-carousel');
 });
 
 // Contact Modal
