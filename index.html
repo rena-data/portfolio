@@ -73,6 +73,7 @@
         .sec-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);font-weight:700;margin-bottom:.5rem}
         .sec-title{font-size:1.6rem;font-weight:800;margin-bottom:1.5rem}
         .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem}
+        .cg-4{grid-template-columns:repeat(4,1fr)}
         .cd{background:var(--card);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .3s;border:1px solid var(--border);position:relative}
         .cd:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 12px 40px rgba(0,232,198,.08)}
         .cd-live{position:absolute;top:12px;right:12px;padding:.2rem .6rem;background:var(--accent);color:var(--bg);border-radius:6px;font-size:.6rem;font-weight:800;letter-spacing:.05em}
@@ -149,7 +150,7 @@
         .sk-fill{height:100%;border-radius:3px;transition:width 1s ease}
 
         footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;color:var(--sub);font-size:.78rem}
-        @media(max-width:768px){.hero h1{font-size:1.7rem}.hero-top{flex-direction:column}.hero-right{flex:none;width:100%}.summary{grid-template-columns:1fr 1fr}.qp{flex-direction:column}.cg{grid-template-columns:1fr}.agrid{grid-template-columns:1fr}.fcards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}}
+        @media(max-width:768px){.hero h1{font-size:1.7rem}.hero-top{flex-direction:column}.hero-right{flex:none;width:100%}.summary{grid-template-columns:1fr 1fr}.qp{flex-direction:column}.cg{grid-template-columns:1fr}.cg-4{grid-template-columns:1fr 1fr}.agrid{grid-template-columns:1fr}.fcards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}}
     </style>
 </head>
 <body>
@@ -266,7 +267,7 @@
 
     <div class="sec-label" style="margin-top:3rem">Bootcamp Projects</div>
     <div class="sec-title">데이터 분석 부트캠프 프로젝트</div>
-    <div class="cg">
+    <div class="cg cg-4">
         <div class="cd" onclick="go('bp1')">
             <div class="ci"><img src="screenshots/bootcamp_insurance.png"></div>
             <div class="cb">
@@ -292,6 +293,15 @@
                 <div class="ct">고객 이탈 예측</div>
                 <div class="cdesc">머신러닝 기반 은행 고객 이탈 예측 모델 (Recall 80.3%) + 군집화 전략</div>
                 <div class="ctags"><span class="ctag">ML</span><span class="ctag">LightGBM</span><span class="ctag">K-means</span></div>
+            </div>
+        </div>
+        <div class="cd" onclick="go('bp4')">
+            <div class="ci"><img src="screenshots/bootcamp_suncare.png"></div>
+            <div class="cb">
+                <div class="cn">BOOTCAMP 04 · Tableau</div>
+                <div class="ct">K-선케어 일본 진출 전략</div>
+                <div class="cdesc">한·일 뷰티 플랫폼 크롤링 + Tableau 대시보드 → STP 전략 기반 제품 추천</div>
+                <div class="ctags"><span class="ctag">크롤링</span><span class="ctag">Tableau</span><span class="ctag">STP</span></div>
             </div>
         </div>
     </div>
@@ -720,6 +730,72 @@
     </div>
 
     <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">LightGBM</span><span class="sk">XGBoost</span><span class="sk">CatBoost</span><span class="sk">SMOTE</span><span class="sk">K-means</span><span class="sk">Optuna</span><span class="sk">Pandas</span></div>
+</div>
+</div>
+
+<!-- ═══ BOOTCAMP 4: K-선케어 ═══ -->
+<div class="page" id="page-bp4">
+<div class="container" style="padding:3rem 2rem">
+    <button class="back" onclick="go('landing')">← 돌아가기</button>
+    <div class="ph"><div class="pn">B4</div><div class="pt">K-선케어 트렌드 분석 → 일본 시장 진출 전략</div><div class="ps">한·일 뷰티 플랫폼 크롤링 · Tableau 대시보드 · 팀 프로젝트 (4인)</div></div>
+
+    <div class="story">
+        <div class="story-label">Background</div>
+        <div class="story-title">왜 이 프로젝트를 진행했나?</div>
+        <div class="story-text">일본 화장품 시장은 코로나 이후 회복 중이며, K-뷰티에 대한 관심이 지속 증가하고 있습니다. <br>이상 기후로 한·일 모두 UV 케어 중요성이 부각되는 상황에서, 한국 선케어 제품의 일본 시장 진출 기회를 데이터로 분석했습니다.<br>한국 4개 플랫폼(올리브영/화해/무신사/네이버쇼핑) + 일본 2개 플랫폼(LIPS/Q10)에서 크롤링한 약 1,500건의 데이터를 Tableau 대시보드로 분석하여 틈새시장을 공략하는 전략을 수립했습니다.</div>
+        <div class="sh warn"><p><strong>목표:</strong> 한·일 선케어 시장 비교 분석 → 고객 페르소나 작성 → 나이대별 최적 K-선케어 제품 추천 및 일본 시장 입점 전략 수립</p></div>
+        <div class="sh"><p><strong>접근:</strong> 6개 플랫폼 크롤링(1,490건) → 파생변수 생성(최종점수) → Tableau 대시보드로 한·일 트렌드 비교 → STP 포지셔닝 전략 도출</p></div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Key Insights</div>
+        <div class="story-title">분석 결과 & 인사이트</div>
+        <div class="fcards">
+            <div class="fc c1">
+                <div class="fct">한·일 트렌드 비교</div>
+                <ul>
+                    <li>한국: 선크림 > 선스틱 > 선스프레이 순 인기</li>
+                    <li>일본: 여드름/모공/건조 피부타입 중심 수요</li>
+                    <li>한국: "자극 없는, 수분, 톤업" 키워드 (일본과 다른 차별점)</li>
+                    <li>일본 10대 저가, 20대 중고가, 30대 고가, 40대 중고가 선호</li>
+                    <li>일본 TOP 제품(라로슈포제) 이미 시장 장악 → 틈새 공략 필요</li>
+                </ul>
+            </div>
+            <div class="fc c2">
+                <div class="fct">STP 전략 & 제품 추천</div>
+                <ul>
+                    <li>IQR 상위 25~75% 브랜드를 타겟 (TOP은 이미 진출)</li>
+                    <li>10대: 구달 (저가, 착한 성분, 민감 피부 적합)</li>
+                    <li>20~30대 여성: 벤튼 스킨핏 (메이크업 유지, 가벼운 마무리)</li>
+                    <li>20~30대 남성: AHC 선스틱 (높은 차단, 번들거림 없음)</li>
+                    <li>40대: 헤라 UV프로텍터 (차단+안티에이징+미백+톤업)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="fcards">
+            <div class="fc c1">
+                <div class="fct">기여도 & 역할</div>
+                <ul>
+                    <li>한국 플랫폼(올리브영/화해/무신사/네이버) 크롤링</li>
+                    <li>파생변수 설계 (좋아요/싫어요 분류, 최종점수 산출)</li>
+                    <li>Tableau 대시보드 구축 (한·일 비교 분석)</li>
+                    <li>나이대별 고객 페르소나 작성</li>
+                    <li>STP 포지셔닝 전략 및 제품 추천안 공동 작성</li>
+                </ul>
+            </div>
+            <div class="fc c2">
+                <div class="fct">한계점 & 개선방향</div>
+                <ul>
+                    <li>일본 데이터 200건으로 한국(1,290건) 대비 부족</li>
+                    <li>일본 소비자의 보수적 성향 → 신규 브랜드 진입 어려움</li>
+                    <li>개선: 일본 온라인 플랫폼 면밀 분석 + 유통채널 공략</li>
+                    <li>개선: 인바운드 마케팅 (면세점/올리브영 프로모션)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">크롤링</span><span class="sk">Tableau</span><span class="sk">Pandas</span><span class="sk">STP 전략</span><span class="sk">페르소나</span><span class="sk">시각화</span></div>
 </div>
 </div>
 
