@@ -437,7 +437,14 @@
     <div class="story">
         <div class="story-label">Service Depth</div>
         <div class="story-title">4개 탭 대시보드</div>
-        <div class="gallery single"><div class="gi"><img src="screenshots/fintech_dashboard.png"><div class="gi-cap">Streamlit 인터랙티브 대시보드</div></div></div>
+        <div class="carousel" id="fintech-carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="screenshots/fintech_dashboard.png"><div class="gi-cap">Streamlit 인터랙티브 대시보드</div></div>
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="slideCarousel('fintech-carousel',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" onclick="slideCarousel('fintech-carousel',1)">&#8250;</button>
+            <div class="carousel-thumbs" id="fintech-carousel-thumbs"></div>
+        </div>
         <div class="fcards">
             <div class="fc c1"><div class="fct">마케팅 성과</div><ul><li>채널별 CPC/CAC/ROAS</li><li>"어느 채널에 예산을 써야 하나?"</li></ul></div>
             <div class="fc c1"><div class="fct">프로덕트 지표</div><ul><li>전환 퍼널 + 코호트 리텐션</li><li>"어디서 유저를 잃고 있나?"</li></ul></div>
@@ -535,7 +542,14 @@
     <div class="story">
         <div class="story-label">Service Depth</div>
         <div class="story-title">게임 구성</div>
-        <div class="gallery single"><div class="gi"><img src="screenshots/pet_main.png"><div class="gi-cap">5종 동물 선택 + 3단계 난이도</div></div></div>
+        <div class="carousel" id="pet-carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="screenshots/pet_main.png"><div class="gi-cap">5종 동물 선택 + 3단계 난이도</div></div>
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="slideCarousel('pet-carousel',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" onclick="slideCarousel('pet-carousel',1)">&#8250;</button>
+            <div class="carousel-thumbs" id="pet-carousel-thumbs"></div>
+        </div>
         <div class="fcards">
             <div class="fc c1"><div class="fct">게임 메커닉</div><ul><li>3스탯 (배고픔/행복/청결) × 4성장단계</li><li>연쇄 붕괴 + 피로도 + 랜덤 이벤트</li><li>칭호: 학대범(0턴)→전설의 집사(100+)</li></ul></div>
             <div class="fc c1"><div class="fct">바이럴 설계</div><ul><li>게임오버 추모카드 자동 생성</li><li>X 공유 + 챌린지 텍스트</li><li>칭호 수집 경쟁 → 재방문 유도</li></ul></div>
@@ -781,6 +795,8 @@ window.addEventListener('load', ()=>{
     const id = location.hash.slice(1) || 'landing';
     showPage(id);
     initCarousel('beauty-carousel');
+    initCarousel('fintech-carousel');
+    initCarousel('pet-carousel');
 });
 
 // Contact Modal
