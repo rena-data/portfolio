@@ -21,6 +21,7 @@
 | B01 | **보험 데이터 분석** | 의료 보험 데이터 기반 보험료 모델링 및 마케팅 전략 | SQL, 데이터분석 |
 | B02 | **배너 광고 성과 분석** | 내부/외부 배너 비교 → 혼합 운영 전략으로 수익 7% 향상 | Python, RFM |
 | B03 | **고객 이탈 예측** | ML 기반 은행 고객 이탈 예측 (Recall 80.3%) + 군집화 전략 | LightGBM, K-means |
+| B04 | **K-선케어 일본 진출 전략** | 한·일 뷰티 플랫폼 크롤링 + Tableau 대시보드 → STP 전략 | 크롤링, Tableau, Pandas |
 
 ## Stack
 
@@ -28,7 +29,7 @@
 - **Hosting**: GitHub Pages
 - **Font**: Pretendard Variable
 - **Analytics**: GA4 (쿠키 동의 시에만)
-- **Contact**: Google Sheets + Apps Script
+- **Contact**: Google Sheets + Apps Script + Slack 알림
 
 ## Structure
 
@@ -36,7 +37,7 @@
 web/
 ├── index.html          # 메인 SPA (랜딩 + About + 프로젝트 상세)
 ├── og-image.png        # OG 이미지
-└── screenshots/        # 프로젝트 스크린샷
+└── screenshots/        # 프로젝트 스크린샷 (800x560 통일)
 ```
 
 ## Contact
