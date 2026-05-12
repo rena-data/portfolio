@@ -1,0 +1,49 @@
+# Claude Code / 로컬 AI 설정 (GitHub 불필요)
+.claude/
+
+# Cursor IDE 로컬·에이전트 캐시 등 (팀에서 .cursor/rules만 올리고 싶다면 아래 줄을 조정)
+.cursor/
+
+# 기타 AI 코딩 도구 (사용 시)
+.aider*
+.specstory/
+.continue/
+
+# 환경 변수·비밀 (실수로 추가 방지)
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 로그·임시
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tmp
+*.temp
+*.swp
+*~
+
+# Node (나중에 도구 추가 시)
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# IDE
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 기타
+*.local
