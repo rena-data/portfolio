@@ -116,9 +116,11 @@
         /* ═══ CAROUSEL ═══ */
         .carousel{position:relative;margin:1.5rem 0;overflow:hidden;border-radius:12px;border:1px solid var(--border);background:var(--card)}
         .carousel-track{display:flex;transition:transform .4s ease}
-        .carousel-slide{min-width:100%;flex-shrink:0}
+        .carousel-slide{min-width:100%;flex-shrink:0;display:flex;flex-direction:column}
         .carousel-slide img{width:100%;display:block}
-        .carousel-slide .gi-cap{padding:.5rem 1rem;font-size:.72rem;color:var(--sub);text-align:center;background:var(--card2)}
+        .carousel-slide-frame{background:#fff;width:100%;aspect-ratio:800/560;display:flex;align-items:center;justify-content:center;overflow:hidden;line-height:0;flex-shrink:0}
+        .carousel-slide-frame img{width:100%;height:100%;object-fit:contain;display:block;vertical-align:middle}
+        .carousel-slide .gi-cap{padding:.7rem 1rem .95rem;font-size:.84rem;color:var(--text);text-align:center;background:var(--card2);line-height:1.55;border-top:1px solid var(--border)}
         .carousel-btn{position:absolute;top:50%;transform:translateY(-60%);width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:rgba(11,13,19,.85);color:var(--text);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2}
         .carousel-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(11,13,19,.95)}
         .carousel-prev{left:.8rem}
@@ -451,11 +453,11 @@
         <div class="story-title">4개 탭 대시보드</div>
         <div class="carousel" id="fintech-carousel">
             <div class="carousel-track">
-                <div class="carousel-slide"><img src="screenshots/fintech_dashboard.png"><div class="gi-cap">Streamlit 인터랙티브 대시보드</div></div>
-                <div class="carousel-slide"><img src="screenshots/fintech_dashboard_01.png"><div class="gi-cap">마케팅 주요 지표 성과 분석</div></div>
-                <div class="carousel-slide"><img src="screenshots/fintech_dashboard_02.png"><div class="gi-cap">프로덕트 지표 분석</div></div>
-                <div class="carousel-slide"><img src="screenshots/fintech_dashboard_03.png"><div class="gi-cap">경영 현황 분석</div></div>
-                <div class="carousel-slide"><img src="screenshots/fintech_dashboard_04.png"><div class="gi-cap">시나리오 시뮬레이터</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard.png" alt="Fintech 대시보드 메인"></div><div class="gi-cap"><strong>메인</strong> — 4개 탭(마케팅·프로덕트·경영·시뮬레이터)으로 Streamlit 인터랙티브 대시보드 전체 구조</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard_01.png" alt="마케팅 지표 탭"></div><div class="gi-cap"><strong>마케팅 탭</strong> — 채널별 CPC·CAC·ROAS와 예산 대비 성과를 한 화면에서 비교해 채널 효율·예산 배분 인사이트 도출</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard_02.png" alt="프로덕트 지표 탭"></div><div class="gi-cap"><strong>프로덕트 탭</strong> — 전환 퍼널·코호트 리텐션으로 유입부터 이탈까지 구간별 이탈 포인트 파악</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard_03.png" alt="경영 현황 탭"></div><div class="gi-cap"><strong>경영 탭</strong> — MRR·번 레이트·런웨이 등 핵심 재무·성장 지표를 모니터링해 사업 건전성 한눈에 파악</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard_04.png" alt="시나리오 시뮬레이터"></div><div class="gi-cap"><strong>시뮬레이터</strong> — 슬라이더로 가격·비용·성장률 등 가정을 바꾸면 12개월 재무 시나리오를 즉시 시뮬레이션</div></div>
             </div>
             <button class="carousel-btn carousel-prev" onclick="slideCarousel('fintech-carousel',-1)">&#8249;</button>
             <button class="carousel-btn carousel-next" onclick="slideCarousel('fintech-carousel',1)">&#8250;</button>
