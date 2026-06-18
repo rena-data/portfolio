@@ -30,6 +30,7 @@ yarn-debug.log*
 yarn-error.log*
 *.tmp
 *.temp
+*.bak
 *.swp
 *~
 
@@ -47,3 +48,6 @@ build/
 
 # 기타
 *.local
+
+# docs
+docs/

@@ -2,11 +2,13 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https://cdn.jsdelivr.net https://cdn.simpleicons.org https://img.icons8.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이기쁨 포트폴리오 | Data & AI</title>
+    <script>document.documentElement.classList.add('js');</script>
+    <title>이기쁨 포트폴리오 | AX · AI Automation</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
-    <meta property="og:title" content="이기쁨 포트폴리오 | Data & AI">
-    <meta property="og:description" content="숫자를 읽고, 문제를 정의하고, 서비스로 해결합니다. 데이터 분석 & 개발 포트폴리오.">
+    <meta property="og:title" content="이기쁨 포트폴리오 | AX · AI Automation">
+    <meta property="og:description" content="AI 코딩 도구로 업무 자동화 솔루션을 직접 기획·개발·운영합니다. AX 엔지니어 · AI 자동화 포트폴리오.">
     <meta property="og:image" content="https://rena-data.github.io/portfolio/og-image.png">
     <meta property="og:url" content="https://rena-data.github.io/portfolio/">
     <meta property="og:type" content="website">
@@ -14,146 +16,7 @@
     <meta name="twitter:image" content="https://rena-data.github.io/portfolio/og-image.png">
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root{--bg:#0B0D13;--bg2:#101320;--card:#161929;--card2:#1C2035;--text:#EAEAF0;--sub:#7E829A;--accent:#00E8C6;--accent2:#845EF7;--accent3:#3B82F6;--border:#252840;--glow:rgba(0,232,198,0.06)}
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Pretendard Variable',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
-        a{color:var(--accent);text-decoration:none}
-        .container{max-width:1100px;margin:0 auto;padding:0 2rem}
-        .page{display:none;animation:fadeIn .35s ease}.page.active{display:block}
-        @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-
-        /* ═══ HERO ═══ */
-        .hero{position:relative;padding:4rem 0 0;overflow:hidden}
-        .hero::before{content:'';position:absolute;top:-200px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 70%);pointer-events:none}
-        .hero::after{content:'';position:absolute;bottom:-150px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(132,94,247,0.04),transparent 70%);pointer-events:none}
-
-        .hero-top{display:flex;justify-content:space-between;align-items:stretch;gap:2rem;margin-bottom:2rem}
-        .hero-left{flex:1;display:flex;flex-direction:column}
-        .hero-right{flex:0 0 340px}
-        .hero-img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
-        .hero-meta{margin-top:1.2rem;font-size:.78rem;color:var(--sub);line-height:2;font-family:'JetBrains Mono',monospace;letter-spacing:.02em;max-width:340px}
-        .hero-meta-row{display:flex;justify-content:space-between}
-        .hero-meta-val{color:var(--text);text-align:right}
-        .hero-timeline{margin-top:1rem;font-size:.78rem;line-height:2;max-width:340px}
-        .hero-timeline span{color:var(--accent);font-family:'JetBrains Mono',monospace}
-        .hero-tag{display:inline-block;padding:.3rem 1rem;border:1px solid var(--accent);border-radius:20px;font-size:.85rem;color:var(--accent);font-weight:600;letter-spacing:.05em;margin-bottom:1rem;align-self:flex-start}
-        .hero h1{font-size:3rem;font-weight:900;line-height:1.25;letter-spacing:-.02em}
-        .hero h1 .hl{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        .hero-desc{color:var(--sub);font-size:1.05rem;margin-top:.8rem;max-width:550px;line-height:1.8}
-        .hero-btns{display:flex;gap:.8rem;margin-top:auto;padding-top:1rem;flex-wrap:wrap}
-        .hero-btns a,.hero-btns button{padding:.6rem 1.5rem;border-radius:8px;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit;transition:all .3s}
-        .bf{background:var(--accent);color:var(--bg);border:none}.bf:hover{box-shadow:0 4px 24px rgba(0,232,198,.25);transform:translateY(-2px)}
-        .bo{background:none;border:1px solid var(--border);color:var(--text)}.bo:hover{border-color:var(--accent);color:var(--accent)}
-
-        /* ═══ SUMMARY STRIP ═══ */
-        .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:3rem}
-        .sum-card{background:var(--card);border-radius:14px;padding:1.2rem;text-align:center;border:1px solid var(--border);transition:border-color .3s}
-        .sum-card:hover{border-color:var(--accent)}
-        .sum-num{font-size:2.2rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        .sum-label{font-size:.85rem;color:var(--sub);margin-top:.2rem;text-transform:uppercase;letter-spacing:.08em}
-
-        /* ═══ QUICK PROFILE ═══ */
-        .qp{background:var(--card);border-radius:16px;padding:1.8rem 2rem;margin-top:-2.5rem;margin-bottom:3rem;display:flex;gap:2rem;align-items:center;border:1px solid var(--border);position:relative;overflow:hidden;z-index:1}
-        .qp::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent2))}
-        .qp-info{flex:1}
-        .qp-name{font-size:1.5rem;font-weight:800}
-        .qp-role{font-size:1rem;color:var(--accent);font-weight:600;margin-bottom:.6rem}
-        .qp-exp{font-size:.95rem;color:var(--sub);line-height:1.8}
-        .qp-exp strong{color:var(--text)}
-        .qp-skills{flex:1;display:flex;flex-direction:column;gap:.6rem;padding-left:2rem}
-        .sk-cat{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
-        .sk-cat-label{font-size:.75rem;color:var(--sub);font-weight:700;min-width:3.2rem;flex-shrink:0;text-transform:uppercase;letter-spacing:.04em}
-        .sk{padding:.25rem .65rem;border-radius:5px;font-size:.78rem;background:rgba(0,232,198,.08);color:var(--accent);font-weight:600;border:1px solid rgba(0,232,198,.15)}
-        .qp-more{margin-top:.8rem}
-        .more-link{font-size:.78rem;color:var(--accent);cursor:pointer;font-weight:600;border:none;background:none;font-family:inherit;padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);transition:all .2s}
-        .more-link:hover{background:var(--accent);color:var(--bg)}
-
-        /* ═══ PROJECTS SECTION ═══ */
-        .sec-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);font-weight:700;margin-bottom:.5rem}
-        .sec-title{font-size:1.6rem;font-weight:800;margin-bottom:1.5rem}
-        .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem}
-        .cg-4{grid-template-columns:repeat(4,1fr)}
-        .cd{background:var(--card);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .3s;border:1px solid var(--border);position:relative}
-        .cd:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 12px 40px rgba(0,232,198,.08)}
-        .cd-live{position:absolute;top:12px;right:12px;padding:.2rem .6rem;background:var(--accent);color:var(--bg);border-radius:6px;font-size:.6rem;font-weight:800;letter-spacing:.05em}
-        .ci{width:100%;height:180px;overflow:hidden;background:var(--bg2)}.ci img{width:100%;height:100%;object-fit:cover;object-position:top;opacity:.8;transition:all .4s}.cd:hover .ci img{opacity:1;transform:scale(1.03)}
-        .cb{padding:1.2rem 1.5rem}
-        .cn{font-size:.78rem;color:var(--accent);font-weight:700;letter-spacing:.12em}
-        .ct{font-size:1.15rem;font-weight:800;margin:.3rem 0}
-        .cdesc{font-size:.88rem;color:var(--sub);line-height:1.6}
-        .ctags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.8rem}
-        .ctag{padding:.12rem .45rem;border-radius:4px;font-size:.62rem;background:rgba(0,232,198,.08);color:var(--accent)}
-
-        /* ═══ ABOUT DETAIL PAGE ═══ */
-        .back{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem 1rem;border:1px solid var(--border);border-radius:8px;color:var(--sub);font-size:.82rem;cursor:pointer;background:none;font-family:inherit;margin-bottom:2rem;transition:all .2s}
-        .back:hover{border-color:var(--accent);color:var(--accent)}
-        .agrid{display:grid;grid-template-columns:1fr 2fr;gap:2.5rem}.agrid-wrap{display:grid;grid-template-columns:1fr 2fr;gap:2.5rem}
-        .ainfo{background:var(--card);border-radius:16px;padding:2rem;border:1px solid var(--border)}
-        .aname{font-size:1.4rem;font-weight:800}.arole{color:var(--accent);font-weight:600;margin-bottom:1.5rem;font-size:.9rem}
-        .ai{margin-bottom:1rem}.al{font-size:.68rem;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.2rem}.av{font-size:.85rem}
-        .ec{background:var(--card);border-radius:14px;padding:1.5rem;border-left:3px solid var(--accent);margin-bottom:1.2rem;border:1px solid var(--border);border-left:3px solid var(--accent)}
-        .ec2{border-left-color:var(--accent2)}
-        .et2{font-size:1.05rem;font-weight:700}.es2{font-size:.76rem;color:var(--sub);margin:.2rem 0 .6rem}
-        .el2{list-style:none}.el2 li{font-size:.8rem;color:var(--sub);padding:.1rem 0}.el2 li::before{content:'→ ';color:var(--accent)}
-        .el2 li strong{color:var(--text)}
-
-        /* ═══ PROJECT DETAIL ═══ */
-        .ph{margin-bottom:1.5rem}.pn{font-size:4rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;opacity:.3;line-height:1}
-        .pt{font-size:2rem;font-weight:800;margin-top:-.5rem}.ps{font-size:.92rem;color:var(--sub);margin-top:.3rem}
-        .story{margin:2rem 0}.story-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);font-weight:700;margin-bottom:.4rem}
-        .story-title{font-size:1.35rem;font-weight:800;margin-bottom:.8rem}
-        .story-text{font-size:.95rem;color:var(--sub);line-height:1.8;margin-bottom:1rem}
-        .sh{background:var(--card);border-radius:12px;padding:1.1rem 1.4rem;margin:.8rem 0;border-left:3px solid var(--accent);border:1px solid var(--border);border-left:3px solid var(--accent)}
-        .sh.warn{border-left-color:#FF6B6B}
-        .sh p{font-size:.92rem;line-height:1.7}
-        .gallery{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
-        .gallery.single{grid-template-columns:1fr}
-        .gi{border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--card)}
-        .gi img{width:100%;display:block}
-        .gi-cap{padding:.5rem 1rem;font-size:.72rem;color:var(--sub);text-align:center;background:var(--card2)}
-
-        /* ═══ CAROUSEL ═══ */
-        .carousel{position:relative;margin:1.5rem 0;overflow:hidden;border-radius:12px;border:1px solid var(--border);background:var(--card)}
-        .carousel-track{display:flex;transition:transform .4s ease}
-        .carousel-slide{min-width:100%;flex-shrink:0;display:flex;flex-direction:column}
-        .carousel-slide img{width:100%;display:block}
-        .carousel-slide-frame{background:#fff;width:100%;aspect-ratio:800/560;display:flex;align-items:center;justify-content:center;overflow:hidden;line-height:0;flex-shrink:0}
-        .carousel-slide-frame img{width:100%;height:100%;object-fit:contain;display:block;vertical-align:middle}
-        .carousel-slide .gi-cap{padding:.7rem 1rem .95rem;font-size:.84rem;color:var(--text);text-align:center;background:var(--card2);line-height:1.55;border-top:1px solid var(--border)}
-        .carousel-btn{position:absolute;top:50%;transform:translateY(-60%);width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:rgba(11,13,19,.85);color:var(--text);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2}
-        .carousel-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(11,13,19,.95)}
-        .carousel-prev{left:.8rem}
-        .carousel-next{right:.8rem}
-        .carousel-thumbs{display:flex;justify-content:center;gap:.5rem;padding:.8rem .5rem;background:var(--card2);overflow-x:auto}
-        .carousel-thumb{width:80px;height:56px;border-radius:6px;overflow:hidden;cursor:pointer;border:2px solid transparent;opacity:.5;transition:all .2s;flex-shrink:0}
-        .carousel-thumb.active{border-color:var(--accent);opacity:1}
-        .carousel-thumb:hover{opacity:.8}
-        .carousel-thumb img{width:100%;height:100%;object-fit:cover}
-        .fcards{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
-        .fc{background:var(--card);border-radius:12px;padding:1.3rem;border:1px solid var(--border)}.fc.c1{border-top:3px solid var(--accent)}.fc.c2{border-top:3px solid var(--accent2)}
-        .fct{font-size:.95rem;font-weight:700;margin-bottom:.5rem}
-        .fc ul{list-style:none}.fc li{font-size:.88rem;color:var(--sub);padding:.15rem 0;line-height:1.6}.fc li::before{content:'• ';color:var(--accent)}
-        .tb{background:var(--card);border-radius:10px;padding:.8rem 1.3rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:1rem 0;border:1px solid var(--border)}
-        .tl{font-size:.68rem;color:var(--sub);font-weight:700;text-transform:uppercase}
-        .future{background:var(--card2);border-radius:14px;padding:1.3rem;margin:1.5rem 0;border:1px solid var(--border)}
-        .future-title{font-size:.88rem;font-weight:700;color:var(--accent2);margin-bottom:.5rem}
-        .future ul{list-style:none}.future li{font-size:.8rem;color:var(--sub);padding:.12rem 0}.future li::before{content:'◇ ';color:var(--accent2)}
-
-        /* Skills Visual */
-        .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
-        .skill-group{background:var(--card);border-radius:14px;padding:1.2rem;border:1px solid var(--border)}
-        .sg-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--sub);font-weight:700;margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
-        .skill-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem}
-        .sk-icon{width:22px;height:22px;flex-shrink:0;border-radius:4px}
-        .sk-emoji{font-size:1.1rem;width:22px;text-align:center;flex-shrink:0}
-        .sk-name{font-size:.78rem;font-weight:600;width:95px;flex-shrink:0}
-        .sk-bar{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
-        .sk-fill{height:100%;border-radius:3px;transition:width 1s ease}
-
-        footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;color:var(--sub);font-size:.78rem}
-        @media(max-width:768px){.hero h1{font-size:1.7rem}.hero-top{flex-direction:column}.hero-right{flex:none;width:100%}.summary{grid-template-columns:1fr 1fr}.qp{flex-direction:column}.cg{grid-template-columns:1fr}.cg-4{grid-template-columns:1fr 1fr}.agrid{grid-template-columns:1fr}.fcards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}}
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -164,28 +27,33 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-top">
-            <div class="hero-left">
+            <div class="hero-left reveal">
                 <span class="hero-tag">PORTFOLIO 2026</span>
                 <h1>숫자를 읽고, 문제를 정의하고<br><span class="hl">서비스로 해결합니다</span></h1>
-                <p class="hero-desc">회계·재무 5년의 숫자 감각 위에 데이터 분석·자동화 역량을 쌓았습니다. <br>문제를 발견하면 직접 기획하고, 만들고, 배포합니다.</p>
+                <div class="hero-role"><span id="typed-role" aria-hidden="true">AI Automation Engineer</span><span class="type-cursor" aria-hidden="true"></span><span class="sr-only">AI Automation Engineer · AX Engineer · AI Service Builder · Data Analyst</span></div>
+                <p class="hero-desc">회계·재무 5년의 비즈니스 감각 위에, AI 코딩 도구로 업무 자동화 솔루션을 직접 기획·개발·운영합니다. 문제 정의부터 배포·운영까지 직무 경계 없이 해결합니다.</p>
                 <div class="hero-timeline">
                     <span>[2026.05]</span> Beauty AI 서비스 라이브<br>
                     <span>[2026.04]</span> GA4 자격증 취득<br>
-                    <span>[2025.08]</span> 광고 API 수집·리포트 자동화 구축<br>
+                    <span>[2025.08]</span> 이용자 세그먼트 변경 자동화<br>
+                    <span>[2025.07]</span> 광고 성과 리포트 자동화 구축<br>
                     <span>[2025.03]</span> 데이터인텔리전스팀 합류<br>
                     <span>[2024.11]</span> 데이터 분석 부트캠프 시작
                 </div>
                 <div class="hero-btns">
                     <button class="bf" onclick="go('about')">About Me 상세</button>
-                    <a href="https://github.com/rena-data" target="_blank" class="bo">GitHub</a>
-                    <a href="https://ldsjoy.tistory.com/" target="_blank" class="bo">Blog</a>
+                    <a href="https://github.com/rena-data" target="_blank" rel="noopener noreferrer" class="bo">GitHub</a>
+                    <a href="https://ldsjoy.tistory.com/" target="_blank" rel="noopener noreferrer" class="bo">Blog</a>
                     <button class="bo" onclick="openContact()">Contact</button>
                 </div>
             </div>
-            <div class="hero-right">
-                <img src="screenshots/hero_workspace.png" class="hero-img" alt="workspace">
+            <div class="hero-right reveal">
+                <div class="hero-art">
+                    <div class="hero-lottie" id="lottie-hero" aria-hidden="true"></div>
+                    <img src="lottie/posters/hero-flow.png" class="hero-poster" alt="데이터에서 자동화, 서비스로 이어지는 워크플로우">
+                </div>
                 <div class="hero-meta">
-                    <div class="hero-meta-row"><span>CURRENTLY</span><span class="hero-meta-val">광고 API 자동화</span></div>
+                    <div class="hero-meta-row"><span>FOCUS</span><span class="hero-meta-val">AI 업무 자동화</span></div>
                     <div class="hero-meta-row"><span>READING</span><span class="hero-meta-val">AI 서비스 프로덕트 설계</span></div>
                     <div class="hero-meta-row"><span>LOCATION</span><span class="hero-meta-val">Seoul, KR</span></div>
                 </div>
@@ -194,51 +62,78 @@
 
         <!-- Summary Numbers -->
         <div class="summary">
-            <div class="sum-card">
-                <div class="sum-num">6년+</div>
+            <div class="sum-card reveal">
+                <div class="sum-num" data-count="6" data-suffix="년+">6년+</div>
                 <div class="sum-label">총 경력</div>
             </div>
-            <div class="sum-card">
-                <div class="sum-num">80%</div>
+            <div class="sum-card reveal">
+                <div class="sum-num" data-count="80" data-suffix="%">80%</div>
                 <div class="sum-label">수작업 절감</div>
             </div>
-            <div class="sum-card">
+            <div class="sum-card reveal">
                 <div class="sum-num">$0</div>
                 <div class="sum-label">실서비스 운영비</div>
             </div>
-            <div class="sum-card">
-                <div class="sum-num">3개</div>
+            <div class="sum-card reveal">
+                <div class="sum-num" data-count="3" data-suffix="개">3개</div>
                 <div class="sum-label">E2E 프로젝트</div>
             </div>
         </div>
     </section>
 
     <!-- Quick Profile -->
-    <div class="qp">
+    <div class="qp reveal">
         <div class="qp-info">
             <div class="qp-name">이기쁨 <span style="font-size:.8rem;color:var(--sub);font-weight:400">Lee Gippeum</span></div>
-            <div class="qp-role">Data Analyst & Developer</div>
+            <div class="qp-role">AI Automation Engineer · AX</div>
             <div class="qp-exp">
-                <strong>에이원퍼포먼스팩토리</strong> 데이터인텔리전스팀에서 광고 API 수집·자동화·대시보드를 만들고, 이전에는 <strong>주네스글로벌코리아</strong> 재경부에서 5년 5개월간 자금·결산을 다뤘습니다. 데이터 분석 부트캠프 수료 및 <strong>GA4</strong> 자격증 보유.
+                <strong>에이원퍼포먼스팩토리</strong>에서 AI 코딩 도구(Claude Code)로 마케팅 업무 자동화 솔루션을 1인 기획·개발·운영했고, 이전 <strong>주네스글로벌코리아</strong> 재경부에서 5년 4개월간 자금·결산을 담당했습니다. 데이터 분석 부트캠프 수료 및 <strong>GA4</strong> 자격증 보유.
             </div>
             <div class="qp-more">
                 <button class="more-link" onclick="go('about')">경력 상세 보기 →</button>
             </div>
         </div>
         <div class="qp-skills">
-            <div class="sk-cat"><span class="sk-cat-label">데이터</span><span class="sk">Python</span><span class="sk">SQL</span><span class="sk">Pandas</span><span class="sk">DuckDB</span></div>
+            <div class="sk-cat"><span class="sk-cat-label">데이터</span><span class="sk">Python</span><span class="sk">SQL</span><span class="sk">Pandas</span><span class="sk">MongoDB</span><span class="sk">크롤링</span></div>
             <div class="sk-cat"><span class="sk-cat-label">분석</span><span class="sk">Tableau</span><span class="sk">GA4</span><span class="sk">NumPy</span><span class="sk">Plotly</span></div>
-            <div class="sk-cat"><span class="sk-cat-label">백엔드</span><span class="sk">FastAPI</span><span class="sk">Streamlit</span><span class="sk">Supabase</span><span class="sk">Docker</span></div>
-            <div class="sk-cat"><span class="sk-cat-label">AI</span><span class="sk">Claude Code</span><span class="sk">Gemini</span><span class="sk">Cursor</span><span class="sk">n8n</span></div>
+            <div class="sk-cat"><span class="sk-cat-label">백엔드</span><span class="sk">FastAPI</span><span class="sk">Streamlit</span><span class="sk">Docker</span><span class="sk">tmux</span><span class="sk">Supabase</span></div>
+            <div class="sk-cat"><span class="sk-cat-label">AI</span><span class="sk">Claude Code</span><span class="sk">Vision AI</span><span class="sk">Cursor</span><span class="sk">n8n</span></div>
             <div class="sk-cat"><span class="sk-cat-label">도구</span><span class="sk">Git</span><span class="sk">GitHub</span><span class="sk">Jira</span><span class="sk">Slack</span></div>
         </div>
     </div>
 
-    <!-- Projects -->
-    <div class="sec-label">Projects</div>
-    <div class="sec-title">프로젝트</div>
+    <!-- Work · 실무 자동화 -->
+    <div class="sec-label reveal">Work · 실무</div>
+    <div class="sec-title reveal">마케팅 자동화 솔루션 <span style="font-size:.92rem;color:var(--sub);font-weight:600">— 에이원퍼포먼스팩토리 · 4개 대형 광고주 · 1인 개발</span></div>
     <div class="cg">
-        <div class="cd" onclick="go('p1')">
+        <div class="wc reveal" onclick="go('w1')">
+            <div class="cn">WORK 01 · API 자동화</div>
+            <div class="ct">네이버 검색광고 API 자동화</div>
+            <div class="cdesc">광고성과·쇼핑검색 리포트 자동 다운로드·병합 + 소재·키워드 등록/수정/삭제 + 입찰가·세그먼트 일괄 변경(예약 실행 포함).</div>
+            <div class="wc-metrics"><span class="wc-m"><b>세그먼트 80%</b>↓</span><span class="wc-m"><b>파일 50%</b>↓</span><span class="wc-m">리포트·CRUD 자동화</span></div>
+            <div class="ctags"><span class="ctag">FastAPI</span><span class="ctag">네이버 광고 API</span><span class="ctag">Streamlit</span><span class="ctag">asyncio</span></div>
+        </div>
+        <div class="wc reveal" onclick="go('w2')">
+            <div class="cn">WORK 02 · 크롤링</div>
+            <div class="ct">웹 크롤링·경쟁사/시장 분석</div>
+            <div class="cdesc">자사·경쟁사 베스트 상품, 방송 편성 상품, 키워드 노출 이미지를 크롤링·매칭·수집. 개발자도구 기반 API 직접 호출로 고속화.</div>
+            <div class="wc-metrics"><span class="wc-m"><b>7개</b> 커머스 수집</span><span class="wc-m">베스트 100위</span><span class="wc-m">방송상품 매칭</span></div>
+            <div class="ctags"><span class="ctag">Selenium</span><span class="ctag">Playwright</span><span class="ctag">BeautifulSoup</span><span class="ctag">requests</span></div>
+        </div>
+        <div class="wc reveal" onclick="go('w3')">
+            <div class="cn">WORK 03 · 운영</div>
+            <div class="ct">운영·안정화·데이터 정합성</div>
+            <div class="cdesc">스케줄러 운영, 카카오 토큰 재발급, 데이터 정합성 확인·재적재, 장애 핫픽스로 대규모 자동화를 안정적으로 운영.</div>
+            <div class="wc-metrics"><span class="wc-m"><b>1h</b> 이내 복구</span><span class="wc-m">정합성 관리</span><span class="wc-m">무중단 운영</span></div>
+            <div class="ctags"><span class="ctag">asyncio</span><span class="ctag">스케줄러</span><span class="ctag">카카오 알림</span><span class="ctag">PostgreSQL</span></div>
+        </div>
+    </div>
+
+    <!-- Side Projects -->
+    <div class="sec-label reveal" style="margin-top:3rem">Side Projects</div>
+    <div class="sec-title reveal">개인 프로젝트</div>
+    <div class="cg">
+        <div class="cd reveal" onclick="go('p1')">
             <div class="ci"><img src="screenshots/fintech_dashboard.png"></div>
             <div class="cb">
                 <div class="cn">PROJECT 01</div>
@@ -247,8 +142,8 @@
                 <div class="ctags"><span class="ctag">Python</span><span class="ctag">DuckDB</span><span class="ctag">Streamlit</span><span class="ctag">n8n</span></div>
             </div>
         </div>
-        <div class="cd" onclick="go('p2')">
-            <span class="cd-live">LIVE</span>
+        <div class="cd reveal" onclick="go('p2')">
+            <span class="cd-live"><span class="live-dot"></span>LIVE</span>
             <div class="ci"><img src="screenshots/beauty_card.png"></div>
             <div class="cb">
                 <div class="cn">PROJECT 02</div>
@@ -257,7 +152,7 @@
                 <div class="ctags"><span class="ctag">FastAPI</span><span class="ctag">Gemini API</span><span class="ctag">Supabase</span><span class="ctag">Render</span></div>
             </div>
         </div>
-        <div class="cd" onclick="go('p3')">
+        <div class="cd reveal" onclick="go('p3')">
             <div class="ci"><img src="screenshots/pet_card.png"></div>
             <div class="cb">
                 <div class="cn">PROJECT 03</div>
@@ -266,12 +161,39 @@
                 <div class="ctags"><span class="ctag">Python</span><span class="ctag">JavaScript</span><span class="ctag">SVG</span><span class="ctag">pytest</span></div>
             </div>
         </div>
+        <div class="cd reveal" onclick="go('p4')">
+            <div class="ci gen" style="background:linear-gradient(135deg,#0b3a6f,#0ea5b7)"><span>🔎</span></div>
+            <div class="cb">
+                <div class="cn">PROJECT 04</div>
+                <div class="ct">Fin Scraper</div>
+                <div class="cdesc">국내 전종목(4,000+) HTTP 크롤링 + 투자지표 스크리닝. <br>KRX 차단 → 네이버 금융 피벗.</div>
+                <div class="ctags"><span class="ctag">Python</span><span class="ctag">requests</span><span class="ctag">BeautifulSoup</span><span class="ctag">크롤링</span></div>
+            </div>
+        </div>
+        <div class="cd reveal" onclick="go('p5')">
+            <div class="ci gen" style="background:linear-gradient(135deg,#3b1f6b,#1f6f5c)"><span>📈</span></div>
+            <div class="cb">
+                <div class="cn">PROJECT 05</div>
+                <div class="ct">Stock Signal AI</div>
+                <div class="cdesc">반도체 7종목 LSTM 매매신호 예측 + 백테스트·리스크관리. <br>딥러닝·백테스트 학습 실험.</div>
+                <div class="ctags"><span class="ctag">PyTorch</span><span class="ctag">LSTM</span><span class="ctag">FastAPI</span><span class="ctag">Streamlit</span></div>
+            </div>
+        </div>
+        <div class="cd reveal" onclick="go('p6')">
+            <div class="ci gen" style="background:linear-gradient(135deg,#0f3d3a,#2563eb)"><span>🤖</span></div>
+            <div class="cb">
+                <div class="cn">PROJECT 06</div>
+                <div class="ct">JobMate AI</div>
+                <div class="cdesc">채용공고 URL → AI 파싱 → Google Sheets 저장 → 마감 Slack 알림 자동화.</div>
+                <div class="ctags"><span class="ctag">Gemini API</span><span class="ctag">Playwright</span><span class="ctag">Sheets API</span><span class="ctag">cron</span></div>
+            </div>
+        </div>
     </div>
 
-    <div class="sec-label" style="margin-top:3rem">Bootcamp Projects</div>
-    <div class="sec-title">데이터 분석 프로젝트</div>
+    <div class="sec-label reveal" style="margin-top:3rem">Bootcamp Projects</div>
+    <div class="sec-title reveal">데이터 분석 프로젝트</div>
     <div class="cg cg-4">
-        <div class="cd" onclick="go('bp1')">
+        <div class="cd reveal" onclick="go('bp1')">
             <div class="ci"><img src="screenshots/bootcamp_insurance.png"></div>
             <div class="cb">
                 <div class="cn">BOOTCAMP 01 · SQL</div>
@@ -280,7 +202,7 @@
                 <div class="ctags"><span class="ctag">SQL</span><span class="ctag">데이터분석</span><span class="ctag">마케팅</span></div>
             </div>
         </div>
-        <div class="cd" onclick="go('bp2')">
+        <div class="cd reveal" onclick="go('bp2')">
             <div class="ci"><img src="screenshots/bootcamp_banner.png"></div>
             <div class="cb">
                 <div class="cn">BOOTCAMP 02 · Python</div>
@@ -289,7 +211,7 @@
                 <div class="ctags"><span class="ctag">Python</span><span class="ctag">퍼포먼스마케팅</span><span class="ctag">RFM</span></div>
             </div>
         </div>
-        <div class="cd" onclick="go('bp3')">
+        <div class="cd reveal" onclick="go('bp3')">
             <div class="ci"><img src="screenshots/bootcamp_churn.png"></div>
             <div class="cb">
                 <div class="cn">BOOTCAMP 03 · ML</div>
@@ -298,7 +220,7 @@
                 <div class="ctags"><span class="ctag">ML</span><span class="ctag">LightGBM</span><span class="ctag">K-means</span></div>
             </div>
         </div>
-        <div class="cd" onclick="go('bp4')">
+        <div class="cd reveal" onclick="go('bp4')">
             <div class="ci"><img src="screenshots/bootcamp_suncare.png"></div>
             <div class="cb">
                 <div class="cn">BOOTCAMP 04 · Tableau</div>
@@ -318,42 +240,47 @@
 
     <!-- 상단: 프로필(좌) + Experience(우) -->
     <div class="agrid">
+        <div class="aleft reveal">
+        <img class="aphoto" src="screenshots/profile.jpg" alt="이기쁨 프로필 사진" onerror="this.style.display='none'">
         <div class="ainfo">
             <div class="aname">이기쁨</div>
-            <div class="arole">Data Analyst & Developer</div>
+            <div class="arole">AI Automation Engineer · AX</div>
             <div class="ai"><div class="al">Email</div><div class="av"><a href="javascript:void(0)" onclick="openContact()" style="color:var(--text);text-decoration:none;border-bottom:1px dashed var(--sub);cursor:pointer">ldsjoy@naver.com</a></div></div>
-            <div class="ai"><div class="al">GitHub</div><div class="av"><a href="https://github.com/rena-data" target="_blank">github.com/rena-data</a></div></div>
-            <div class="ai"><div class="al">Blog</div><div class="av"><a href="https://ldsjoy.tistory.com/" target="_blank">ldsjoy.tistory.com</a></div></div>
-            <div class="ai"><div class="al">Education</div><div class="av">스파르타코딩클럽 데이터 분석 부트캠프<br><span style="color:var(--sub);font-size:.78rem">2024.11~2025.03 | SQL, Python, ML, Tableau</span></div></div>
+            <div class="ai"><div class="al">GitHub</div><div class="av"><a href="https://github.com/rena-data" target="_blank" rel="noopener noreferrer">github.com/rena-data</a></div></div>
+            <div class="ai"><div class="al">Blog</div><div class="av"><a href="https://ldsjoy.tistory.com/" target="_blank" rel="noopener noreferrer">ldsjoy.tistory.com</a></div></div>
+            <div class="ai"><div class="al">Education</div><div class="av">스파르타코딩클럽 데이터 분석 부트캠프<br><span style="color:var(--sub);font-size:.78rem">2024.11~2025.02 | SQL, Python, ML, Tableau</span></div></div>
             <div class="ai"><div class="al">Certification</div><div class="av">Google Analytics (GA4) - 2026.04</div></div>
         </div>
-        <div>
-            <h2 style="font-size:1.2rem;margin-bottom:1.2rem">Experience</h2>
-            <div class="ec">
+        </div>
+        <div class="exp-col">
+            <h2 class="reveal" style="font-size:1.2rem;margin-bottom:1.2rem">Experience</h2>
+            <div class="ec reveal">
                 <div class="et2">에이원퍼포먼스팩토리</div>
                 <div class="es2">데이터인텔리전스팀 | 매니저 — 2025.03~2025.12 (10개월)</div>
                 <ul class="el2">
-                    <li>마케팅 데이터 수집·가공 및 자동화 솔루션 기획·개발</li>
-                    <li><strong>이용자 세그먼트 대량 변경 자동화</strong> → 월 수작업 20시간→4시간 (80% 절감)</li>
-                    <li><strong>광고 성과 리포트 자동화</strong> → 리드타임 1일→실시간, 월 30시간 절감</li>
-                    <li><strong>데이터 수집 안정화</strong> → 장애 복구 1시간 이내, 정합성 이슈 월 2건 미만</li>
-                    <li>Validation 적용 → 입력 오류 기반 장애 0건</li>
-                    <li>Tech: Python, SQL, FastAPI, Streamlit, 네이버/카카오 광고 API, Docker, GitHub</li>
+                    <li>AI 코딩 도구(Claude Code)로 마케팅 자동화 솔루션 1인 기획·개발·운영</li>
+                    <li>이용자 세그먼트 대량변경 자동화 → 처리 시간 <strong>80% 절감</strong>(월 20시간→4시간)·연 약 190만원 인건비 절감</li>
+                    <li>광고 성과 리포트 자동화 → 작성 시간 <strong>월 20시간 절감</strong></li>
+                    <li>데이터 파이프라인 안정화 → 복구 1시간 이내·정합성 이슈 월 3건 미만</li>
                 </ul>
             </div>
-            <div class="ec ec2">
+            <div class="ec ec2 reveal">
                 <div class="et2">주네스글로벌코리아</div>
-                <div class="es2">재경부 | 주임 — 2018.12~2024.04 (5년 5개월)</div>
+                <div class="es2">재경부 | 주임 — 2018.12~2024.03 (5년 4개월)</div>
                 <ul class="el2">
-                    <li>자금·결산 데이터 관리, <strong>월 결산 처리 시간 30% 단축</strong></li>
-                    <li>전사 10종 문서 페이퍼리스 전환 → <strong>제출 누락 월 3~5건→0건</strong></li>
-                    <li>정산·결산 프로세스 표준화, 회계 매뉴얼 문서화</li>
-                    <li>신규 직원 자체 학습 매뉴얼 구축 → 전담 교육 리소스 절감</li>
+                    <li>자금·결산·세무 관리, 전사 페이퍼리스 전환 및 결산 프로세스 표준화 등 재경 업무</li>
                 </ul>
             </div>
-            <div class="ec">
+            <div class="ec ec2 reveal">
+                <div class="et2">웅지생활관관리 · 한국기계전기전자시험연구원</div>
+                <div class="es2">회계경리관리부 / 행정부 — 2015.06~2018.11</div>
+                <ul class="el2">
+                    <li>회계 결산·보고 문서 작성, 인력관리 및 경영지원·행정 사무</li>
+                </ul>
+            </div>
+            <div class="ec reveal">
                 <div class="et2">부트캠프 주요 프로젝트</div>
-                <div class="es2">스파르타코딩클럽 2024.11~2025.03</div>
+                <div class="es2">스파르타코딩클럽 2024.11~2025.02</div>
                 <ul class="el2">
                     <li>건강보험 청구 의료비 분석 → 보험료 모델링</li>
                     <li>배너 광고 기반 온라인 스토어 사용자 행동 분석</li>
@@ -369,68 +296,190 @@
     <div class="skills-grid">
         <div class="skill-group">
             <div class="sg-title">Language</div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="sk-icon"><span class="sk-name">Python</span><div class="sk-bar"><div class="sk-fill" style="width:90%;background:var(--accent)"></div></div></div>
-            <div class="skill-row"><img src="https://img.icons8.com/color/48/sql.png" class="sk-icon"><span class="sk-name">SQL</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:var(--accent)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="sk-icon"><span class="sk-name">JavaScript</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:var(--accent)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="sk-icon"><span class="sk-name">CSS/HTML</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:var(--accent)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="sk-icon"><span class="sk-name">Python</span><div class="sk-bar"><div class="sk-fill" style="--skw:90%;background:var(--accent)"></div></div></div>
+            <div class="skill-row"><img src="https://img.icons8.com/color/48/sql.png" class="sk-icon"><span class="sk-name">SQL</span><div class="sk-bar"><div class="sk-fill" style="--skw:85%;background:var(--accent)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="sk-icon"><span class="sk-name">JavaScript</span><div class="sk-bar"><div class="sk-fill" style="--skw:70%;background:var(--accent)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="sk-icon"><span class="sk-name">CSS/HTML</span><div class="sk-bar"><div class="sk-fill" style="--skw:70%;background:var(--accent)"></div></div></div>
         </div>
         <div class="skill-group">
             <div class="sg-title">Database</div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="sk-icon"><span class="sk-name">MySQL</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent2)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="sk-icon"><span class="sk-name">PostgreSQL</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent2)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="sk-icon"><span class="sk-name">MongoDB</span><div class="sk-bar"><div class="sk-fill" style="width:60%;background:var(--accent2)"></div></div></div>
-            <div class="skill-row"><span class="sk-emoji">🦆</span><span class="sk-name">DuckDB</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent2)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" class="sk-icon"><span class="sk-name">Supabase</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="sk-icon"><span class="sk-name">MySQL</span><div class="sk-bar"><div class="sk-fill" style="--skw:80%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="sk-icon"><span class="sk-name">PostgreSQL</span><div class="sk-bar"><div class="sk-fill" style="--skw:75%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="sk-icon"><span class="sk-name">MongoDB</span><div class="sk-bar"><div class="sk-fill" style="--skw:60%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><span class="sk-emoji">🦆</span><span class="sk-name">DuckDB</span><div class="sk-bar"><div class="sk-fill" style="--skw:80%;background:var(--accent2)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" class="sk-icon"><span class="sk-name">Supabase</span><div class="sk-bar"><div class="sk-fill" style="--skw:75%;background:var(--accent2)"></div></div></div>
         </div>
         <div class="skill-group">
             <div class="sg-title">Framework</div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" class="sk-icon"><span class="sk-name">FastAPI</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:var(--accent3)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" class="sk-icon"><span class="sk-name">Streamlit</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:var(--accent3)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="sk-icon"><span class="sk-name">Pandas</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:var(--accent3)"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="sk-icon"><span class="sk-name">NumPy</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:var(--accent3)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" class="sk-icon"><span class="sk-name">FastAPI</span><div class="sk-bar"><div class="sk-fill" style="--skw:80%;background:var(--accent3)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" class="sk-icon"><span class="sk-name">Streamlit</span><div class="sk-bar"><div class="sk-fill" style="--skw:85%;background:var(--accent3)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="sk-icon"><span class="sk-name">Pandas</span><div class="sk-bar"><div class="sk-fill" style="--skw:85%;background:var(--accent3)"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="sk-icon"><span class="sk-name">NumPy</span><div class="sk-bar"><div class="sk-fill" style="--skw:75%;background:var(--accent3)"></div></div></div>
         </div>
         <div class="skill-group">
             <div class="sg-title">AI & Automation</div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/claude/D4A574" class="sk-icon"><span class="sk-name">Claude Code</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:#E040FB"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg" class="sk-icon" style="filter:brightness(0) invert(1)"><span class="sk-name">Codex</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#E040FB"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2" class="sk-icon"><span class="sk-name">Gemini</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#E040FB"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/cursor/00D4AA" class="sk-icon"><span class="sk-name">Cursor</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#E040FB"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/n8n/EA4B71" class="sk-icon"><span class="sk-name">n8n</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#E040FB"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/make/6D00CC" class="sk-icon"><span class="sk-name">Make</span><div class="sk-bar"><div class="sk-fill" style="width:65%;background:#E040FB"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/claude/D4A574" class="sk-icon"><span class="sk-name">Claude Code</span><div class="sk-bar"><div class="sk-fill" style="--skw:85%;background:#E040FB"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2" class="sk-icon"><span class="sk-name">Gemini</span><div class="sk-bar"><div class="sk-fill" style="--skw:80%;background:#E040FB"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/cursor/00D4AA" class="sk-icon"><span class="sk-name">Cursor</span><div class="sk-bar"><div class="sk-fill" style="--skw:80%;background:#E040FB"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/n8n/EA4B71" class="sk-icon"><span class="sk-name">n8n</span><div class="sk-bar"><div class="sk-fill" style="--skw:70%;background:#E040FB"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/make/6D00CC" class="sk-icon"><span class="sk-name">Make</span><div class="sk-bar"><div class="sk-fill" style="--skw:65%;background:#E040FB"></div></div></div>
         </div>
         <div class="skill-group">
             <div class="sg-title">Infra & Deploy</div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="sk-icon"><span class="sk-name">Docker</span><div class="sk-bar"><div class="sk-fill" style="width:65%;background:#26C6DA"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/render/46E3B7" class="sk-icon"><span class="sk-name">Render</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#26C6DA"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/githubactions/2088FF" class="sk-icon"><span class="sk-name">GitHub Actions</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#26C6DA"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="sk-icon"><span class="sk-name">Docker</span><div class="sk-bar"><div class="sk-fill" style="--skw:65%;background:#26C6DA"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/render/46E3B7" class="sk-icon"><span class="sk-name">Render</span><div class="sk-bar"><div class="sk-fill" style="--skw:80%;background:#26C6DA"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/githubactions/2088FF" class="sk-icon"><span class="sk-name">GitHub Actions</span><div class="sk-bar"><div class="sk-fill" style="--skw:70%;background:#26C6DA"></div></div></div>
         </div>
         <div class="skill-group">
             <div class="sg-title">Analytics & Visualization</div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" class="sk-icon"><span class="sk-name">GA4</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FF6B6B"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tableau.svg" class="sk-icon" style="filter:brightness(0) invert(1)"><span class="sk-name">Tableau</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#FF6B6B"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/plotly/3F4F75" class="sk-icon"><span class="sk-name">Plotly</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FF6B6B"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" class="sk-icon"><span class="sk-name">Matplotlib</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FF6B6B"></div></div></div>
-            <div class="skill-row"><span class="sk-emoji">🌊</span><span class="sk-name">Seaborn</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:#FF6B6B"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="sk-icon"><span class="sk-name">Figma</span><div class="sk-bar"><div class="sk-fill" style="width:60%;background:#FF6B6B"></div></div></div>
-            <div class="skill-row"><img src="https://img.icons8.com/color/48/canva.png" class="sk-icon"><span class="sk-name">Canva</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:#FF6B6B"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" class="sk-icon"><span class="sk-name">GA4</span><div class="sk-bar"><div class="sk-fill" style="--skw:80%;background:#FF6B6B"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tableau.svg" class="sk-icon" style="filter:brightness(0) invert(1)"><span class="sk-name">Tableau</span><div class="sk-bar"><div class="sk-fill" style="--skw:70%;background:#FF6B6B"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/plotly/3F4F75" class="sk-icon"><span class="sk-name">Plotly</span><div class="sk-bar"><div class="sk-fill" style="--skw:80%;background:#FF6B6B"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" class="sk-icon"><span class="sk-name">Matplotlib</span><div class="sk-bar"><div class="sk-fill" style="--skw:80%;background:#FF6B6B"></div></div></div>
+            <div class="skill-row"><span class="sk-emoji">🌊</span><span class="sk-name">Seaborn</span><div class="sk-bar"><div class="sk-fill" style="--skw:75%;background:#FF6B6B"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="sk-icon"><span class="sk-name">Figma</span><div class="sk-bar"><div class="sk-fill" style="--skw:60%;background:#FF6B6B"></div></div></div>
+            <div class="skill-row"><img src="https://img.icons8.com/color/48/canva.png" class="sk-icon"><span class="sk-name">Canva</span><div class="sk-bar"><div class="sk-fill" style="--skw:75%;background:#FF6B6B"></div></div></div>
         </div>
         <div class="skill-group">
             <div class="sg-title">Tools & Collab</div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="sk-icon"><span class="sk-name">Git</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FFA726"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/github/EEEEEE" class="sk-icon"><span class="sk-name">GitHub</span><div class="sk-bar"><div class="sk-fill" style="width:80%;background:#FFA726"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" class="sk-icon"><span class="sk-name">Jira</span><div class="sk-bar"><div class="sk-fill" style="width:75%;background:#FFA726"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" class="sk-icon"><span class="sk-name">Confluence</span><div class="sk-bar"><div class="sk-fill" style="width:70%;background:#FFA726"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" class="sk-icon"><span class="sk-name">Slack</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:#FFA726"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="sk-icon"><span class="sk-name">Git</span><div class="sk-bar"><div class="sk-fill" style="--skw:80%;background:#FFA726"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/github/EEEEEE" class="sk-icon"><span class="sk-name">GitHub</span><div class="sk-bar"><div class="sk-fill" style="--skw:80%;background:#FFA726"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" class="sk-icon"><span class="sk-name">Jira</span><div class="sk-bar"><div class="sk-fill" style="--skw:75%;background:#FFA726"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" class="sk-icon"><span class="sk-name">Confluence</span><div class="sk-bar"><div class="sk-fill" style="--skw:70%;background:#FFA726"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" class="sk-icon"><span class="sk-name">Slack</span><div class="sk-bar"><div class="sk-fill" style="--skw:85%;background:#FFA726"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" class="sk-icon"><span class="sk-name">Notion</span><div class="sk-bar"><div class="sk-fill" style="--skw:85%;background:#FFA726"></div></div></div>
         </div>
         <div class="skill-group">
             <div class="sg-title">Productivity</div>
-            <div class="skill-row"><img src="https://cdn.simpleicons.org/googlesheets/34A853" class="sk-icon"><span class="sk-name">Google Sheets</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:#4CAF50"></div></div></div>
-            <div class="skill-row"><img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" class="sk-icon"><span class="sk-name">Excel</span><div class="sk-bar"><div class="sk-fill" style="width:90%;background:#4CAF50"></div></div></div>
-            <div class="skill-row"><img src="https://img.icons8.com/color/48/microsoft-powerpoint-2019.png" class="sk-icon"><span class="sk-name">PowerPoint</span><div class="sk-bar"><div class="sk-fill" style="width:90%;background:#4CAF50"></div></div></div>
-            <div class="skill-row"><img src="https://img.icons8.com/color/48/microsoft-word-2019.png" class="sk-icon"><span class="sk-name">Word</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:#4CAF50"></div></div></div>
-            <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" class="sk-icon"><span class="sk-name">Notion</span><div class="sk-bar"><div class="sk-fill" style="width:85%;background:#4CAF50"></div></div></div>
+            <div class="skill-row"><img src="https://cdn.simpleicons.org/googlesheets/34A853" class="sk-icon"><span class="sk-name">Google Sheets</span><div class="sk-bar"><div class="sk-fill" style="--skw:85%;background:#4CAF50"></div></div></div>
+            <div class="skill-row"><img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" class="sk-icon"><span class="sk-name">Excel</span><div class="sk-bar"><div class="sk-fill" style="--skw:90%;background:#4CAF50"></div></div></div>
+            <div class="skill-row"><img src="https://img.icons8.com/color/48/microsoft-powerpoint-2019.png" class="sk-icon"><span class="sk-name">PowerPoint</span><div class="sk-bar"><div class="sk-fill" style="--skw:90%;background:#4CAF50"></div></div></div>
+            <div class="skill-row"><img src="https://img.icons8.com/color/48/microsoft-word-2019.png" class="sk-icon"><span class="sk-name">Word</span><div class="sk-bar"><div class="sk-fill" style="--skw:85%;background:#4CAF50"></div></div></div>
         </div>
     </div>
+</div>
+</div>
+
+<!-- ═══ WORK 1 ═══ -->
+<div class="page" id="page-w1">
+<div class="container" style="padding:3rem 2rem">
+    <button class="back" onclick="go('landing')">← 돌아가기</button>
+    <div class="ph"><div class="pn">W1</div><div class="pt">네이버 검색광고 API 자동화</div><div class="ps">에이원퍼포먼스팩토리 · 4개 대형 광고주 · 2025</div></div>
+
+    <div class="story">
+        <div class="story-label">Background</div>
+        <div class="story-title">왜 이 업무를 자동화했나?</div>
+        <div class="story-text">대형 홈쇼핑·이커머스 광고주들은 네이버 검색광고를 여러 계정으로 운영합니다. 마케터가 계정마다 성과 리포트를 수동으로 다운로드·병합하고, 소재·키워드는 하나씩 등록·수정해 반복 업무와 입력 실수가 컸습니다.</div>
+        <div class="sh warn"><p><strong>문제:</strong> 계정별 리포트 수작업 취합 + 소재·키워드 수작업 등록 → 반복·지연·입력 오류.</p></div>
+        <div class="sh"><p><strong>해결:</strong> HMAC-SHA256 서명 인증으로 네이버 검색광고 API를 연동해, 리포트 자동 다운로드·병합과 소재·키워드 등록/수정/삭제(엑셀 업로드 → 계정별 분할 → 일괄 처리)를 구축. 입찰가·세그먼트 일괄 변경과 예약 실행까지 지원.</p></div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Build</div>
+        <div class="story-title">구현</div>
+        <div class="gallery">
+            <div class="gi"><img src="screenshots/work_w1_report.png" alt="광고성과보고서 다운로드 화면"><div class="gi-cap">리포트 자동 다운로드 — 계정·날짜 멀티 선택, 실시간 프로그레스</div></div>
+            <div class="gi"><img src="screenshots/work_w1_bulk.png" alt="소재·키워드 대량 관리 화면"><div class="gi-cap">소재·키워드 대량 등록/수정 — 성공/실패 건수·성공률</div></div>
+        </div>
+        <div class="story-text" style="font-size:.78rem">* 광고주명·사내 데이터·화면은 보안상 익명화 및 샘플/목업으로 재구성했습니다.</div>
+        <div class="fcards">
+            <div class="fc c1"><div class="fct">리포트 자동화</div><ul><li>광고성과·다차원·쇼핑검색 리포트 자동 다운로드·병합</li><li>.xlsx → .txt 변환으로 용량 50%↓</li><li>연관키워드 추출(동기→비동기 전환, 약 70% 단축)</li></ul></div>
+            <div class="fc c1"><div class="fct">대량 CRUD</div><ul><li>소재·키워드 등록/수정/삭제(엑셀 일괄)</li><li>입찰가·ON/OFF·세그먼트 일괄 변경</li><li>계정별 자동 분할 + 예약 실행</li></ul></div>
+        </div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Results</div>
+        <div class="story-title">성과</div>
+        <div class="fcards">
+            <div class="fc c2"><div class="fct">정량적</div><ul><li>이용자 세그먼트 대량 변경 수작업 80% 절감 · 연 약 190만원 인건비 절감</li><li>입력 오류 기반 장애 0건</li><li>연관키워드 처리 동기→비동기 전환으로 약 70% 단축</li><li>리포트 파일 .xlsx → .txt 변환 용량 50%↓</li></ul></div>
+            <div class="fc c2"><div class="fct">정성적</div><ul><li>리포트·소재 작업을 버튼 클릭 자동화로 전환</li><li>4개 광고주에 공통 모듈로 재사용·확장</li></ul></div>
+        </div>
+    </div>
+
+    <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">FastAPI</span><span class="sk">Streamlit</span><span class="sk">네이버 검색광고 API</span><span class="sk">asyncio</span><span class="sk">httpx</span><span class="sk">pandas</span></div>
+</div>
+</div>
+
+<!-- ═══ WORK 2 ═══ -->
+<div class="page" id="page-w2">
+<div class="container" style="padding:3rem 2rem">
+    <button class="back" onclick="go('landing')">← 돌아가기</button>
+    <div class="ph"><div class="pn">W2</div><div class="pt">웹 크롤링·경쟁사/시장 분석</div><div class="ps">에이원퍼포먼스팩토리 · 4개 대형 광고주 · 2025</div></div>
+
+    <div class="story">
+        <div class="story-label">Background</div>
+        <div class="story-title">왜 이 자동화가 필요했나?</div>
+        <div class="story-text">광고주들은 자사·경쟁사 베스트 상품과 시장 트렌드를 수동으로 확인했고, 방송 편성 상품과 광고 상품을 맞추는 작업도 사람이 일일이 처리했습니다.</div>
+        <div class="sh warn"><p><strong>문제:</strong> 자사·경쟁사 베스트 수동 확인 + 방송상품 수동 매칭 + 트렌드 파악 지연.</p></div>
+        <div class="sh"><p><strong>해결:</strong> Selenium·Playwright 동적 크롤링과 개발자도구 기반 API 직접 호출로 자사 3개 몰·경쟁사 4개 몰 베스트 상품을 자동 수집. 방송 편성 상품 수집·매칭·병합과 상위 키워드 노출 이미지 추출까지 자동화.</p></div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Build</div>
+        <div class="story-title">구현</div>
+        <div class="gallery">
+            <div class="gi"><img src="screenshots/work_w2_best.png" alt="베스트 상품 수집 결과"><div class="gi-cap">베스트 상품 수집 — 자사·경쟁사 100위 + 가격·평점 정규화</div></div>
+            <div class="gi"><img src="screenshots/work_w2_image.png" alt="키워드 이미지 수집·분석"><div class="gi-cap">상위 키워드 노출 상품 이미지 추출</div></div>
+        </div>
+        <div class="story-text" style="font-size:.78rem">* 광고주명·사내 데이터·화면은 보안상 익명화 및 샘플/목업으로 재구성했습니다.</div>
+        <div class="fcards">
+            <div class="fc c1"><div class="fct">수집·분석</div><ul><li>자사 3몰·경쟁사 4몰 베스트 100개 자동 수집</li><li>사이트별 상이한 구조 → 통일 스키마 정규화</li><li>상위 키워드 노출 상품 이미지 추출·저장</li></ul></div>
+            <div class="fc c1"><div class="fct">매칭·연동</div><ul><li>방송 편성 상품 수집·매칭·병합</li><li>개발자도구 기반 API 직접 호출로 수집 고속화</li><li>경쟁사 트렌드 비교 환경 제공</li></ul></div>
+        </div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Results</div>
+        <div class="story-title">성과</div>
+        <div class="fcards">
+            <div class="fc c2"><div class="fct">정량적</div><ul><li>자사·경쟁사 7개 커머스 베스트 상품 자동 수집</li><li>방송 편성 상품 매칭 자동화로 수작업 제거</li></ul></div>
+            <div class="fc c2"><div class="fct">정성적</div><ul><li>경쟁사·시장 트렌드 선제 대응 환경 제공</li><li>크롤러 구조를 광고주별로 재사용</li></ul></div>
+        </div>
+    </div>
+
+    <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">Selenium</span><span class="sk">Playwright</span><span class="sk">BeautifulSoup4</span><span class="sk">requests</span><span class="sk">pandas</span></div>
+</div>
+</div>
+
+<!-- ═══ WORK 3 ═══ -->
+<div class="page" id="page-w3">
+<div class="container" style="padding:3rem 2rem">
+    <button class="back" onclick="go('landing')">← 돌아가기</button>
+    <div class="ph"><div class="pn">W3</div><div class="pt">운영·안정화·데이터 정합성</div><div class="ps">에이원퍼포먼스팩토리 · 4개 대형 광고주 · 2025</div></div>
+
+    <div class="story">
+        <div class="story-label">Background</div>
+        <div class="story-title">왜 이 운영 체계가 필요했나?</div>
+        <div class="story-text">자동화 솔루션이 4개 광고주에서 매일 돌아가면서, 스케줄 실행·외부 API·크롤링 과정에서 장애와 데이터 누락·정합성 이슈가 생겼습니다. 그때마다 수동으로 확인·대응하면 현업 업무가 지연됐습니다.</div>
+        <div class="sh warn"><p><strong>문제:</strong> 스케줄러·API·크롤링 장애 + 데이터 누락·정합성 이슈 → 수동 대응으로 현업 지연.</p></div>
+        <div class="sh"><p><strong>해결:</strong> 수집 작업을 asyncio로 병렬화하고, 스케줄러 운영(실행 시간 조정), 카카오 토큰 재발급, 데이터 정합성 확인·재적재, 반복 장애 핫픽스(광고성과 첫행 누락 해결, 소재 다운로드 데이터 불일치 점검, 크롤러 요소 수정)로 안정 운영 체계를 만들었습니다.</p></div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Build</div>
+        <div class="story-title">운영·대응 활동</div>
+        <div class="gallery">
+            <div class="gi"><img src="screenshots/work_w3_monitor.png" alt="수집 모니터링 화면"><div class="gi-cap">스케줄러·수집 모니터링 — 작업별 성공/실패·다음 실행</div></div>
+            <div class="gi"><img src="screenshots/work_w3_integrity.png" alt="데이터 정합성 점검·재적재 화면"><div class="gi-cap">데이터 정합성 점검·재적재 (지연 감지 → 자동 재적재)</div></div>
+        </div>
+        <div class="story-text" style="font-size:.78rem">* 광고주명·사내 데이터·화면은 보안상 익명화 및 샘플/목업으로 재구성했습니다.</div>
+        <div class="fcards">
+            <div class="fc c1"><div class="fct">안정화·성능</div><ul><li>수집 작업 asyncio 병렬 처리</li><li>스케줄러 실행 시간 조정·운영</li><li>카카오 토큰 재발급·연동 유지</li></ul></div>
+            <div class="fc c1"><div class="fct">데이터 정합성</div><ul><li>데이터 누락·불일치 점검 및 재적재</li><li>광고성과 리포트 첫행 누락 등 핫픽스</li><li>크롤러 요소 변경 대응·코드 점검</li></ul></div>
+        </div>
+    </div>
+
+    <div class="story">
+        <div class="story-label">Results</div>
+        <div class="story-title">성과</div>
+        <div class="fcards">
+            <div class="fc c2"><div class="fct">정량적</div><ul><li>장애 평균 복구 1시간 이내 유지</li><li>데이터 정합성 이슈 월 3건 미만 관리</li></ul></div>
+            <div class="fc c2"><div class="fct">정성적</div><ul><li>장애 대응 절차 표준화</li><li>4개 광고주 대상 무중단 운영</li></ul></div>
+        </div>
+    </div>
+
+    <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">asyncio</span><span class="sk">httpx</span><span class="sk">PostgreSQL</span><span class="sk">스케줄러</span><span class="sk">카카오 알림</span><span class="sk">tmux</span></div>
 </div>
 </div>
 
@@ -459,8 +508,8 @@
                 <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard_03.png" alt="경영 현황 탭"></div><div class="gi-cap"><strong>경영 탭</strong> — MRR·번 레이트·런웨이 등 핵심 재무·성장 지표를 모니터링해 사업 건전성 한눈에 파악</div></div>
                 <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard_04.png" alt="시나리오 시뮬레이터"></div><div class="gi-cap"><strong>시뮬레이터</strong> — 슬라이더로 가격·비용·성장률 등 가정을 바꾸면 12개월 재무 시나리오를 즉시 시뮬레이션</div></div>
             </div>
-            <button class="carousel-btn carousel-prev" onclick="slideCarousel('fintech-carousel',-1)">&#8249;</button>
-            <button class="carousel-btn carousel-next" onclick="slideCarousel('fintech-carousel',1)">&#8250;</button>
+            <button class="carousel-btn carousel-prev" aria-label="이전 슬라이드" onclick="slideCarousel('fintech-carousel',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" aria-label="다음 슬라이드" onclick="slideCarousel('fintech-carousel',1)">&#8250;</button>
             <div class="carousel-thumbs" id="fintech-carousel-thumbs"></div>
         </div>
         <div class="fcards">
@@ -475,11 +524,23 @@
         <div class="story-label">Results</div>
         <div class="story-title">핵심 성과</div>
         <div class="fcards">
-            <div class="fc c2"><div class="fct">정량적</div><ul><li>75,000+ 유저, 190만 이벤트 데이터 설계</li><li>수동 작업 90% 절감 자동화 설계</li><li>이상 감지: 1일 → 10분 이내</li></ul></div>
+            <div class="fc c2"><div class="fct">정량적</div><ul><li>75,000+ 유저, 190만 이벤트 데이터 설계</li><li>수동 작업 <span class="stat" data-count="90" data-suffix="%">90%</span> 절감 자동화 설계</li><li>이상 감지: 1일 → 10분 이내</li></ul></div>
             <div class="fc c2"><div class="fct">기술적</div><ul><li>DuckDB ↔ BigQuery 무중단 전환</li><li>3 Layer 지표 체계 설계</li><li>n8n 워크플로우 4개 설계</li></ul></div>
         </div>
     </div>
 
+    <div class="story">
+        <div class="story-label">Decisions</div>
+        <div class="story-title">기술 선택 · 트레이드오프</div>
+        <div class="sh">
+            <ul class="dlist">
+                <li><strong>개발 DuckDB ↔ 실무 BigQuery 환경변수 분기</strong> — 포트폴리오 단계 비용 0원과 실무(BigQuery) 전환 가능성을 동시에 잡으려, SQL은 공통으로 쓰고 연결 모듈만 분기하도록 설계.</li>
+                <li><strong>실데이터 대신 18개월 가상 데이터 직접 생성(유저 75K·이벤트 190만)</strong> — 사내 데이터 접근 불가 제약에서 분석이 의미를 가지려면 ‘스토리 있는’ 데이터가 필요해, 성장→리텐션→런웨이 서사를 시드로 의도적으로 심음.</li>
+                <li><strong>자동화는 n8n으로 ‘설계’까지만(미구현)</strong> — 노코드 오케스트레이션을 목표했으나 n8n 미경험이라 MVP는 대시보드만 실구동하고 파이프라인·알림은 설계 단계로 남김(‘90% 절감·1일→10분’은 설계 기대치).</li>
+                <li><strong>프론트는 Streamlit 단일 앱(4탭+슬라이더 시뮬레이터)</strong> — ‘분석+엔지니어링’ 분석가가 직접 만들고 유지하는 내부 툴임을 보이려 Python만으로 인터랙티브 대시보드를 빠르게 구현.</li>
+            </ul>
+        </div>
+        </div>
     <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">DuckDB</span><span class="sk">BigQuery</span><span class="sk">Pandas</span><span class="sk">Streamlit</span><span class="sk">Plotly</span><span class="sk">n8n</span><span class="sk">Docker</span></div>
     <div class="future"><div class="future-title">향후 계획</div><ul><li>n8n 워크플로우 실제 구현</li><li>Slack 연동 (주간 리포트, 이상 알림)</li><li>BigQuery 실서비스 연동</li><li>ML 이탈 예측 모델</li></ul></div>
 </div>
@@ -489,7 +550,7 @@
 <div class="page" id="page-p2">
 <div class="container" style="padding:3rem 2rem">
     <button class="back" onclick="go('landing')">← 돌아가기</button>
-    <div class="ph"><div class="pn">02</div><div class="pt">Beauty AI Analyze</div><div class="ps">AI 퍼스널컬러 분석 — <a href="https://beauty-ai-analyze.onrender.com" target="_blank">Live Service</a></div></div>
+    <div class="ph"><div class="pn">02</div><div class="pt">Beauty AI Analyze</div><div class="ps">AI 퍼스널컬러 분석 — <a href="https://beauty-ai-analyze.onrender.com" target="_blank" rel="noopener noreferrer">Live Service</a></div></div>
 
     <div class="story">
         <div class="story-label">Background</div>
@@ -518,8 +579,8 @@
                 <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/beauty_11_share.png" alt="결과 공유"></div><div class="gi-cap">결과 공유 - 리포트 미리보기 + 카카오톡/Threads/X/Facebook/URL 공유</div></div>
                 <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/beauty_12_report.png" alt="전체 리포트"></div><div class="gi-cap">전체 리포트 - 8서브타입 드레이핑 + 아이섀도/립 진단 + 패션&악세사리</div></div>
             </div>
-            <button class="carousel-btn carousel-prev" onclick="slideCarousel('beauty-carousel',-1)">&#8249;</button>
-            <button class="carousel-btn carousel-next" onclick="slideCarousel('beauty-carousel',1)">&#8250;</button>
+            <button class="carousel-btn carousel-prev" aria-label="이전 슬라이드" onclick="slideCarousel('beauty-carousel',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" aria-label="다음 슬라이드" onclick="slideCarousel('beauty-carousel',1)">&#8250;</button>
             <div class="carousel-thumbs" id="beauty-carousel-thumbs"></div>
         </div>
         <div class="fcards">
@@ -532,12 +593,24 @@
         <div class="story-label">Architecture</div>
         <div class="story-title">기술적 챌린지</div>
         <div class="fcards">
-            <div class="fc c2"><div class="fct">모델 폴백 체인</div><ul><li>Gemini 503 과부하 빈번</li><li>4개 모델 순차 시도 + API 키 2개 자동 전환</li><li>일일 3,000회 분석 가능</li></ul></div>
+            <div class="fc c2"><div class="fct">모델 폴백 체인</div><ul><li>Gemini 503 과부하 빈번</li><li>4개 모델 순차 시도 + API 키 2개 자동 전환</li><li>일일 <span class="stat" data-count="3000" data-suffix="회">3,000회</span> 분석 가능</li></ul></div>
             <div class="fc c2"><div class="fct">$0 인프라</div><ul><li>Render Free + UptimeRobot + Supabase</li><li>GA4 + UTM 추적 + Google Sheets 문의</li><li>카카오 SDK + SNS 5채널 공유</li></ul></div>
         </div>
     </div>
 
     <div class="sh"><p><strong>성과:</strong> 실서비스 배포 완료 | 운영비 $0/월 | Google 검색 등록 | 8개 탭 + SNS 5채널 공유 + 리포트 다운로드</p></div>
+    <div class="story">
+        <div class="story-label">Decisions</div>
+        <div class="story-title">기술 선택 · 트레이드오프</div>
+        <div class="sh">
+            <ul class="dlist">
+                <li><strong>Streamlit → Vanilla JS 전환</strong> — Streamlit이 iframe 한계로 4계절 비교·레이더 차트 등 커스텀 UI의 HTML이 깨져, 순수 JS 프론트로 피벗.</li>
+                <li><strong>OpenCV·2코드베이스 거절 → Gemini Vision + FastAPI 단일</strong> — OpenCV 피부톤은 정확도가 낮고 Next.js+FastAPI 2코드베이스는 과해서, 무료·고정확도 Gemini Vision으로 통합.</li>
+                <li><strong>Gemini 4모델 폴백 + API 키 프로젝트 분리</strong> — 무료 Gemini의 503/429가 빈번해 가용성 확보가 필요했고, 같은 프로젝트 키는 할당량을 공유하므로 프로젝트를 분리해야 일 3,000회 분석이 가능.</li>
+                <li><strong>확신도 ‘0.90 기본값 금지’ 프롬프트 강제</strong> — Gemini가 확신도를 늘 ~90%로 부풀려, 사진 조건별(자연광 0.8~0.92 / 조명 불량 0.45~0.65) 기준을 프롬프트에 강제 주입해 신뢰도 확보.</li>
+            </ul>
+        </div>
+        </div>
     <div class="tb"><span class="tl">Tech</span><span class="sk">FastAPI</span><span class="sk">Gemini API</span><span class="sk">Supabase</span><span class="sk">JavaScript</span><span class="sk">Render</span><span class="sk">GA4</span><span class="sk">html2canvas</span><span class="sk">UptimeRobot</span><span class="sk">Kakao SDK</span></div>
     <div class="future"><div class="future-title">향후 계획</div><ul><li>쿠팡파트너스 제휴 링크 수익화 (신청 완료)</li><li>AI 리포트 강화 (아이섀도/립 컬러 진단, 8서브타입 드레이핑)</li><li>포털 확장 (관상/MBTI/심리테스트)</li></ul></div>
 </div>
@@ -567,8 +640,8 @@
                 <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/pet_05_danger.png" alt="위기 상태"></div><div class="gi-cap">위기 상태 - 스탯 경고 + 표정 변화 + 연쇄 붕괴</div></div>
                 <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/pet_03_gameover.png" alt="게임 오버"></div><div class="gi-cap">게임 오버 - 추모 화면 + SNS 공유</div></div>
             </div>
-            <button class="carousel-btn carousel-prev" onclick="slideCarousel('pet-carousel',-1)">&#8249;</button>
-            <button class="carousel-btn carousel-next" onclick="slideCarousel('pet-carousel',1)">&#8250;</button>
+            <button class="carousel-btn carousel-prev" aria-label="이전 슬라이드" onclick="slideCarousel('pet-carousel',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" aria-label="다음 슬라이드" onclick="slideCarousel('pet-carousel',1)">&#8250;</button>
             <div class="carousel-thumbs" id="pet-carousel-thumbs"></div>
         </div>
         <div class="fcards">
@@ -581,13 +654,174 @@
         <div class="story-label">Results</div>
         <div class="story-title">핵심 성과</div>
         <div class="fcards">
-            <div class="fc c2"><div class="fct">개발</div><ul><li>MVP 완성 + 26개 테스트 100% 통과</li><li>SVG 5종×4기분=20변형 렌더러</li><li>구버전 세이브 호환 100%</li></ul></div>
+            <div class="fc c2"><div class="fct">개발</div><ul><li>MVP 완성 + <span class="stat" data-count="26" data-suffix="개">26개</span> 테스트 <span class="stat" data-count="100" data-suffix="%">100%</span> 통과</li><li>SVG 5종×4기분=20변형 렌더러</li><li>구버전 세이브 호환 100%</li></ul></div>
             <div class="fc c2"><div class="fct">비즈니스</div><ul><li>4단계 그로스 전략 수립 ($0 바이럴→광고)</li><li>단기 목표 DAU 100~300, DAU 1K 달성 시 월 15~45만원</li><li>6가지 배포 옵션 비교 분석 + 로드맵</li></ul></div>
         </div>
     </div>
 
+    <div class="story">
+        <div class="story-label">Decisions</div>
+        <div class="story-title">기술 선택 · 트레이드오프</div>
+        <div class="sh">
+            <ul class="dlist">
+                <li><strong>UI는 순수 HTML/CSS/JS 커스텀, Python은 상태관리만</strong> — 다마고치식 인터랙션을 기본 Streamlit 위젯으로 못 만들어 역할을 분리, 향후 정적웹/PWA 이식까지 대비.</li>
+                <li><strong>저장은 서버 DB 대신 브라우저 localStorage(다중 슬롯)</strong> — 바이럴 테스트용 프로토타입이라 서버·인증 부담을 피하고 무료 정적 호스팅 배포를 가능케 하려는 선택.</li>
+                <li><strong>세이브 version 필드 + 누락 필드 기본값 복원</strong> — localStorage라 유저 기기의 옛 세이브를 강제 무효화할 수 없어, 후속 추가 필드를 기본값으로 채워 업데이트 시 세이브가 깨지지 않게 함.</li>
+                <li><strong>난이도 상수 튜닝(부정이벤트 15%→45%, 연쇄붕괴 1.5배 등)</strong> — ‘아무리 잘해도 결국 죽는다 = 공유 욕구’ 가설을 성립시키려 후반부로 갈수록 무너지는 곡선을 의도적으로 설계.</li>
+            </ul>
+        </div>
+        </div>
     <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">JavaScript</span><span class="sk">Streamlit</span><span class="sk">SVG</span><span class="sk">CSS Animation</span><span class="sk">localStorage</span><span class="sk">pytest</span></div>
     <div class="future"><div class="future-title">향후 계획</div><ul><li>GitHub Pages 정적 웹 배포</li><li>PWA (오프라인+홈화면 설치)</li><li>GA4 + AdSense 수익화</li><li>멀티플레이 / 랭킹</li></ul></div>
+</div>
+</div>
+
+<!-- ═══ PROJECT 4: fin-scraper ═══ -->
+<div class="page" id="page-p4">
+<div class="container" style="padding:3rem 2rem">
+    <button class="back" onclick="go('landing')">← 돌아가기</button>
+    <div class="ph"><div class="pn">04</div><div class="pt">Fin Scraper</div><div class="ps">국내 주식 전종목 크롤링·투자지표 스크리닝 · 개인 프로젝트</div></div>
+    <div class="story">
+        <div class="story-label">Background</div>
+        <div class="story-title">왜 이 프로젝트를 시작했나?</div>
+        <div class="story-text">투자 종목 스크리닝에는 전종목 데이터가 필요한데, KRX 정보데이터시스템이 전면 로그인 필수로 전환돼 공식 경로 수집이 막혔습니다. HTTP·로그인·암호화 분석을 학습하며 우회 경로를 찾는 과정으로 진행했습니다.</div>
+        <div class="sh warn"><p><strong>문제:</strong> KRX(data.krx.co.kr) 로그인 전환(alert·LOGOUT 반환) → 전종목 직접 수집 불가.</p></div>
+        <div class="sh"><p><strong>해결:</strong> HTTP 세션·CSRF, JS 암호화(Base64·AES·RSA) Python 재현을 학습한 뒤, 차단된 KRX 대신 네이버 금융 시가총액 순위 페이지를 파싱해 KOSPI+KOSDAQ 4,000+ 전종목을 수집.</p></div>
+    </div>
+    <div class="story">
+        <div class="story-label">Build</div>
+        <div class="story-title">구현</div>
+        <div class="gallery single">
+            <div class="gi"><div class="ph-img"><span class="ph-ico">📊</span><span>이미지 준비 중</span></div><div class="gi-cap">전종목 수집 결과 · 투자지표 스크리닝 (실제 스크린샷 예정)</div></div>
+        </div>
+        <div class="fcards">
+            <div class="fc c1"><div class="fct">수집 파이프라인</div><ul><li>네이버 금융 시총순위 페이지 파싱(type_2 테이블)</li><li>전일비 텍스트·구분행 등 실전 이슈 처리</li><li>CSV/JSON 구조화 저장</li></ul></div>
+            <div class="fc c1"><div class="fct">역공학 학습</div><ul><li>HTTP 세션·CSRF·재시도 로직</li><li>JS 암호화(Base64·AES·RSA) Python 재현</li><li>KRX 차단 분석 → 네이버 피벗 문서화</li></ul></div>
+        </div>
+    </div>
+    <div class="story">
+        <div class="story-label">Results</div>
+        <div class="story-title">성과</div>
+        <div class="fcards">
+            <div class="fc c2"><div class="fct">정량적</div><ul><li>KOSPI+KOSDAQ 4,000+ 전종목 수집</li><li>저PER(≤10·시총 1조+)·고ROE(≥15%·5천억+)·외국인 TOP 스크리닝</li></ul></div>
+            <div class="fc c2"><div class="fct">정성적</div><ul><li>차단 상황(KRX) 분석 후 대체 경로로 우회</li><li>단계별 노트북으로 과정 문서화</li></ul></div>
+        </div>
+    </div>
+    <div class="story">
+        <div class="story-label">Decisions</div>
+        <div class="story-title">기술 선택 · 트레이드오프</div>
+        <div class="sh">
+            <ul class="dlist">
+                <li><strong>초기 타겟 KRX 포기 → 네이버 금융 피벗</strong> — KRX가 로그인 필수로 전환돼(LOGOUT/alert만 반환) 비회원 수집이 원천 차단 → 동일 데이터를 공개하는 네이버 시총순위로 대체 경로.</li>
+                <li><strong>Selenium 대신 requests + BeautifulSoup</strong> — 대상이 로그인 불필요한 정적 HTML이라 헤드리스 브라우저 없이 87페이지를 ~36초에 수집(가벼움·속도 우선).</li>
+                <li><strong>User-Agent 위장 + 0.3초 딜레이 + 재시도</strong> — UA가 없으면 403으로 차단되고, 연속 요청 시 부하·차단을 피하려 딜레이·점증 백오프 재시도를 넣음(안정성을 속도보다 우선).</li>
+                <li><strong>전일비를 정규식 + img alt로 파싱, 구분행 필터</strong> — 셀이 ‘&lt;img alt="상승"&gt;13,500’ 형태라 그대로 변환하면 실패(‘0종목 수집’ 버그) → 사이트 마크업 제약에 맞춰 파싱 방식을 강제당한 결정.</li>
+            </ul>
+        </div>
+        </div>
+    <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">requests</span><span class="sk">BeautifulSoup4</span><span class="sk">PyCryptodome</span></div>
+</div>
+</div>
+
+<!-- ═══ PROJECT 5: stock signal ai ═══ -->
+<div class="page" id="page-p5">
+<div class="container" style="padding:3rem 2rem">
+    <button class="back" onclick="go('landing')">← 돌아가기</button>
+    <div class="ph"><div class="pn">05</div><div class="pt">Stock Signal AI</div><div class="ps">반도체 7종목 LSTM 매매신호 예측 · 학습용 개인 프로젝트</div></div>
+    <div class="story">
+        <div class="story-label">Background</div>
+        <div class="story-title">왜 이 프로젝트를 시작했나?</div>
+        <div class="story-text">시계열 딥러닝(LSTM)과 백테스트·리스크관리 방법론을 직접 구현하며 학습하기 위한 실험 프로젝트입니다. 국내 반도체 7종목 3년 데이터로 매매 신호를 예측하고 백테스트했습니다.</div>
+        <div class="sh warn"><p><strong>⚠️ 한계(정직하게):</strong> 학습·연구용 실험으로 <strong>실제 수익을 보장하지 않습니다.</strong> 7종목·3년의 제한된 표본, 정밀도 47%·재현율 100%로 <strong>과적합 가능성</strong>이 있으며, 백테스트는 거래비용이 단순화된 과거 시뮬레이션입니다.</p></div>
+        <div class="sh"><p><strong>접근:</strong> pykrx로 7종목 3년(5,110레코드) 수집 → 27개 기술지표·60일 시퀀스 → 2층 LSTM(128) → 백테스트 + 규칙 기반 리스크관리. FastAPI + Streamlit로 신호 조회.</p></div>
+    </div>
+    <div class="story">
+        <div class="story-label">Build</div>
+        <div class="story-title">구현</div>
+        <div class="gallery single">
+            <div class="gi"><div class="ph-img"><span class="ph-ico">📈</span><span>이미지 준비 중</span></div><div class="gi-cap">매매 신호 대시보드 · 백테스트 결과 (실제 스크린샷 예정)</div></div>
+        </div>
+        <div class="fcards">
+            <div class="fc c1"><div class="fct">모델</div><ul><li>2층 LSTM(128) + 27개 기술지표·60일 시퀀스</li><li>WeightedBCELoss로 클래스 불균형 대응</li><li>Threshold 0.02→0.01 조정으로 F1 0%→64.2%</li></ul></div>
+            <div class="fc c1"><div class="fct">백테스트·리스크관리</div><ul><li>손절-5%/익절+10%/트레일링-20%/히스테리시스</li><li>FastAPI 신호 API + Streamlit 대시보드</li><li>SQLite + pykrx 데이터 파이프라인</li></ul></div>
+        </div>
+    </div>
+    <div class="story">
+        <div class="story-label">Results</div>
+        <div class="story-title">성과 (학습 관점)</div>
+        <div class="fcards">
+            <div class="fc c2"><div class="fct">모델·실험</div><ul><li>F1 64.2% (Threshold 1%p 조정이 핵심)</li><li>시계열 분할로 미래 데이터 누수 방지</li><li>리스크관리 도입 시 거래 1회→57.7회(능동 대응)</li></ul></div>
+            <div class="fc c2"><div class="fct">백테스트(과거 시뮬)</div><ul><li>3년 평균 150.72% · 종목별 편차 큼</li><li>※ 거래비용·슬리피지 단순화, 표본 제한 → 참고용</li></ul></div>
+        </div>
+    </div>
+    <div class="story">
+        <div class="story-label">Decisions</div>
+        <div class="story-title">기술 선택 · 트레이드오프</div>
+        <div class="sh">
+            <ul class="dlist">
+                <li><strong>글로벌 14종목·앙상블·90% 목표 → 반도체 7종목·LSTM 단독·F1 64%로 축소</strong> — ‘주식 90% 예측은 비현실적(EMH)’이라 결론, 1인·단기 제약상 상관 높은 한 섹터·단일 모델로 좁혀 ‘저점 동시 포착’ 검증에 집중(앙상블은 설계 단계, Transformer는 미구현).</li>
+                <li><strong>Threshold 0.02→0.01 + WeightedBCELoss</strong> — 매수 신호가 희소(불균형 6:1)해 F1 0% → 임계값을 1%p 낮춰 양성 36→64개(불균형 3:1)로 F1 64.2% 급변, 남은 불균형은 손실 가중치로 보정.</li>
+                <li><strong>시간 순서 7:1.5:1.5 분할(랜덤 셔플 X)</strong> — 랜덤 분할 시 미래 데이터 누수(look-ahead)로 성능이 부풀려져, 순차 분할로 누수를 차단(워크포워드 검증은 향후 과제로 인정).</li>
+                <li><strong>Buy&amp;Hold → 규칙기반 리스크관리(손절·익절·트레일링)</strong> — 보유는 평균 189%지만 거래 1회·MDD −55%로 손실 방어가 없어, 리스크관리로 수익 150%·승률은 낮아져도 거래 57.7회로 능동 대응(수익 일부를 손실 통제와 맞바꾼 트레이드오프).</li>
+            </ul>
+        </div>
+        </div>
+    <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">PyTorch</span><span class="sk">LSTM</span><span class="sk">FastAPI</span><span class="sk">Streamlit</span><span class="sk">SQLite</span><span class="sk">pykrx</span></div>
+</div>
+</div>
+
+<!-- ═══ PROJECT 6: jobmate ai ═══ -->
+<div class="page" id="page-p6">
+<div class="container" style="padding:3rem 2rem">
+    <button class="back" onclick="go('landing')">← 돌아가기</button>
+    <div class="ph"><div class="pn">06</div><div class="pt">JobMate AI</div><div class="ps">채용공고 자동 정리·마감 알림 도구 · 개인 프로젝트</div></div>
+    <div class="story">
+        <div class="story-label">Background</div>
+        <div class="story-title">왜 이 프로젝트를 시작했나?</div>
+        <div class="story-text">여러 채용 사이트의 공고를 일일이 스프레드시트에 정리하고, 마감일을 놓쳐 지원을 못 하는 번거로움을 자동화하려 만들었습니다.</div>
+        <div class="sh warn"><p><strong>문제:</strong> 사이트마다 공고를 수동 정리 + 마감일 추적 누락.</p></div>
+        <div class="sh"><p><strong>해결:</strong> URL 입력 → 전용 파서(원티드/사람인) + Gemini 폴백으로 회사·포지션·자격·마감일 자동 추출 → Google Sheets 저장 → 마감 2일 전 Slack 알림(cron).</p></div>
+    </div>
+    <div class="story">
+        <div class="story-label">Build</div>
+        <div class="story-title">구현</div>
+        <div class="carousel" id="jobmate-carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_01_collect.png" alt="공고 수집"></div><div class="gi-cap">공고 수집 — URL 입력 → 자동 파싱(WantedParser) → 저장 전 미리보기·수정</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_02_list.png" alt="저장 목록"></div><div class="gi-cap">저장 목록 — 로컬 캐시 / Google Sheets 전환, 회사·포지션·마감일·상태 표시</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_03_deadline.png" alt="마감 임박 알림"></div><div class="gi-cap">마감 임박 알림 — D-2 이내 공고 조회 후 Slack 알림</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_04_status.png" alt="지원 상태 변경"></div><div class="gi-cap">지원 상태 변경 — 관심·지원·면접·마감 단계 관리</div></div>
+            </div>
+            <button class="carousel-btn carousel-prev" aria-label="이전 슬라이드" onclick="slideCarousel('jobmate-carousel',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" aria-label="다음 슬라이드" onclick="slideCarousel('jobmate-carousel',1)">&#8250;</button>
+            <div class="carousel-thumbs" id="jobmate-carousel-thumbs"></div>
+        </div>
+        <div class="fcards">
+            <div class="fc c1"><div class="fct">멀티사이트 파싱</div><ul><li>원티드 전용 파서(추출 7/7), 사람인(5~7/7)</li><li>점핏·잡코리아 등은 Gemini AI 폴백 추출</li><li>Playwright 기반 동적 페이지 수집</li></ul></div>
+            <div class="fc c1"><div class="fct">저장·알림 자동화</div><ul><li>Google Sheets 자동 저장(11개 항목) + 중복 캐시</li><li>마감 2일 전 Slack 알림(cron)</li><li>상태 관리: 관심/지원/면접/마감</li></ul></div>
+        </div>
+    </div>
+    <div class="story">
+        <div class="story-label">Results</div>
+        <div class="story-title">성과</div>
+        <div class="fcards">
+            <div class="fc c2"><div class="fct">정량적</div><ul><li>공고 항목 자동 추출·Sheets 저장 + 마감 자동 알림</li><li>전용 파서 + AI 폴백으로 다중 사이트 커버</li></ul></div>
+            <div class="fc c2"><div class="fct">정성적</div><ul><li>탭 기반 Streamlit 웹 UI(수집·목록·마감·상태)</li><li>구직 공고 관리·마감 누락 방지 자동화</li></ul></div>
+        </div>
+    </div>
+    <div class="story">
+        <div class="story-label">Decisions</div>
+        <div class="story-title">기술 선택 · 트레이드오프</div>
+        <div class="sh">
+            <ul class="dlist">
+                <li><strong>AI SaaS 구상 접고 로컬 Streamlit 앱으로 피벗</strong> — $0 예산에서 무료 서버(Render 512MB)로는 Playwright Chromium(300MB+)을 못 띄워 ‘무료+크롤링’이 물리적으로 불가 → ‘나만 쓰는 도구’로 바꾸자 서버·인증·과금·법적 제약이 모두 사라짐.</li>
+                <li><strong>저장은 Google Sheets(RDBMS 거절)</strong> — 개인용 수십~수백 건엔 DB가 과하고, 무료에 시트에서 데이터를 바로 확인·수정할 수 있어 운영이 편리.</li>
+                <li><strong>전용 파서 + Gemini 폴백 하이브리드, 본문만 전달</strong> — 전용만으론 신규 사이트 불가·AI만으론 정확도/비용 부담이라 균형. 잡코리아는 리뉴얼로 셀렉터가 불안정해 폴백 처리, HTML 전체는 노이즈라 trafilatura+BS4 본문만 전달(543→1,048자).</li>
+                <li><strong>로켓펀치는 우회 대신 ‘미지원 + 명확한 안내’</strong> — CloudFront 403 봇 차단을 stealth로 뚫는 건 불안정·과해서, 우회보다 사용자에게 상태를 명확히 안내하는 쪽을 택함.</li>
+            </ul>
+        </div>
+        </div>
+    <div class="tb"><span class="tl">Tech</span><span class="sk">Python</span><span class="sk">Streamlit</span><span class="sk">Playwright</span><span class="sk">Gemini API</span><span class="sk">Google Sheets API</span><span class="sk">Slack</span><span class="sk">cron</span></div>
 </div>
 </div>
 
@@ -646,7 +880,7 @@
         <div class="story-title">왜 이 프로젝트를 진행했나?</div>
         <div class="story-text">온라인 스토어에서 내부 배너 광고와 외부 배너 광고의 효과 차이를 분석하여, 비용 대비 최적의 배너 운영 전략을 수립하는 것이 목표였습니다. <br>CPC 단가(내부 100원 vs 외부 500원)와 CTR을 기반으로 수익성을 비교했습니다.</div>
         <div class="sh warn"><p><strong>가설:</strong> "내부 광고가 외부 광고보다 수익률이 높을 것이다"</p></div>
-        <div class="sh"><p><strong>결과:</strong> 내부 수익 8,300만원 vs 외부 7,400만원. 고객 세그먼트 기반 혼합 운영 전략으로 8,800만원(+7%) 달성 가능.</p></div>
+        <div class="sh"><p><strong>결과:</strong> 내부 수익 8,300만원 vs 외부 7,400만원. 고객 세그먼트 기반 혼합 운영 전략으로 8,800만원(+<span class="stat" data-count="7" data-suffix="%">7%</span>) 달성 가능.</p></div>
     </div>
 
     <div class="story">
@@ -691,7 +925,7 @@
         <div class="story-title">왜 이 프로젝트를 진행했나?</div>
         <div class="story-text">기업의 안정적 수익 확보를 위해 기존 고객 유지가 중요합니다. 은행 고객 데이터(신용점수/연령/잔고/가입기간 등)를 기반으로 이탈을 예측하는 머신러닝 모델을 개발하고, <br>예측 결과를 활용한 고객 맞춤형 유지 전략을 제안했습니다.</div>
         <div class="sh warn"><p><strong>목표:</strong> ① 고객 이탈을 예측하는 ML 모델 개발 ② 예측 결과 기반 맞춤형 유지 전략 제안</p></div>
-        <div class="sh"><p><strong>결과:</strong> LightGBM 최종 모델 Recall 80.3% 달성 (이탈 고객 5명 중 4명 정확 예측). K-means 군집화로 4가지 이탈 유형 분류 → 유형별 방지 전략 제안.</p></div>
+        <div class="sh"><p><strong>결과:</strong> LightGBM 최종 모델 Recall <span class="stat" data-count="80.3" data-decimals="1" data-suffix="%">80.3%</span> 달성 (이탈 고객 5명 중 4명 정확 예측). K-means 군집화로 4가지 이탈 유형 분류 → 유형별 방지 전략 제안.</p></div>
     </div>
 
     <div class="story">
@@ -755,7 +989,7 @@
         <div class="story-title">왜 이 프로젝트를 진행했나?</div>
         <div class="story-text">일본 화장품 시장은 코로나 이후 회복 중이며, K-뷰티에 대한 관심이 지속 증가하고 있습니다. <br>이상 기후로 한·일 모두 UV 케어 중요성이 부각되는 상황에서, 한국 선케어 제품의 일본 시장 진출 기회를 데이터로 분석했습니다.<br>한국 4개 플랫폼(올리브영/화해/무신사/네이버쇼핑) + 일본 2개 플랫폼(LIPS/Q10)에서 크롤링한 약 1,500건의 데이터를 <br>Tableau 대시보드로 분석하여 틈새시장을 공략하는 전략을 수립했습니다.</div>
         <div class="sh warn"><p><strong>목표:</strong> 한·일 선케어 시장 비교 분석 → 고객 페르소나 작성 → 나이대별 최적 K-선케어 제품 추천 및 일본 시장 입점 전략 수립</p></div>
-        <div class="sh"><p><strong>접근:</strong> 6개 플랫폼 크롤링(1,490건) → 파생변수 생성(최종점수) → Tableau 대시보드로 한·일 트렌드 비교 → STP 포지셔닝 전략 도출</p></div>
+        <div class="sh"><p><strong>접근:</strong> 6개 플랫폼 크롤링(<span class="stat" data-count="1490" data-suffix="건">1,490건</span>) → 파생변수 생성(최종점수) → Tableau 대시보드로 한·일 트렌드 비교 → STP 포지셔닝 전략 도출</p></div>
     </div>
 
     <div class="story">
@@ -810,6 +1044,9 @@
 </div>
 </div>
 
+<!-- ═══ 이미지 라이트박스 ═══ -->
+<div id="img-lightbox"><span class="lb-close">✕</span><img alt="확대 이미지"></div>
+
 <!-- ═══ CONTACT MODAL ═══ -->
 <div id="contact-modal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center">
     <div onclick="closeContact()" style="position:absolute;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px)"></div>
@@ -822,7 +1059,7 @@
 
         <div style="margin-bottom:1rem">
             <label style="font-size:.82rem;color:var(--sub);display:block;margin-bottom:.3rem">문의 유형</label>
-            <div id="c-type-wrap" style="display:flex;gap:.5rem;flex-wrap:wrap">
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap">
                 <button class="c-type-btn active" data-type="일반 문의" style="padding:.4rem .9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:.82rem;cursor:pointer;font-family:inherit;transition:all .2s">일반 문의</button>
                 <button class="c-type-btn" data-type="채용/협업" style="padding:.4rem .9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:.82rem;cursor:pointer;font-family:inherit;transition:all .2s">채용/협업</button>
                 <button class="c-type-btn" data-type="프로젝트 문의" style="padding:.4rem .9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:.82rem;cursor:pointer;font-family:inherit;transition:all .2s">프로젝트 문의</button>
@@ -832,7 +1069,7 @@
         <div style="margin-bottom:1rem">
             <label style="font-size:.82rem;color:var(--sub);display:block;margin-bottom:.3rem">이메일 (선택)</label>
             <div style="display:flex;gap:.4rem;align-items:center">
-                <input id="c-email-id" type="text" placeholder="아이디" style="flex:1;padding:.6rem .8rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit">
+                <input id="c-email-id" type="text" maxlength="64" placeholder="아이디" style="flex:1;padding:.6rem .8rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit">
                 <span style="color:var(--sub);font-size:.9rem">@</span>
                 <select id="c-email-domain" style="flex:1;padding:.6rem .8rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;cursor:pointer">
                     <option value="">선택</option>
@@ -845,143 +1082,24 @@
                     <option value="icloud.com">icloud.com</option>
                     <option value="custom">직접 입력</option>
                 </select>
-                <input id="c-email-custom" type="text" placeholder="도메인 입력" style="flex:1;padding:.6rem .8rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;display:none">
+                <input id="c-email-custom" type="text" maxlength="255" placeholder="도메인 입력" style="flex:1;padding:.6rem .8rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;display:none">
             </div>
         </div>
         <div style="margin-bottom:1.2rem">
             <label style="font-size:.82rem;color:var(--sub);display:block;margin-bottom:.3rem">문의 내용 *</label>
-            <textarea id="c-content" rows="5" placeholder="문의 내용을 입력해주세요." style="width:100%;padding:.6rem .8rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;resize:vertical"></textarea>
+            <textarea id="c-content" rows="5" maxlength="2000" placeholder="문의 내용을 입력해주세요." style="width:100%;padding:.6rem .8rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;resize:vertical"></textarea>
         </div>
+        <input type="text" id="c-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <button id="c-submit" onclick="submitContact()" style="width:100%;padding:.7rem;border:none;border-radius:10px;background:var(--accent);color:var(--bg);font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .3s">문의 보내기</button>
+        <div id="contact-success-wrap"><div id="lottie-contact" aria-hidden="true"></div></div>
         <p id="c-status" style="text-align:center;margin-top:.8rem;font-size:.85rem;display:none"></p>
         <p style="font-size:.72rem;color:var(--sub);text-align:center;margin-top:.6rem;line-height:1.4">문의 내용은 운영자에게 전달되며, 이메일을 남기시면 회신드려요.</p>
     </div>
 </div>
 
-<footer><div class="container"><a href="javascript:void(0)" onclick="go('about')" style="text-decoration:none;cursor:pointer">이기쁨</a> | <a href="javascript:void(0)" onclick="openContact()" style="text-decoration:none;cursor:pointer">ldsjoy@naver.com</a> | <a href="https://github.com/rena-data" target="_blank">GitHub</a></div></footer>
+<footer><div class="container"><a href="javascript:void(0)" onclick="go('about')" style="text-decoration:none;cursor:pointer">이기쁨</a> | <a href="javascript:void(0)" onclick="openContact()" style="text-decoration:none;cursor:pointer">ldsjoy@naver.com</a> | <a href="https://github.com/rena-data" target="_blank" rel="noopener noreferrer">GitHub</a></div><div class="container" style="margin-top:.5rem;font-size:.66rem;opacity:.5">Icons by <a href="https://icons8.com" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">Icons8</a></div></footer>
 
-<script>
-// Carousel
-function initCarousel(id){
-    const el=document.getElementById(id);if(!el)return;
-    const slides=el.querySelectorAll('.carousel-slide');
-    const thumbsWrap=el.querySelector('[id$="-thumbs"]');
-    if(!slides.length)return;
-    el._idx=0;el._total=slides.length;
-    thumbsWrap.innerHTML='';
-    slides.forEach((s,i)=>{
-        const img=s.querySelector('img');
-        const t=document.createElement('div');t.className='carousel-thumb'+(i===0?' active':'');
-        t.innerHTML='<img src="'+img.src+'">';
-        t.onclick=()=>{el._idx=i;updateCarousel(id)};
-        thumbsWrap.appendChild(t);
-    });
-}
-function updateCarousel(id){
-    const el=document.getElementById(id);if(!el)return;
-    el.querySelector('.carousel-track').style.transform='translateX(-'+el._idx*100+'%)';
-    el.querySelectorAll('.carousel-thumb').forEach((t,i)=>t.classList.toggle('active',i===el._idx));
-}
-function slideCarousel(id,dir){
-    const el=document.getElementById(id);if(!el)return;
-    el._idx=(el._idx+dir+el._total)%el._total;updateCarousel(id);
-}
-
-function go(id){
-    location.hash = id;
-}
-function showPage(id){
-    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-    const el = document.getElementById('page-'+id);
-    if(el) el.classList.add('active');
-    else document.getElementById('page-landing').classList.add('active');
-    window.scrollTo({top:0,behavior:'smooth'});
-}
-window.addEventListener('hashchange', ()=>{
-    const id = location.hash.slice(1) || 'landing';
-    showPage(id);
-});
-window.addEventListener('load', ()=>{
-    const id = location.hash.slice(1) || 'landing';
-    showPage(id);
-    initCarousel('beauty-carousel');
-    initCarousel('fintech-carousel');
-    initCarousel('pet-carousel');
-});
-
-// Contact Modal
-let _contactType = '일반 문의';
-function openContact(){
-    document.getElementById('contact-modal').style.display='flex';
-    // 문의 유형 버튼 이벤트
-    document.querySelectorAll('.c-type-btn').forEach(btn => {
-        btn.onclick = () => {
-            document.querySelectorAll('.c-type-btn').forEach(b => {
-                b.style.background = 'var(--bg)'; b.style.color = 'var(--text)'; b.style.borderColor = 'var(--border)';
-            });
-            btn.style.background = 'var(--accent)'; btn.style.color = 'var(--bg)'; btn.style.borderColor = 'var(--accent)';
-            _contactType = btn.dataset.type;
-        };
-    });
-    // 기본 선택 표시
-    const first = document.querySelector('.c-type-btn.active');
-    if (first) { first.style.background = 'var(--accent)'; first.style.color = 'var(--bg)'; first.style.borderColor = 'var(--accent)'; }
-    // 이메일 도메인 드롭다운 연동
-    const sel = document.getElementById('c-email-domain');
-    const custom = document.getElementById('c-email-custom');
-    if (sel && custom) {
-        sel.onchange = () => {
-            if (sel.value === 'custom') {
-                sel.style.display = 'none';
-                custom.style.display = 'block';
-                custom.value = '';
-                custom.focus();
-            }
-        };
-        custom.onblur = () => {
-            if (!custom.value.trim()) {
-                custom.style.display = 'none';
-                sel.style.display = 'block';
-                sel.value = '';
-            }
-        };
-    }
-}
-function closeContact(){document.getElementById('contact-modal').style.display='none';document.getElementById('c-status').style.display='none'}
-
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbyZDufcSXptCX11FbzDkmRa5xWeUxDl-ojPUl9SkyQyUrsXwO0Nb0spiixecCbS6hcRlg/exec";
-const _s = ["/services","T0ALPKJAH0T","B0B248TUF60","qUEXex1yRU4OM7oBXaZgpzQ7"];
-const SLACK_URL = "https://hooks.slack.com" + _s[0] + "/" + _s[1] + "/" + _s[2] + "/" + _s[3];
-
-async function submitContact(){
-    const eid=document.getElementById('c-email-id').value.trim();
-    const sel=document.getElementById('c-email-domain');
-    const edom = sel.value === 'custom' ? document.getElementById('c-email-custom').value.trim() : sel.value;
-    const email = eid && edom ? eid + '@' + edom : '';
-    const content=document.getElementById('c-content').value.trim();
-    const status=document.getElementById('c-status');
-    const btn=document.getElementById('c-submit');
-    const subject = _contactType;
-
-    if(!content){
-        status.textContent='문의 내용을 입력해주세요.';status.style.color='#FF6B6B';status.style.display='block';return;
-    }
-
-    btn.disabled=true;btn.textContent='전송 중...';status.style.display='none';
-
-    try{
-        fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({email: email || '(미입력)',subject,content})});
-        fetch(SLACK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:`📩 *포트폴리오 문의*\n*유형:* ${subject}\n*From:* ${email || '(미입력)'}\n*내용:* ${content}`})});
-
-        status.textContent='전송 완료! 이메일을 남기셨다면 빠른 시일 내 회신드리겠습니다.';status.style.color='var(--accent)';status.style.display='block';
-        document.getElementById('c-email-id').value='';document.getElementById('c-email-domain').value='';document.getElementById('c-email-domain').style.display='block';document.getElementById('c-email-custom').value='';document.getElementById('c-email-custom').style.display='none';document.getElementById('c-content').value='';
-        setTimeout(()=>closeContact(),3000);
-    }catch(e){
-        status.textContent='전송 실패. 다시 시도해주세요.';status.style.color='#FF6B6B';status.style.display='block';
-    }finally{
-        btn.disabled=false;btn.textContent='문의 보내기';
-    }
-}
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossorigin="anonymous"></script>
+<script src="app.js"></script>
 </body>
 </html>
