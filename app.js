@@ -9,15 +9,18 @@ function initCarousel(id){
     slides.forEach((s,i)=>{
         const img=s.querySelector('img');
         const t=document.createElement('div');t.className='carousel-thumb'+(i===0?' active':'');
-        t.innerHTML='<img src="'+img.src+'">';
-        t.onclick=()=>{el._idx=i;updateCarousel(id)};
+        t.setAttribute('role','button');t.setAttribute('tabindex','0');t.setAttribute('aria-label',(i+1)+'번 슬라이드로 이동');t.setAttribute('aria-current',i===0?'true':'false');
+        t.innerHTML='<img src="'+img.src+'" alt="">';
+        const goTo=()=>{el._idx=i;updateCarousel(id)};
+        t.onclick=goTo;
+        t.onkeydown=(e)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();goTo();}};
         thumbsWrap.appendChild(t);
     });
 }
 function updateCarousel(id){
     const el=document.getElementById(id);if(!el)return;
     el.querySelector('.carousel-track').style.transform='translateX(-'+el._idx*100+'%)';
-    el.querySelectorAll('.carousel-thumb').forEach((t,i)=>t.classList.toggle('active',i===el._idx));
+    el.querySelectorAll('.carousel-thumb').forEach((t,i)=>{var on=i===el._idx;t.classList.toggle('active',on);t.setAttribute('aria-current',on?'true':'false');});
 }
 function slideCarousel(id,dir){
     const el=document.getElementById(id);if(!el)return;
