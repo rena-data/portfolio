@@ -506,7 +506,7 @@
                 <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard_01.png" alt="마케팅 지표 탭"></div><div class="gi-cap"><strong>마케팅 탭</strong> — 채널별 CPC·CAC·ROAS와 예산 대비 성과를 한 화면에서 비교해 채널 효율·예산 배분 인사이트 도출</div></div>
                 <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard_02.png" alt="프로덕트 지표 탭"></div><div class="gi-cap"><strong>프로덕트 탭</strong> — 전환 퍼널·코호트 리텐션으로 유입부터 이탈까지 구간별 이탈 포인트 파악</div></div>
                 <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard_03.png" alt="경영 현황 탭"></div><div class="gi-cap"><strong>경영 탭</strong> — MRR·번 레이트·런웨이 등 핵심 재무·성장 지표를 모니터링해 사업 건전성 한눈에 파악</div></div>
-                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard_04.png" alt="시나리오 시뮬레이터"></div><div class="gi-cap"><strong>시뮬레이터</strong> — 슬라이더로 가격·비용·성장률 등 가정을 바꾸면 12개월 재무 시나리오를 즉시 시뮬레이션</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/fintech_dashboard_04.png" alt="시나리오 시뮬레이터"></div><div class="gi-cap"><strong>시뮬레이터</strong> — 슬라이더로 마케팅비·인력·매출 성장률·이탈률 가정을 바꾸면 12개월 현금·런웨이 시나리오를 즉시 시뮬레이션</div></div>
             </div>
             <button class="carousel-btn carousel-prev" aria-label="이전 슬라이드" onclick="slideCarousel('fintech-carousel',-1)">&#8249;</button>
             <button class="carousel-btn carousel-next" aria-label="다음 슬라이드" onclick="slideCarousel('fintech-carousel',1)">&#8250;</button>
@@ -525,7 +525,7 @@
         <div class="story-title">핵심 성과</div>
         <div class="fcards">
             <div class="fc c2"><div class="fct">정량적</div><ul><li>75,000+ 유저, 190만 이벤트 데이터 설계</li><li>수동 작업 <span class="stat" data-count="90" data-suffix="%">90%</span> 절감 자동화 설계</li><li>이상 감지: 1일 → 10분 이내</li></ul></div>
-            <div class="fc c2"><div class="fct">기술적</div><ul><li>DuckDB ↔ BigQuery 무중단 전환</li><li>3 Layer 지표 체계 설계</li><li>n8n 워크플로우 4개 설계</li></ul></div>
+            <div class="fc c2"><div class="fct">기술적</div><ul><li>DuckDB ↔ BigQuery 전환 모듈 설계(환경변수 DB_ENGINE 분기·SQL 공통)</li><li>3 Layer 지표 체계 설계</li><li>n8n 워크플로우 4개 설계</li></ul></div>
         </div>
     </div>
 
@@ -612,7 +612,7 @@
         </div>
         </div>
     <div class="tb"><span class="tl">Tech</span><span class="sk">FastAPI</span><span class="sk">Gemini API</span><span class="sk">Supabase</span><span class="sk">JavaScript</span><span class="sk">Render</span><span class="sk">GA4</span><span class="sk">html2canvas</span><span class="sk">UptimeRobot</span><span class="sk">Kakao SDK</span></div>
-    <div class="future"><div class="future-title">향후 계획</div><ul><li>쿠팡파트너스 제휴 링크 수익화 (신청 완료)</li><li>AI 리포트 강화 (아이섀도/립 컬러 진단, 8서브타입 드레이핑)</li><li>포털 확장 (관상/MBTI/심리테스트)</li></ul></div>
+    <div class="future"><div class="future-title">향후 계획</div><ul><li>쿠팡파트너스 제휴 링크 수익화 (구조 준비 — buy_url만 교체하면 연동)</li><li>AI 리포트 강화 (아이섀도/립 컬러 진단, 8서브타입 드레이핑)</li><li>포털 확장 (검토 중 — 추가 AI 테스트 서비스)</li></ul></div>
 </div>
 </div>
 
@@ -627,7 +627,7 @@
         <div class="story-title">왜 이 프로젝트를 시작했나?</div>
         <div class="story-text">캐주얼 게임에서 감정을 건드리는 게임이 바이럴 효과가 가장 큽니다. "결국 죽는" 컨셉으로 유저가 자발적으로 결과를 공유하게 만들면, 광고비 $0으로 성장이 가능하다고 판단했습니다.</div>
         <div class="sh warn"><p><strong>가설:</strong> 감정 유발 게임 결과(추모카드+칭호)를 SNS에 공유하고 싶게 만들면 바이럴 성장 가능.</p></div>
-        <div class="sh"><p><strong>설계:</strong> 연쇄 붕괴(스탯 하나 떨어지면 나머지 급락) + 피로도(같은 행동 효과 감소) → 전략적 긴장감. 게임오버 시 추모카드+칭호 → X 자동 공유.</p></div>
+        <div class="sh"><p><strong>설계:</strong> 연쇄 붕괴(스탯 하나 떨어지면 나머지 급락) + 피로도(같은 행동 효과 감소) → 전략적 긴장감. 게임오버 시 추모카드+칭호 → SNS 5채널(X·페이스북·카카오·인스타·네이버블로그) 공유·복사.</p></div>
     </div>
 
     <div class="story">
@@ -646,7 +646,7 @@
         </div>
         <div class="fcards">
             <div class="fc c1"><div class="fct">게임 메커닉</div><ul><li>3스탯 (배고픔/행복/청결) × 4성장단계</li><li>연쇄 붕괴 + 피로도 + 랜덤 이벤트</li><li>칭호: 학대범(0턴)→전설의 집사(100+)</li></ul></div>
-            <div class="fc c1"><div class="fct">바이럴 설계</div><ul><li>게임오버 추모카드 자동 생성</li><li>X 공유 + 챌린지 텍스트</li><li>칭호 수집 경쟁 → 재방문 유도</li></ul></div>
+            <div class="fc c1"><div class="fct">바이럴 설계</div><ul><li>게임오버 추모카드 자동 생성</li><li>SNS 5채널 공유 + 챌린지 텍스트</li><li>칭호 수집 경쟁 → 재방문 유도</li></ul></div>
         </div>
     </div>
 
@@ -686,7 +686,7 @@
         <div class="story-title">왜 이 프로젝트를 시작했나?</div>
         <div class="story-text">투자 종목 스크리닝에는 전종목 데이터가 필요한데, KRX 정보데이터시스템이 전면 로그인 필수로 전환돼 공식 경로 수집이 막혔습니다. HTTP·로그인·암호화 분석을 학습하며 우회 경로를 찾는 과정으로 진행했습니다.</div>
         <div class="sh warn"><p><strong>문제:</strong> KRX(data.krx.co.kr) 로그인 전환(alert·LOGOUT 반환) → 전종목 직접 수집 불가.</p></div>
-        <div class="sh"><p><strong>해결:</strong> HTTP 세션·CSRF, JS 암호화(Base64·AES·RSA) Python 재현을 학습한 뒤, 차단된 KRX 대신 네이버 금융 시가총액 순위 페이지를 파싱해 KOSPI+KOSDAQ 4,000+ 전종목을 수집.</p></div>
+        <div class="sh"><p><strong>해결:</strong> HTTP 세션·CSRF·JS 암호화(Base64·AES·RSA)를 단계별로 학습한 뒤, 정작 차단된 KRX 대신 로그인이 필요 없는 네이버 금융 시가총액 순위 페이지(정적 HTML)를 파싱해 KOSPI+KOSDAQ 4,000+ 전종목을 수집.</p></div>
     </div>
     <div class="story">
         <div class="story-label">Build</div>
@@ -702,7 +702,7 @@
         </div>
         <div class="fcards">
             <div class="fc c1"><div class="fct">수집 파이프라인</div><ul><li>네이버 금융 시총순위 페이지 파싱(type_2 테이블)</li><li>전일비 텍스트·구분행 등 실전 이슈 처리</li><li>CSV/JSON 구조화 저장</li></ul></div>
-            <div class="fc c1"><div class="fct">역공학 학습</div><ul><li>HTTP 세션·CSRF·재시도 로직</li><li>JS 암호화(Base64·AES·RSA) Python 재현</li><li>KRX 차단 분석 → 네이버 피벗 문서화</li></ul></div>
+            <div class="fc c1"><div class="fct">역공학 학습</div><ul><li>HTTP 세션·쿠키·CSRF·재시도 로직 (연습 사이트)</li><li>JS 암호화(Base64·AES·RSA) Python 재현 실습</li><li>KRX 차단 분석 → 네이버 피벗 (실수집은 정적 HTML)</li></ul></div>
         </div>
     </div>
     <div class="story">
@@ -710,7 +710,7 @@
         <div class="story-title">성과</div>
         <div class="fcards">
             <div class="fc c2"><div class="fct">정량적</div><ul><li>KOSPI+KOSDAQ 4,000+ 전종목 수집</li><li>저PER(≤10·시총 1조+)·고ROE(≥15%·5천억+)·외국인 TOP 스크리닝</li></ul></div>
-            <div class="fc c2"><div class="fct">정성적</div><ul><li>차단 상황(KRX) 분석 후 대체 경로로 우회</li><li>단계별 노트북으로 과정 문서화</li></ul></div>
+            <div class="fc c2"><div class="fct">정성적</div><ul><li>차단 상황(KRX) 분석 후 대체 경로로 우회</li><li>4단계 학습 폴더·실습 노트북(59셀)·analysis.md로 트러블슈팅까지 문서화</li></ul></div>
         </div>
     </div>
     <div class="story">
@@ -793,25 +793,26 @@
         <div class="story-title">왜 이 프로젝트를 시작했나?</div>
         <div class="story-text">여러 채용 사이트의 공고를 일일이 스프레드시트에 정리하고, 마감일을 놓쳐 지원을 못 하는 번거로움을 자동화하려 만들었습니다.</div>
         <div class="sh warn"><p><strong>문제:</strong> 사이트마다 공고를 수동 정리 + 마감일 추적 누락.</p></div>
-        <div class="sh"><p><strong>해결:</strong> URL 입력 → 전용 파서(원티드/사람인) + Gemini 폴백으로 회사·포지션·자격·마감일 자동 추출 → Google Sheets 저장 → 마감 2일 전 Slack 알림(cron).</p></div>
+        <div class="sh"><p><strong>해결:</strong> URL 입력 → 전용 파서(원티드/사람인/잡코리아/그룹바이) + 점핏·기타는 Gemini 폴백으로 회사·포지션·자격·마감일 자동 추출 → Google Sheets 저장 → 마감 2일 전 Slack 알림(cron).</p></div>
     </div>
     <div class="story">
         <div class="story-label">Build</div>
         <div class="story-title">구현</div>
         <div class="carousel" id="jobmate-carousel">
             <div class="carousel-track">
-                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_01_collect.png" alt="공고 수집"></div><div class="gi-cap">공고 수집 — URL 입력 → 자동 파싱(WantedParser) → 저장 전 미리보기·수정</div></div>
-                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_02_list.png" alt="저장 목록"></div><div class="gi-cap">저장 목록 — 로컬 캐시 / Google Sheets 전환, 회사·포지션·마감일·상태 표시</div></div>
-                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_03_deadline.png" alt="마감 임박 알림"></div><div class="gi-cap">마감 임박 알림 — D-2 이내 공고 조회 후 Slack 알림</div></div>
-                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_04_status.png" alt="지원 상태 변경"></div><div class="gi-cap">지원 상태 변경 — 관심·지원·면접·마감 단계 관리</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_01_dashboard.png" alt="대시보드"></div><div class="gi-cap">대시보드 — 수집 현황·직군/상태 분포·최근 공고·마감 임박 (Gemini·Sheets·Slack 연동)</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_02_collect.png" alt="공고 수집"></div><div class="gi-cap">공고 수집 — 채용공고 URL 입력 → Playwright 파싱 → 저장</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_03_list.png" alt="저장 목록"></div><div class="gi-cap">저장 목록 — 로컬 캐시 / Google Sheets 전환, 회사·포지션·마감·상태 관리</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_04_deadline.png" alt="마감 임박 알림"></div><div class="gi-cap">마감 임박 알림 — D-2 이내 공고 조회 후 Slack 알림</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_05_status.png" alt="지원 상태 변경"></div><div class="gi-cap">지원 상태 변경 — 관심·지원·면접·마감 단계 관리</div></div>
             </div>
             <button class="carousel-btn carousel-prev" aria-label="이전 슬라이드" onclick="slideCarousel('jobmate-carousel',-1)">&#8249;</button>
             <button class="carousel-btn carousel-next" aria-label="다음 슬라이드" onclick="slideCarousel('jobmate-carousel',1)">&#8250;</button>
             <div class="carousel-thumbs" id="jobmate-carousel-thumbs"></div>
         </div>
         <div class="fcards">
-            <div class="fc c1"><div class="fct">멀티사이트 파싱</div><ul><li>원티드 전용 파서(추출 7/7), 사람인(5~7/7)</li><li>점핏·잡코리아 등은 Gemini AI 폴백 추출</li><li>Playwright 기반 동적 페이지 수집</li></ul></div>
-            <div class="fc c1"><div class="fct">저장·알림 자동화</div><ul><li>Google Sheets 자동 저장(11개 항목) + 중복 캐시</li><li>마감 2일 전 Slack 알림(cron)</li><li>상태 관리: 관심/지원/면접/마감</li></ul></div>
+            <div class="fc c1"><div class="fct">멀티사이트 파싱</div><ul><li>원티드 전용 파서(추출 7/7), 사람인(5~7/7)</li><li>잡코리아·그룹바이도 전용 파서(ld+json·__NEXT_DATA__ 직접 추출, Gemini 불필요)</li><li>점핏·기타 사이트는 Gemini AI 폴백 추출</li><li>Playwright 기반 동적 페이지 수집</li></ul></div>
+            <div class="fc c1"><div class="fct">저장·알림 자동화</div><ul><li>Google Sheets 자동 저장(15개 항목) + 중복 캐시</li><li>마감 2일 전 Slack 알림(cron)</li><li>상태 관리: 관심/지원/면접/마감</li></ul></div>
         </div>
     </div>
     <div class="story">
@@ -819,7 +820,7 @@
         <div class="story-title">성과</div>
         <div class="fcards">
             <div class="fc c2"><div class="fct">정량적</div><ul><li>공고 항목 자동 추출·Sheets 저장 + 마감 자동 알림</li><li>전용 파서 + AI 폴백으로 다중 사이트 커버</li></ul></div>
-            <div class="fc c2"><div class="fct">정성적</div><ul><li>탭 기반 Streamlit 웹 UI(수집·목록·마감·상태)</li><li>구직 공고 관리·마감 누락 방지 자동화</li></ul></div>
+            <div class="fc c2"><div class="fct">정성적</div><ul><li>사이드바 기반 Streamlit 웹 UI(대시보드·수집·목록·마감·상태) + 연동 상태 모니터링</li><li>구직 공고 관리·마감 누락 방지 자동화</li></ul></div>
         </div>
     </div>
     <div class="story">
@@ -829,7 +830,7 @@
             <ul class="dlist">
                 <li><strong>AI SaaS 구상 접고 로컬 Streamlit 앱으로 피벗</strong> — $0 예산에서 무료 서버(Render 512MB)로는 Playwright Chromium(300MB+)을 못 띄워 ‘무료+크롤링’이 물리적으로 불가 → ‘나만 쓰는 도구’로 바꾸자 서버·인증·과금·법적 제약이 모두 사라짐.</li>
                 <li><strong>저장은 Google Sheets(RDBMS 거절)</strong> — 개인용 수십~수백 건엔 DB가 과하고, 무료에 시트에서 데이터를 바로 확인·수정할 수 있어 운영이 편리.</li>
-                <li><strong>전용 파서 + Gemini 폴백 하이브리드, 본문만 전달</strong> — 전용만으론 신규 사이트 불가·AI만으론 정확도/비용 부담이라 균형. 잡코리아는 리뉴얼로 셀렉터가 불안정해 폴백 처리, HTML 전체는 노이즈라 trafilatura+BS4 본문만 전달(543→1,048자).</li>
+                <li><strong>전용 파서 + Gemini 폴백 하이브리드, 본문만 전달</strong> — 전용만으론 신규 사이트 불가·AI만으론 정확도/비용 부담이라 균형. 잡코리아는 초기엔 셀렉터가 불안정해 Gemini 폴백을 썼으나 ld+json(JobPosting)+iframe 전용 파서로 전환해 Gemini 의존을 제거. 폴백 경로에선 HTML 전체가 노이즈라 trafilatura+BS4로 본문만 전달(잡코리아 543→1,048자).</li>
                 <li><strong>로켓펀치는 우회 대신 ‘미지원 + 명확한 안내’</strong> — CloudFront 403 봇 차단을 stealth로 뚫는 건 불안정·과해서, 우회보다 사용자에게 상태를 명확히 안내하는 쪽을 택함.</li>
             </ul>
         </div>
