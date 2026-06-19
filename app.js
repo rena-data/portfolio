@@ -221,7 +221,7 @@ function openContact(){
 }
 function closeContact(){document.getElementById('contact-modal').style.display='none';document.getElementById('c-status').style.display='none';var w=document.getElementById('contact-success-wrap');if(w)w.style.display='none';}
 
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbyZDufcSXptCX11FbzDkmRa5xWeUxDl-ojPUl9SkyQyUrsXwO0Nb0spiixecCbS6hcRlg/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbzhqx1mQ2XOO1meOzfFQaF3glbCAvvpUY5VGF6Cgn2Q4VS6ZMFQD0bIzNa8YEHZIWQUVQ/exec";
 
 async function submitContact(){
     const eid=document.getElementById('c-email-id').value.trim();
