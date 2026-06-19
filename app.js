@@ -176,6 +176,8 @@ window.addEventListener('load', ()=>{
     initCarousel('fintech-carousel');
     initCarousel('pet-carousel');
     initCarousel('jobmate-carousel');
+    initCarousel('stock-carousel');
+    initCarousel('finscraper-carousel');
     initLottie();
 });
 

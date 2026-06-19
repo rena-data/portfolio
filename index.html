@@ -75,8 +75,8 @@
                 <div class="sum-label">실서비스 운영비</div>
             </div>
             <div class="sum-card reveal">
-                <div class="sum-num" data-count="3" data-suffix="개">3개</div>
-                <div class="sum-label">E2E 프로젝트</div>
+                <div class="sum-num" data-count="6" data-suffix="개">6개</div>
+                <div class="sum-label">개인 프로젝트</div>
             </div>
         </div>
     </section>
@@ -691,8 +691,14 @@
     <div class="story">
         <div class="story-label">Build</div>
         <div class="story-title">구현</div>
-        <div class="gallery single">
-            <div class="gi"><div class="ph-img"><span class="ph-ico">📊</span><span>이미지 준비 중</span></div><div class="gi-cap">전종목 수집 결과 · 투자지표 스크리닝 (실제 스크린샷 예정)</div></div>
+        <div class="carousel" id="finscraper-carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/finscraper_01_collect.png" alt="전종목 수집"></div><div class="gi-cap">전종목 수집 — KOSPI+KOSDAQ 4,285종목 · 12개 항목 파싱 → CSV/JSON</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/finscraper_02_screen.png" alt="투자지표 스크리닝"></div><div class="gi-cap">투자지표 스크리닝 — 저PER·고ROE·외국인 보유 상위 자동 선별</div></div>
+            </div>
+            <button class="carousel-btn carousel-prev" aria-label="이전 슬라이드" onclick="slideCarousel('finscraper-carousel',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" aria-label="다음 슬라이드" onclick="slideCarousel('finscraper-carousel',1)">&#8250;</button>
+            <div class="carousel-thumbs" id="finscraper-carousel-thumbs"></div>
         </div>
         <div class="fcards">
             <div class="fc c1"><div class="fct">수집 파이프라인</div><ul><li>네이버 금융 시총순위 페이지 파싱(type_2 테이블)</li><li>전일비 텍스트·구분행 등 실전 이슈 처리</li><li>CSV/JSON 구조화 저장</li></ul></div>
@@ -738,8 +744,15 @@
     <div class="story">
         <div class="story-label">Build</div>
         <div class="story-title">구현</div>
-        <div class="gallery single">
-            <div class="gi"><div class="ph-img"><span class="ph-ico">📈</span><span>이미지 준비 중</span></div><div class="gi-cap">매매 신호 대시보드 · 백테스트 결과 (실제 스크린샷 예정)</div></div>
+        <div class="carousel" id="stock-carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/stock_01_app.png" alt="앱 화면"></div><div class="gi-cap">Streamlit 앱 — 시장 현황·반도체 종목 매매 신호·진입 전략</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/stock_02_signal.png" alt="예측 결과"></div><div class="gi-cap">예측 결과 — AI 신뢰도·예측 근거(기술 지표)·종목별 매수 신호</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/stock_03_backtest.png" alt="백테스트"></div><div class="gi-cap">백테스트 — 포트폴리오 가치·매수/매도 신호·거래별 수익률 (삼성전자 예시·학습용)</div></div>
+            </div>
+            <button class="carousel-btn carousel-prev" aria-label="이전 슬라이드" onclick="slideCarousel('stock-carousel',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" aria-label="다음 슬라이드" onclick="slideCarousel('stock-carousel',1)">&#8250;</button>
+            <div class="carousel-thumbs" id="stock-carousel-thumbs"></div>
         </div>
         <div class="fcards">
             <div class="fc c1"><div class="fct">모델</div><ul><li>2층 LSTM(128) + 27개 기술지표·60일 시퀀스</li><li>WeightedBCELoss로 클래스 불균형 대응</li><li>Threshold 0.02→0.01 조정으로 F1 0%→64.2%</li></ul></div>
