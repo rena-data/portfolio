@@ -800,11 +800,12 @@
         <div class="story-title">구현</div>
         <div class="carousel" id="jobmate-carousel">
             <div class="carousel-track">
-                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_01_dashboard.png" alt="대시보드"></div><div class="gi-cap">대시보드 — 수집 현황·직군/상태 분포·최근 공고·마감 임박 (Gemini·Sheets·Slack 연동)</div></div>
-                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_02_collect.png" alt="공고 수집"></div><div class="gi-cap">공고 수집 — 채용공고 URL 입력 → Playwright 파싱 → 저장</div></div>
-                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_03_list.png" alt="저장 목록"></div><div class="gi-cap">저장 목록 — 로컬 캐시 / Google Sheets 전환, 회사·포지션·마감·상태 관리</div></div>
-                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_04_deadline.png" alt="마감 임박 알림"></div><div class="gi-cap">마감 임박 알림 — D-2 이내 공고 조회 후 Slack 알림</div></div>
-                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_05_status.png" alt="지원 상태 변경"></div><div class="gi-cap">지원 상태 변경 — 관심·지원·면접·마감 단계 관리</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_01_dashboard.png" alt="대시보드 개요"></div><div class="gi-cap">대시보드 — 총 수집 94건·플랫폼별 현황·직군/상태 분포 (Gemini·Sheets·Slack 연동)</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_02_dashboard_recent.png" alt="대시보드 최근 수집·마감 임박"></div><div class="gi-cap">대시보드 — 최근 수집 공고·마감 임박(D-7) 리스트 한눈에</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_03_collect.png" alt="공고 수집"></div><div class="gi-cap">공고 수집 — URL 직접 입력 + 키워드 자동 수집(원티드·사람인·잡코리아, cron 연동)</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_04_list.png" alt="저장 목록"></div><div class="gi-cap">저장 목록 — 로컬 캐시 / Google Sheets 전환, 회사·포지션·마감·상태 관리</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_05_deadline.png" alt="마감 임박 알림"></div><div class="gi-cap">마감 임박 알림 — D-2 이내 공고 조회 후 Slack 발송</div></div>
+                <div class="carousel-slide"><div class="carousel-slide-frame"><img src="screenshots/jobmate_06_status.png" alt="지원 상태 변경"></div><div class="gi-cap">지원 상태 변경 — 관심·지원·서류·면접·최종 단계 관리</div></div>
             </div>
             <button class="carousel-btn carousel-prev" aria-label="이전 슬라이드" onclick="slideCarousel('jobmate-carousel',-1)">&#8249;</button>
             <button class="carousel-btn carousel-next" aria-label="다음 슬라이드" onclick="slideCarousel('jobmate-carousel',1)">&#8250;</button>
